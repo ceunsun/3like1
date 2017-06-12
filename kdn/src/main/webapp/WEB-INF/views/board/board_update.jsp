@@ -27,35 +27,37 @@
 									<span class="glyphicon glyphicon-home"></span> 홈
 								</a>
 								<span>&gt;</span></li>
-							<li class="women">신고 게시판</li>
+							<li class="women">신고 게시글 작성</li>
 						</ul>
 						<ul class="previous">
-						 	<li><a href="board.do?pageNo=${pageNo}">이전 페이지로</a></li> 
+						 	<%-- <li><a href="board_write.do?pageNo=${pageNo}">이전 페이지로</a></li>  --%>
+				        	<li><a href="boardSearch.do?boardno=${board.boardno}&pageNo=${pageNo}">이전 페이지로</a></li> 
 						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="tm-what-we-do-right section-margin-top">
-						<table class="table table-hover table-responsive table-striped board_table">
-							<thead>
-								<tr>
-									<th>제목</th><td colspan="5">${board.title}</td>
-								</tr>
-								<tr>
-									<th>글 번호</th><td>${board.boardno}</td>
-									<th>작성자</th><td>${board.memberno}</td>
-									<th>작성일</th><td>${board.regdate}</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td colspan="6">${board.content}</td>
-								<tr>
-							</tbody>
-						</table>
-						<div class="boardbtn">
-							<a href=""><input type="button" value="삭제"></a>
-							<input type="button" value="수정" onclick="location.href='updateBoardForm.do?title=${board.title}&boardno=${board.boardno}&memberno=${board.memberno}&content=${board.content}&pageNo=${pageNo}'">
-						</div>
+						<form action="updateBoard.do" method="post">
+						    <div class="form-group">
+								<input type="hidden" name="boardno" id="boardno" class="form-control"
+									placeholder="게시글번호" value="${board.boardno}"/>
+							</div>
+							<div class="form-group">
+								<input type="text" name="title" id="title" class="form-control"
+									placeholder="${board.title}" />
+							</div>
+							<div class="form-group">
+								<input type="file" name="boardimage" id="boardimage" class="form-control"
+									placeholder=" " />  
+							</div>
+							<div class="form-group">
+								<textarea name="content" id="content" class="form-control" rows="12"
+									placeholder="${board.content}"></textarea>
+							</div>
+							<div class="boardbtn">
+								<input type="submit" value="수정 완료">
+								<input type="reset" value="취소">
+							</div>
+						</form>
 					</div>
 				</div>
 				<jsp:include page="board_sidebar.jsp"></jsp:include>

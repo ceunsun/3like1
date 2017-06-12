@@ -2,6 +2,9 @@ package com.kdn.project;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,4 +64,31 @@ public class BoardController {
 			
 		return "redirect:board.do?pageNo=1";
 	}
+	
+	
+	@RequestMapping(value = "updateBoardForm.do", method = RequestMethod.GET)
+	public String updateBoardForm(HttpServletRequest request, HttpSession session, Model model) {
+		//본인의 글인 경우
+		if(request.getParameter("memberno").equals(session.getAttribute("memberno"))){
+		
+			String boardno = request.getParameter("boardno");
+			System.out.println(boardno);
+			
+			model.addAttribute("board", boardService.search(Integer.parseInt(boardno)));
+			model.addAttribute("content", "board_update");
+			return "board/board";
+			
+		}else{ //남의 글인 경우,,, 팝업을 띄워야할까
+			return "redirect:board.do?pageNo=1";
+		}
+	}
+	
+	// board_update.jsp
+	@RequestMapping(value = "updateBoard.do", method = RequestMethod.POST)
+	public String updateBoard(Board board, HttpSession session, Model model) {
+		boardService.update(board);
+		
+		return "redirect:board.do?pageNo=1";
+	}
+	
 }

@@ -28,7 +28,8 @@
 	
 	<update id="update" parameterType="board">
 		UPDATE board 
-		SET content=#{content},
+		SET title=#{title},
+		    content=#{content},
 		    regdate=sysdate
 		WHERE boardno=#{boardno}
 	</update>

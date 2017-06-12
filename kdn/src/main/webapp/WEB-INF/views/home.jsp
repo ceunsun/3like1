@@ -28,7 +28,6 @@
 	<!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
 	<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" src="js/templatemo-script.js"></script>
 	<script type="text/javascript" src="js/templatemo.js"></script>
