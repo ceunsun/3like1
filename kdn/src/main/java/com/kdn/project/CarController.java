@@ -31,7 +31,7 @@ public class CarController {
 		int pageNo=1;
 		pb.setTotal(carService.getCount(car)); // 총 게시글 개수
 		pb.setPageNo(pageNo);
-		pb.setInterval(5);
+		pb.setInterval(3);
 		
 		List<Car> cList = carService.availableSearch(car, pb);
 		

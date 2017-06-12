@@ -17,7 +17,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<!-- Testimonial -->
 			<div class="col-lg-12">
@@ -57,6 +56,7 @@
 										<td><input type="checkbox" name='check' id='check' value='${rList.reserveno}'></td>	
 										<td>${rList.reserveno}</td>
 										<td>차량 이미지</td>
+										<td>차량 번호</td>
 										<td>사원 번호</td>
 										<td>사원 이름</td>
 										<td>사원 이메일</td>
