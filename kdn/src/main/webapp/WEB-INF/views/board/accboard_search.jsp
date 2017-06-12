@@ -27,36 +27,32 @@
 									<span class="glyphicon glyphicon-home"></span> 홈
 								</a>
 								<span>&gt;</span></li>
-							<li class="women">문의 게시글 작성</li>
+							<li class="women">사고 게시판</li>
 						</ul>
 						<ul class="previous">
-							<li><a href="board_write.do?pageNo=${pageNo}">이전 페이지로</a></li>
+						 	<li><a href="accboard.do?pageNo=${pageNo}">이전 페이지로</a></li> 
 						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="tm-what-we-do-right section-margin-top">
-						<form action="board_write.do" method="post">
-							<div class="form-group">
-								<input type="text" name="memberno" id="memberno" class="form-control"
-									placeholder="사원번호" value="${memberno}"/>
-							</div>
-							<div class="form-group">
-								<input type="text" name="title" id="title" class="form-control"
-									placeholder="글 제목을 입력하세요" />
-							</div>
-							<div class="form-group">
-								<input type="file" name="boardimage" id="boardimage" class="form-control"
-									placeholder="신고할 차량 이미지를 올려주세요" />
-							</div>
-							<div class="form-group">
-								<textarea name="content" id="content" class="form-control" rows="12"
-									placeholder="내용을 입력하세요"></textarea>
-							</div>
-							<div class="boardbtn">
-								<input type="submit" value="작성 완료">
-								<a href="board.do?pageNo=${pageNo}"><input type="button" value="취소"></a>
-							</div>
-						</form>
+						<table class="table table-hover table-responsive table-striped board_table">
+								<tr>
+									<th>사고번호</th><td colspan="5">${accident.accidentno}</td>
+								</tr>
+								<tr>
+									<th>날짜</th><td>${accident.accidentdate}</td>
+								</tr>
+								<tr>
+									<th>사번</th><td>${accident.memberno}</td>
+								</tr>
+								<tr>
+									<th>차량번호</th><td>${accident.carno}</td>
+								</tr>
+						</table>
+						<div class="boardbtn">
+							<input type="button" value="삭제" onClick="location.href='accboardDelete.do?accidentno=${accident.accidentno}'"> 
+							<input type="button" value="수정" onclick="location.href='accupdateBoardForm.do?accidentno=${accident.accidentno}&accidentdate=${accident.accidentdate}&memberno=${accident.memberno}&carno=${accident.carno}&pageNo=${pageNo}'">
+						</div> 
 					</div>
 				</div>
 				<jsp:include page="board_sidebar.jsp"></jsp:include>

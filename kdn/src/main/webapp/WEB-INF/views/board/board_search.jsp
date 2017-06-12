@@ -27,7 +27,7 @@
 									<span class="glyphicon glyphicon-home"></span> 홈
 								</a>
 								<span>&gt;</span></li>
-							<li class="women">신고 게시판</li>
+							<li class="women">문의 게시판</li>
 						</ul>
 						<ul class="previous">
 						 	<li><a href="board.do?pageNo=${pageNo}">이전 페이지로</a></li> 

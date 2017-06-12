@@ -4,8 +4,8 @@
 	<div class="navbar-default sidebar" role="navigation">
 		<div class="sidebar-nav navbar-collapse">
 			<ul class="nav" id="side-menu">
-				<li><a href="index.html">공지사항</a></li>
-				<li><a href="board.do?pageNo=1">신고 게시판<span class="fa arrow"></span></a></li>
+				<li><a href="accboard.do?pageNo=1">사고 게시판</a></li>
+				<li><a href="board.do?pageNo=1">문의 게시판<span class="fa arrow"></span></a></li>
 			</ul>
 		</div>
 	</div>

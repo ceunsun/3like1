@@ -27,34 +27,31 @@
 									<span class="glyphicon glyphicon-home"></span> 홈
 								</a>
 								<span>&gt;</span></li>
-							<li class="women">문의 게시글 작성</li>
+							<li class="women">사고 게시글 수정</li>
 						</ul>
 						<ul class="previous">
-							<li><a href="board_write.do?pageNo=${pageNo}">이전 페이지로</a></li>
+						 	<%-- <li><a href="board_write.do?pageNo=${pageNo}">이전 페이지로</a></li>  --%>
+				        	<li><a href="accboardSearch.do?accidentno=${accident.accidentno}&pageNo=${pageNo}">이전 페이지로</a></li> 
 						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="tm-what-we-do-right section-margin-top">
-						<form action="board_write.do" method="post">
-							<div class="form-group">
-								<input type="text" name="memberno" id="memberno" class="form-control"
-									placeholder="사원번호" value="${memberno}"/>
+						<form action="accupdateBoard.do" method="post">
+						    <div class="form-group">
+								<input type="hidden" name="accidentno" id="accidentno" class="form-control"
+									placeholder="사고번호" value='${accident.accidentno}'/>
 							</div>
 							<div class="form-group">
-								<input type="text" name="title" id="title" class="form-control"
-									placeholder="글 제목을 입력하세요" />
+								<input type="text" name="accidentdate" id="accidentdate" class="form-control"
+									placeholder="${accident.accidentdate}" />
 							</div>
 							<div class="form-group">
-								<input type="file" name="boardimage" id="boardimage" class="form-control"
-									placeholder="신고할 차량 이미지를 올려주세요" />
-							</div>
-							<div class="form-group">
-								<textarea name="content" id="content" class="form-control" rows="12"
-									placeholder="내용을 입력하세요"></textarea>
+								<input type="text" name="carno" id="carno" class="form-control"
+									placeholder="${accident.carno}" />  
 							</div>
 							<div class="boardbtn">
-								<input type="submit" value="작성 완료">
-								<a href="board.do?pageNo=${pageNo}"><input type="button" value="취소"></a>
+								<input type="submit" value="수정 완료">
+								<input type="reset" value="취소" onClick="location.href='accboardSearch.do?accidentno=${accident.accidentno}&pageNo=${pageNo}'">
 							</div>
 						</form>
 					</div>
