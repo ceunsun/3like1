@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+<mapper namespace="board">
+	<select id="search" parameterType="int" resultType="board">
+		SELECT *
+		FROM board
+		WHERE boardno=#{boardno}
+	</select>
+	
+	<select id="searchAll" resultType="board">
+		SELECT *
+		FROM board
+		ORDER BY boardno desc
+	</select>
+	
+	<select id="getCount" resultType="int" >
+		SELECT count(*) count
+		FROM board
+	</select>
+	
+	<insert id="insert" parameterType="board">
+		INSERT INTO board 
+		VALUES(board_no.nextval, #{memberno}, #{title}, #{content}, sysdate)
+	</insert>
+	
+	<update id="update" parameterType="board">
+		UPDATE board 
+		SET content=#{content},
+		    regdate=sysdate
+		WHERE boardno=#{boardno}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM member
+		WHERE memberno = #{memberno}
+	</delete>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+<!--여러 도메인을 위한 쿼리 xml를 작성할 때  도메인을 식별하기 위해 
+    namespace 부여 
+=> sqlSession.쿼리메서드("식별자", paramdata);
+    식별자 =>  namespace.id
+  ex)sqlSession.selectOne("board.search", paramdata);    
+-->	
+<mapper namespace="member">
+	<select id="search" parameterType="string" resultType="member" >
+		SELECT *
+		FROM member
+		WHERE memberno = #{memberno}
+	</select>
+	
+	<select id="searchAll" resultType="member" parameterType="pageBean">
+		SELECT *
+		FROM member
+		WHERE memberno != 'admin'
+	</select>
+	
+	<select id="getCount" resultType="int" >
+		SELECT count(*) count
+		FROM member
+		WHERE memberno != 'admin'
+	</select>
+	
+	<update id="update" parameterType="member">
+		UPDATE member 
+		SET pwd=#{pwd},
+		    name=#{name},
+		    dept=#{dept},
+		    mobile=#{mobile},
+		    email=#{email}
+		WHERE memberno=#{memberno}
+	</update> 
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM member
+		WHERE memberno = #{memberno}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
