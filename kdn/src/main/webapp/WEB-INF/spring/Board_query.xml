@@ -34,7 +34,7 @@
 	</update>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM member
-		WHERE memberno = #{memberno}
+		DELETE FROM board
+		WHERE boardno = #{boardno}
 	</delete>
 </mapper>

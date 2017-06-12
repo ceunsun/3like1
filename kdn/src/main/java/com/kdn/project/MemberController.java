@@ -79,4 +79,32 @@ public class MemberController {
 				
 		return "redirect:myPage.do";
 	}
+	
+	//rsvInfoPage_content.jsp
+	@RequestMapping(value= "rsvInfo.do", method = RequestMethod.GET)
+	public String rsvInfo(HttpSession session, Model model){
+		
+		String memberno = (String) session.getAttribute("memberno");
+		System.out.println(memberno);
+		
+		model.addAttribute("reservation", ms.my_reservation(memberno));
+		model.addAttribute("content", "rsvInfoPage_content");
+		
+		return "myPage/myPage";
+		
+	}
+	
+	//returnPage_content.jsp
+	@RequestMapping(value= "returnPage.do", method = RequestMethod.GET)
+	public String returnPage(HttpSession session, Model model){
+		
+		String memberno = (String) session.getAttribute("memberno");
+		System.out.println(memberno);
+		
+		model.addAttribute("rent", ms.my_return(memberno));
+		model.addAttribute("content", "returnPage_content");
+		
+		return "myPage/myPage";
+		
+	}
 }

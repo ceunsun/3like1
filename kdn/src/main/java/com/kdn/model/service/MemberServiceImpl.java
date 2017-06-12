@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.kdn.model.dao.MemberDao;
+import com.kdn.model.domain.Board;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
+import com.kdn.model.domain.Rent;
+import com.kdn.model.domain.Reservation;
 import com.kdn.model.domain.UpdateException;
 
 @Service("memberService")
@@ -85,5 +88,36 @@ public class MemberServiceImpl implements MemberService {
 		} catch(Exception  e){
 			throw new UpdateException("DB 서버 오류");
 		} 
+	}
+
+	
+	@Override
+	public Reservation my_reservation(String memberno) {
+		Reservation m = null;
+	
+		try {
+			if(memberno!=null) {
+				m = dao.my_reservation(memberno);
+			}
+		} catch (Exception e) {
+			throw new UpdateException("DB 서버 오류");
+		}
+		
+		return m;
+	}
+	
+	@Override
+	public Rent my_return(String memberno) {
+		Rent m = null;
+	
+		try {
+			if(memberno!=null) {
+				m = dao.my_return(memberno);
+			}
+		} catch (Exception e) {
+			throw new UpdateException("DB 서버 오류");
+		}
+		
+		return m;
 	}
 }

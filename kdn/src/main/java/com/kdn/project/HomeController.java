@@ -52,24 +52,6 @@ public class HomeController {
 		return "contact/contact";
 	}
 	
-	/**
-	 * myPage
-	 */		
-	@RequestMapping(value = "returnPage.do", method = RequestMethod.GET)
-	public String returnPage(Model model) {
-		
-		model.addAttribute("content", "returnPage_content");
-		
-		return "myPage/myPage";
-	}
-	
-	@RequestMapping(value = "rsvInfo.do", method = RequestMethod.GET)
-	public String rsvInfo(Model model) {
-		
-		model.addAttribute("content", "rsvInfoPage_content");
-		
-		return "myPage/myPage";
-	}
 	
 	/**
 	 * adminPage

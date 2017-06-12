@@ -53,7 +53,7 @@
 							</tbody>
 						</table>
 						<div class="boardbtn">
-							<a href=""><input type="button" value="삭제"></a>
+							<input type="button" value="삭제" onClick="location.href='boardDelete.do?boardno=${board.boardno}'">
 							<a href=""><input type="button" value="수정"></a>
 						</div>
 					</div>
