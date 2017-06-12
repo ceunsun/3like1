@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kdn.model.domain.Accident;
+import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.domain.Rent;
@@ -89,7 +90,21 @@ public class AdminController {
 	}
 	
 	// adminPage_sidebar.jsp
-	@RequestMapping(value = "accidentContent", method = RequestMethod.GET)
+	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
+	public String reserveConfirm(HttpServletRequest request, Model model) {
+		String[] rList = request.getParameterValues("check");
+		
+		
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.reserveConfirm(Integer.parseInt(rList[i]));
+		}		
+		
+		return "redirect:reserveContent.do";
+	}
+	
+	// adminPage_sidebar.jsp
+	@RequestMapping(value = "accidentContent.do", method = RequestMethod.GET)
 	public String accidentContent(Model model) {
 		List<Accident> aList = carService.accidentSearch();
 		
@@ -106,5 +121,15 @@ public class AdminController {
 		model.addAttribute("content", "renewConfirm_content");
 		
 		return "adminPage/adminPage";
+	}
+	
+	//사고 처리 accident_content.jsp
+	@RequestMapping(value= "accidentUpdate.do", method = RequestMethod.GET)
+	public String accidentUpdate(HttpServletRequest request, Model model, int carno){
+		System.out.println(carno);
+			
+		carService.accidentUpdate(carno);
+		
+		return "redirect:accidentContent.do";
 	}
 }

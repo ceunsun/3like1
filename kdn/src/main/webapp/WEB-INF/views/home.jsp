@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>KDN Car Rental System</title>
 	
@@ -15,7 +15,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="css/flexslider.css" rel="stylesheet">
-	<link href="css/templatemo-style.css?ver=1" rel="stylesheet">
+	<link href="css/templatemo-style.css?" rel="stylesheet">
 	<!-- <link href="css/style.css?ver=1" rel="stylesheet"> -->
 	
 	<!-- Javascript -->
@@ -38,24 +38,32 @@
 	<!-- Header -->
 	<header>
 		<!-- Header Nav -->
-		<jsp:include page = "include/header_nav.jsp" />
+		<jsp:include page="include/header_nav.jsp" />
 		<!-- Header Nav End-->
-		<jsp:include page = "include/login_modal.jsp" />		
-	
+		<jsp:include page="include/login_modal.jsp" />
+
 		<!-- Header Banner -->
 		<section class="tm-banner">
-			<jsp:include page = "include/main_banner.jsp" />
+			<jsp:include page="include/main_banner.jsp" />
 		</section>
 		<!-- Header Banner End -->
 	</header>
 	<!-- Header End -->
-	
+
 	<!-- Main Content -->
 	<section>
-		<jsp:include page = "home/home_content.jsp"></jsp:include>		
+		<c:choose>
+			<c:when test="${empty content}">
+				<jsp:include page="home/home_content.jsp"></jsp:include>
+			</c:when>
+			<c:otherwise>
+				<jsp:include page="${content}.jsp"></jsp:include>
+			</c:otherwise>
+		</c:choose>
+		
 	</section>
 	<!-- Main Content End -->
-	
+
 	<!-- Footer -->
 	<footer class="tm-black-bg">
 		<jsp:include page="include/footer.jsp" />

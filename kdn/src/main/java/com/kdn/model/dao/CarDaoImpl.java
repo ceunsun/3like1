@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kdn.model.domain.Accident;
 import com.kdn.model.domain.Car;
+import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.domain.Rent;
 import com.kdn.model.domain.Reservation;
@@ -20,15 +21,19 @@ public class CarDaoImpl implements CarDao {
 	SqlSessionTemplate sql;
 	
 	@Override
-	public int getCount() {
-		return sql.selectOne("car.getCount");
+	public Car search(int carno) {
+		return sql.selectOne("car.search", carno);
+	}
+	@Override
+	public int getCount(String carname) {
+		return sql.selectOne("car.getCount", carname);
 	}
 	
 	@Override
-	public List<Car> availableSearch(PageBean pb) {
+	public List<Car> availableSearch(String carname, PageBean pb) {
 		RowBounds rowBounds = new RowBounds(pb.getStart()-1, pb.getEnd());
 		
-		return sql.selectList("car.availableSearch", pb, rowBounds);
+		return sql.selectList("car.availableSearch", carname, rowBounds);
 	}
 	
 	@Override
@@ -50,5 +55,26 @@ public class CarDaoImpl implements CarDao {
 	@Override
 	public List<Accident> accidentSearch() {
 		return sql.selectList("car.accidentSearch");
+	}
+	
+	@Override
+	public void accidentUpdate(int carno) {
+		sql.update("car.accidentUpdate", carno);
+	}
+
+
+	@Override
+	public void reserve(Reservation reservation) {
+		sql.insert("car.reserve", reservation);
+	}
+
+	@Override
+	public void reserveStatus(int carno) {
+		sql.update("car.reserveStatus", carno);		
+	}
+
+	@Override
+	public void reserveConfirm(int carno) {
+		sql.update("car.reserveConfirm", carno);
 	}
 }

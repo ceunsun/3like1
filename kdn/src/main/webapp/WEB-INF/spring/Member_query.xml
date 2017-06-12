@@ -45,14 +45,14 @@
 	
 	<!-- 나의 예약 정보 -->
 	<select id="my_reservation" parameterType="string" resultType="reservation" >
-		SELECT reserveno, startdate, enddate, carno
+		SELECT reserveno, to_char(startdate, 'yyyy/mm/dd') startdate, to_char(enddate, 'yyyy/mm/dd') enddate, carno
 		FROM reservation
 		WHERE memberno = #{memberno}
 	</select>
 	
 	<!-- 반납 신청 -->
 	<select id="my_return" parameterType="string" resultType="rent" >
-		SELECT rentno, rentdate, returndate, carno
+		SELECT rentno, to_char(rentdate, 'yyyy/mm/dd') rentdate, to_char(returndate, 'yyyy/mm/dd') returndate, carno
 		FROM rent
 		WHERE memberno = #{memberno}
 	</select>

@@ -45,12 +45,38 @@
 									</select> <a href=""><img src="img/arrow2.gif" alt="" class="v-middle"></a>
 								</div>
 							</div>
+							
+							<table class="table table-hover table-responsive table-striped board_table section-margin-top">
+								<thead>
+									<tr>
+										<th>사고 번호</th>
+										<th>사고 발생일</th>
+										<th>사번</th>
+										<th>차량 번호</th>
+										<th>사고 확인</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="aList" items="${aList}">
+									<tr>
+										<td>${aList.accidentno}</td>
+										<td>${aList.accidentdate}</td>
+										<td>${aList.memberno}</td>
+										<td>${aList.carno}</td>
+										<td><input type="button" value="확인" onClick="location.href='accidentUpdate.do?carno=${aList.carno}'"></td>
+									</tr>
+								</c:forEach>
+								</tbody>
+							</table>
+							
 							<ul class="pagenation">
 								<li class="active"><a href="#">1</a></li>
 								<li><a href="#">2</a></li>
 							</ul>
 							<div class="clearfix"></div>
 						</div>
+					
 					</div>
 				</div>
 				<jsp:include page="adminPage_sidebar.jsp" />
