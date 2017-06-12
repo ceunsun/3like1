@@ -13,7 +13,6 @@
 				<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
 			</div>
 		</div>
-		
 		<div class="row">
 			<!-- contact form -->
 			<form action="reserve.do" method="post" class="tm-contact-form">

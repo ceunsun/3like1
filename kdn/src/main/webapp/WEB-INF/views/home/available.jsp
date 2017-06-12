@@ -35,6 +35,7 @@
 	<script type="text/javascript" src="js/google_map.js"></script>
 	<script type="text/javascript" src="js/reservation.js"></script>	
 </head>
+
 <body class="tm-gray-bg">
 	<!-- Header -->
 	<header>
