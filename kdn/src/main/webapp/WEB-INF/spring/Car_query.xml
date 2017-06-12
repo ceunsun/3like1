@@ -4,27 +4,35 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 	
 <mapper namespace="car">
-	<select id="getCount" resultType="int" >
-		SELECT count(*) count
-		FROM car
-	</select>
-	
-	<select id="availableSearch" resultType="car">
+	<select id="search" parameterType="int" resultType="car">
 		SELECT *
 		FROM car
+		WHERE carname = #{carname}
+	</select>
+	
+	<select id="getCount" parameterType="String" resultType="int" >
+		SELECT count(*) count
+		FROM car
+		WHERE carname = #{carname} and carstatus='예약가능'
+	</select>
+	
+	<select id="availableSearch" parameterType="String" resultType="car">
+		SELECT *
+		FROM car
+		WHERE carname = #{carname} and carstatus like '예약%'
 	</select>
 	
 	<select id="returnSearch" resultType="return">
-		SELECT returnno, to_char(returndate, 'yyyy-mm-dd') returndate, memberno, carno
+		SELECT returnno, to_char(returndate, 'yyyy/mm/dd') returndate, memberno, carno
 		FROM return
 	</select>
 	
 	<select id="rentSearch" resultType="rent">
 		SELECT rentno, 
-				to_char(rentdate, 'yyyy-mm-dd') rentdate, 
-				to_char(returndate, 'yyyy-mm-dd') returndate, 
-				memberno, 
-				carno
+			   to_char(rentdate, 'yyyy/mm/dd') rentdate, 
+			   to_char(returndate, 'yyyy/mm/dd') returndate, 
+			   memberno, 
+			   carno
 		FROM rent
 	</select>
 	
@@ -32,11 +40,17 @@
 		SELECT reserveno, 
 			   carno, 
 			   memberno,
-			   TO_CHAR(startdate, 'yyyy-mm-dd') startdate, 
-			   TO_CHAR(enddate, 'yyyy-mm-dd') enddate 
+			   TO_CHAR(startdate, 'yyyy/mm/dd') startdate, 
+			   TO_CHAR(enddate, 'yyyy/mm/dd') enddate 
 		FROM RESERVATION  
 	</select>
-
+	
+	<update id="reserveConfirm" parameterType="int">
+		UPDATE car	
+		SET carstatus='예약완료'
+		WHERE carno=#{carno} 
+	</update>
+	
 	<select id="accidentSearch" resultType="accident"> 
 		SELECT accidentno, accidentdate, memberno, carno
 		FROM accident 
@@ -48,4 +62,15 @@
 		SET carstatus = '사고차량' 
 		WHERE carno=#{carno} 
 	</select>
+	
+	<insert id="reserve" parameterType="reservation">		
+		INSERT INTO reservation 
+		VALUES(reservation_seq.nextval, #{startdate}, #{enddate}, #{carno}, #{memberno})
+	</insert>
+	
+	<update id="reserveStatus" parameterType="int">
+		UPDATE car	
+		SET carstatus='예약대기'
+		WHERE carno=#{carno} 
+	</update>
 </mapper>
