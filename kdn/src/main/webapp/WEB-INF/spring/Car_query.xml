@@ -4,14 +4,16 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 	
 <mapper namespace="car">
-	<select id="getCount" resultType="int" >
+	<select id="getCount" parameterType="String" resultType="int" >
 		SELECT count(*) count
 		FROM car
+		WHERE carname = #{carname} and carstatus='예약가능'
 	</select>
 	
-	<select id="availableSearch" resultType="car">
+	<select id="availableSearch" parameterType="String" resultType="car">
 		SELECT *
 		FROM car
+		WHERE carname = #{carname} and carstatus='예약가능'
 	</select>
 	
 	<select id="returnSearch" resultType="return">
@@ -41,4 +43,9 @@
 		SELECT * 
 		FROM accident 
 	</select>
+	
+	<insert id="reserve" parameterType="reservation">		
+		INSERT INTO reservation 
+		VALUES(reservation_seq.nextval, #{startdate}, #{enddate}, #{carno}, #{memberno})
+	</insert>
 </mapper>

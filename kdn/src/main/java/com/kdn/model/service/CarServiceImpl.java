@@ -23,11 +23,11 @@ public class CarServiceImpl implements CarService {
 	private CarDao dao;
 	
 	@Override
-	public int getCount() {
+	public int getCount(String carname) {
 		int count=0;
 		
 		try {		
-			count = dao.getCount();
+			count = dao.getCount(carname);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -35,11 +35,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public List<Car> availableSearch(PageBean pb) {
+	public List<Car> availableSearch(String carname, PageBean pb) {
 		List<Car> aList = null;
 		
 		try {		
-			aList = dao.availableSearch(pb);
+			aList = dao.availableSearch(carname, pb);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -97,5 +97,14 @@ public class CarServiceImpl implements CarService {
 		}
 		
 		return aList;
+	}
+
+	@Override
+	public void reserve(Reservation reservation) {
+		try {
+			dao.reserve(reservation);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 	}
 }

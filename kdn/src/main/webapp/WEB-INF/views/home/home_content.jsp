@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<<script type="text/javascript">
+function available(f){
+	f.action = 'available.do?pageNo=1';
+	f.method = 'POST';
+	f.submit();
+}
+</script>
 <section class="container tm-home-section-1" id="more">
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-6">
@@ -13,17 +19,17 @@
 				<div class="tab-content tm-white-bg">
 					<div role="tabpanel" class="tab-pane fade in active id="car">
 						<div class="tm-search-box effect2">
-							<form class="hotel-search-form" id="frm">
+							<form class="hotel-search-form" action="available.do?pageNo=1" method="POST">
 								<div class="tm-form-inner">
 									<div class="form-group margin-bottom-0">
-										<select class="form-control" id="fuel">
+										<select class="form-control" id="fuel" name="fuel">
 											<option value="">-- 유종 --</option>
 											<option value="전기">전기</option>
 											<option value="휘발유">휘발유</option>
 										</select>
 									</div>
 									<div class="form-group">
-										<select class="form-control" id="car">
+										<select class="form-control" id="car" name="car">
 											<option value="">-- 차종 --</option>
 											<option value="쏘나타">쏘나타</option>
 											<option value="말리부">말리부</option>
@@ -33,7 +39,7 @@
 									</div>
 									<div class="form-group">
 										<div class='input-group date' id='datetimepicker1'>
-											<input type='text' class="form-control"
+											<input type='text' class="form-control" name="startdate"
 												placeholder="-- 대여일 --" /> <span
 												class="input-group-addon"> <span
 												class="fa fa-calendar"></span>
@@ -42,7 +48,7 @@
 									</div>
 									<div class="form-group">
 										<div class='input-group date' id='datetimepicker2'>
-											<input type='text' class="form-control"
+											<input type='text' class="form-control" name="enddate"
 												placeholder="-- 반납일 --" /> <span
 												class="input-group-addon"> <span
 												class="fa fa-calendar"></span>
@@ -51,16 +57,16 @@
 									</div>
 								</div>
 								<div class="form-group tm-yellow-gradient-bg text-center">
-									<a href="available.do?pageNo=1" class="reservation" data-toggle="modal" data-target="#searchModal">
+									<a href="" class="reservation" onclick="available(this.form)">
 									<button class="tm-yellow-btn">예약 가능 조회</button></a>
 								</div>
-								<div class="modal fade" id="searchModal" role="dialog">
+								<%-- <div class="modal fade" id="searchModal" role="dialog">
 									<div class="modal-dialog modal-lg">
 										<div class="modal-content">
-											<%-- <jsp:include page="../include/search_modal.jsp" /> --%>
+											<jsp:include page="../include/search_modal.jsp" />
 										</div>
 									</div>
-								</div>
+								</div> --%>
 							</form>
 						</div>
 					</div>
