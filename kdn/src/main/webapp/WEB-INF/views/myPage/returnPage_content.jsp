@@ -35,18 +35,18 @@
 						<table class="table table-hover table-responsive table-striped board_table section-margin-top">
 							<thead>
 								<tr>
-									<th>차량이미지</th>
+									<th>대여번호</th>
+									<th>대여일</th>
+									<th>반납일</th>
 									<th>차량번호</th>
-									<th>날짜</th>
-									<th>상태</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>차량이미지</td>
-									<td>차량번호</td>
-									<td>날짜</td>
-									<td>상태</td>
+									<td>${rent.rentno }</td>
+									<td>${rent.rentdate }</td>
+									<td>${rent.returndate }</td>
+									<td>${rent.carno }</td>
 									<td>
 										<div class="boardbtn">
 											<a href="writeForm.do"><input type="button" value="반납"></a>

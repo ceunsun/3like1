@@ -42,6 +42,21 @@
 		DELETE FROM member
 		WHERE memberno = #{memberno}
 	</delete>
+	
+	<!-- 나의 예약 정보 -->
+	<select id="my_reservation" parameterType="string" resultType="reservation" >
+		SELECT reserveno, startdate, enddate, carno
+		FROM reservation
+		WHERE memberno = #{memberno}
+	</select>
+	
+	<!-- 반납 신청 -->
+	<select id="my_return" parameterType="string" resultType="rent" >
+		SELECT rentno, rentdate, returndate, carno
+		FROM rent
+		WHERE memberno = #{memberno}
+	</select>
+	
 </mapper>
 
 

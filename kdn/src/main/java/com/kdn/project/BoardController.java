@@ -91,4 +91,17 @@ public class BoardController {
 		return "redirect:board.do?pageNo=1";
 	}
 	
+	
+	//게시글 삭제
+	@RequestMapping(value= "boardDelete.do", method = RequestMethod.GET)
+	public String boardDelete(HttpServletRequest request, Model model){
+		
+		String boardno = request.getParameter("boardno");
+		System.out.println(boardno);
+		
+		int boardno1 = Integer.parseInt(boardno);
+		boardService.delete(boardno1);
+		
+		return "redirect:board.do?pageNo=1";
+	}
 }
