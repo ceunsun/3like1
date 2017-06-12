@@ -21,6 +21,18 @@ public class CarServiceImpl implements CarService {
 	@Autowired
 	@Qualifier("carDao")
 	private CarDao dao;
+
+	@Override
+	public Car search(int carno) {
+		Car c= null;
+		
+		try {		
+			c = dao.search(carno);
+		} catch (Exception e) {
+			throw new UpdateException("DB 서버 오류");
+		}
+		return c;
+	}
 	
 	@Override
 	public int getCount(String carname) {
@@ -115,5 +127,14 @@ public class CarServiceImpl implements CarService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
+	}
+
+	@Override
+	public void reserveConfirm(int carno) {
+		try {
+			dao.reserveConfirm(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 	}
 }

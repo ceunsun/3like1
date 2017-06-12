@@ -89,6 +89,20 @@ public class AdminController {
 	}
 	
 	// adminPage_sidebar.jsp
+	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
+	public String reserveConfirm(HttpServletRequest request, Model model) {
+		String[] rList = request.getParameterValues("check");
+		
+		
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.reserveConfirm(Integer.parseInt(rList[i]));
+		}		
+		
+		return "redirect:reserveContent.do";
+	}
+	
+	// adminPage_sidebar.jsp
 	@RequestMapping(value = "accidentContent", method = RequestMethod.GET)
 	public String accidentContent(Model model) {
 		List<Accident> aList = carService.accidentSearch();

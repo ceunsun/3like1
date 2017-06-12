@@ -20,6 +20,10 @@ public class CarDaoImpl implements CarDao {
 	SqlSessionTemplate sql;
 	
 	@Override
+	public Car search(int carno) {
+		return sql.selectOne("car.search", carno);
+	}
+	@Override
 	public int getCount(String carname) {
 		return sql.selectOne("car.getCount", carname);
 	}
@@ -60,5 +64,10 @@ public class CarDaoImpl implements CarDao {
 	@Override
 	public void reserveStatus(int carno) {
 		sql.update("car.reserveStatus", carno);		
+	}
+
+	@Override
+	public void reserveConfirm(int carno) {
+		sql.update("car.reserveConfirm", carno);
 	}
 }

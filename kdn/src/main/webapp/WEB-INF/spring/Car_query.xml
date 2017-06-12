@@ -4,6 +4,12 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 	
 <mapper namespace="car">
+	<select id="search" parameterType="int" resultType="car">
+		SELECT *
+		FROM car
+		WHERE carname = #{carname}
+	</select>
+	
 	<select id="getCount" parameterType="String" resultType="int" >
 		SELECT count(*) count
 		FROM car
@@ -38,7 +44,13 @@
 			   TO_CHAR(enddate, 'yyyy/mm/dd') enddate 
 		FROM RESERVATION  
 	</select>
-
+	
+	<update id="reserveConfirm" parameterType="int">
+		UPDATE car	
+		SET carstatus='예약완료'
+		WHERE carno=#{carno} 
+	</update>
+	
 	<select id="accidentSearch" resultType="accident"> 
 		SELECT * 
 		FROM accident 

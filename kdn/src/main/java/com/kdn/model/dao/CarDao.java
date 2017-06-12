@@ -10,6 +10,7 @@ import com.kdn.model.domain.Reservation;
 import com.kdn.model.domain.Return;
 
 public interface CarDao {
+	public abstract Car search(int carno); // 차량 번호에 해당하는 차량 정보를 추출
 	public abstract int getCount(String carname); // 페이징을 위한 쿼리 결과물 개수를 조회
 	public abstract List<Car> availableSearch(String carname, PageBean pb); // 예약 가능한 차 조회
 	public abstract List<Return> returnSearch(); // 반납 신청 조회
@@ -18,4 +19,5 @@ public interface CarDao {
 	public abstract List<Accident> accidentSearch(); // 사고 신청 조회
 	public abstract void reserve(Reservation reservation); // 예약 신청
 	public abstract void reserveStatus(int carno); // 예약 대기 중으로 상태 변경
+	public abstract void reserveConfirm(int carno); // 예약 대기 중으로 상태 변경
 }
