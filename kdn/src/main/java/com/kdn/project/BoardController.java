@@ -67,13 +67,12 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "updateBoardForm.do", method = RequestMethod.GET)
-	public String updateBoardForm(HttpServletRequest request, HttpSession session, Model model) {
+	public String updateBoardForm(HttpServletRequest request, HttpSession session, Model model, int pageNo) {
 		//본인의 글인 경우
 		if(request.getParameter("memberno").equals(session.getAttribute("memberno"))){
-		
 			String boardno = request.getParameter("boardno");
-			System.out.println(boardno);
 			
+			model.addAttribute("pageNo", pageNo);
 			model.addAttribute("board", boardService.search(Integer.parseInt(boardno)));
 			model.addAttribute("content", "board_update");
 			return "board/board";
