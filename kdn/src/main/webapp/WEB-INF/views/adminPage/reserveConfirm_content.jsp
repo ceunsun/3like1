@@ -17,7 +17,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<!-- Testimonial -->
 			<div class="col-lg-12">
@@ -37,44 +36,47 @@
 							</ul>
 							<div class="clearfix"></div>
 						</div>
-						<table class="table table-hover table-responsive table-striped board_table section-margin-top">
-							<thead>
-								<tr>
-									<th></th>
-									<th>예약 번호</th>
-									<th>차량 이미지</th>
-									<th>차량 번호</th>
-									<th>사원 이름</th>
-									<th>사원 전화번호</th>
-									<th>사원 이메일</th>
-									<th>대여 예정일</th>
-									<th>반납 예정일</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="rList" items="${rList}">
+						<form action="reserveConfirm.do" method="post">
+							<table class="table table-hover table-responsive table-striped board_table section-margin-top">
+								<thead>
 									<tr>
-										<td><input type="checkbox" name='check' id='check' value='${rList.reserveno}'></td>	
-										<td>${rList.reserveno}</td>
-										<td>차량 이미지</td>
-										<td>사원 번호</td>
-										<td>사원 이름</td>
-										<td>사원 이메일</td>
-										<td>${rList.startdate}</td>
-										<td>${rList.enddate}</td>
+										<th></th>
+										<th>예약 번호</th>
+										<th>차량 이미지</th>
+										<th>차량 번호</th>
+										<th>사원 이름</th>
+										<th>사원 전화번호</th>
+										<th>사원 이메일</th>
+										<th>대여 예정일</th>
+										<th>반납 예정일</th>
 									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-						<div class="boardbtn">
-							<a href="writeForm.do"><input type="button" value="확인"></a>
-							<a href="writeForm.do"><input type="button" value="취소"></a>
-							<ul class="pagenation">
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-							</ul>
-						</div>						
-						<div class="clearfix"></div>
+								</thead>
+								<tbody>
+									<c:forEach var="rList" items="${rList}">
+										<tr>
+											<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
+											<td>${rList.reserveno}</td>
+											<td>차량 이미지</td>
+											<td>${rList.carno}</td>
+											<td>${rList.memberno}</td>
+											<td>사원 이름</td>
+											<td>사원 이메일</td>
+											<td>${rList.startdate}</td>
+											<td>${rList.enddate}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+							<div class="boardbtn">
+								<input type="submit" value="확인">
+								<input type="reset" value="취소">
+								<ul class="pagenation">
+									<li class="active"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+								</ul>
+							</div>						
+							<div class="clearfix"></div>
+						</form>
 					</div>
 				</div>
 				<jsp:include page="adminPage_sidebar.jsp" />

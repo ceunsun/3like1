@@ -21,13 +21,25 @@ public class CarServiceImpl implements CarService {
 	@Autowired
 	@Qualifier("carDao")
 	private CarDao dao;
+
+	@Override
+	public Car search(int carno) {
+		Car c= null;
+		
+		try {		
+			c = dao.search(carno);
+		} catch (Exception e) {
+			throw new UpdateException("DB 서버 오류");
+		}
+		return c;
+	}
 	
 	@Override
-	public int getCount() {
+	public int getCount(String carname) {
 		int count=0;
 		
 		try {		
-			count = dao.getCount();
+			count = dao.getCount(carname);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -35,11 +47,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public List<Car> availableSearch(PageBean pb) {
+	public List<Car> availableSearch(String carname, PageBean pb) {
 		List<Car> aList = null;
 		
 		try {		
-			aList = dao.availableSearch(pb);
+			aList = dao.availableSearch(carname, pb);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -103,5 +115,32 @@ public class CarServiceImpl implements CarService {
 	public void accidentUpdate(int carno){
 		
 		dao.accidentUpdate(carno);
+	}
+
+	@Override
+	public void reserve(Reservation reservation) {
+		try {
+			dao.reserve(reservation);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
+	@Override
+	public void reserveStatus(int carno) {
+		try {
+			dao.reserveStatus(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
+
+	@Override
+	public void reserveConfirm(int carno) {
+		try {
+			dao.reserveConfirm(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 	}
 }

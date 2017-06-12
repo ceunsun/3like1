@@ -30,7 +30,7 @@
 							<li class="women">신고 게시판</li>
 						</ul>
 						<ul class="previous">
-							<li><a href="board.do?pageNo=${pageNo}">이전 페이지로</a></li>
+						 	<li><a href="board.do?pageNo=${pageNo}">이전 페이지로</a></li> 
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -54,7 +54,7 @@
 						</table>
 						<div class="boardbtn">
 							<input type="button" value="삭제" onClick="location.href='boardDelete.do?boardno=${board.boardno}'">
-							<a href=""><input type="button" value="수정"></a>
+							<input type="button" value="수정" onclick="location.href='updateBoardForm.do?title=${board.title}&boardno=${board.boardno}&memberno=${board.memberno}&content=${board.content}&pageNo=${pageNo}'">
 						</div>
 					</div>
 				</div>

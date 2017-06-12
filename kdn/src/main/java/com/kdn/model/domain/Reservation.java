@@ -9,6 +9,14 @@ public class Reservation {
 	
 	public Reservation() { }
 	
+	public Reservation(String startdate, String enddate, int carno,
+			String memberno) {
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.carno = carno;
+		this.memberno = memberno;
+	}
+	
 	public Reservation(int reserveno, String startdate, String enddate,
 			int carno, String memberno) {
 		this.reserveno = reserveno;

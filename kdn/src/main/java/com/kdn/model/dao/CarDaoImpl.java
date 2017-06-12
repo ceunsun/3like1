@@ -21,15 +21,19 @@ public class CarDaoImpl implements CarDao {
 	SqlSessionTemplate sql;
 	
 	@Override
-	public int getCount() {
-		return sql.selectOne("car.getCount");
+	public Car search(int carno) {
+		return sql.selectOne("car.search", carno);
+	}
+	@Override
+	public int getCount(String carname) {
+		return sql.selectOne("car.getCount", carname);
 	}
 	
 	@Override
-	public List<Car> availableSearch(PageBean pb) {
+	public List<Car> availableSearch(String carname, PageBean pb) {
 		RowBounds rowBounds = new RowBounds(pb.getStart()-1, pb.getEnd());
 		
-		return sql.selectList("car.availableSearch", pb, rowBounds);
+		return sql.selectList("car.availableSearch", carname, rowBounds);
 	}
 	
 	@Override
@@ -58,4 +62,19 @@ public class CarDaoImpl implements CarDao {
 		sql.update("car.accidentUpdate", carno);
 	}
 
+
+	@Override
+	public void reserve(Reservation reservation) {
+		sql.insert("car.reserve", reservation);
+	}
+
+	@Override
+	public void reserveStatus(int carno) {
+		sql.update("car.reserveStatus", carno);		
+	}
+
+	@Override
+	public void reserveConfirm(int carno) {
+		sql.update("car.reserveConfirm", carno);
+	}
 }
