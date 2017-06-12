@@ -67,7 +67,7 @@
 							</table>
 							<div class="boardbtn">
 								<input type="submit" value="수정">
-								<input type="reset" value="취소">
+								<input type="reset" value="취소" onClick="location.href='myPage.do'">
 							</div>
 						</form>
 					</div>
