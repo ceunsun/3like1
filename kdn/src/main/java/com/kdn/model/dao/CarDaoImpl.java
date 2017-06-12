@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kdn.model.domain.Accident;
 import com.kdn.model.domain.Car;
+import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.domain.Rent;
 import com.kdn.model.domain.Reservation;
@@ -51,4 +52,10 @@ public class CarDaoImpl implements CarDao {
 	public List<Accident> accidentSearch() {
 		return sql.selectList("car.accidentSearch");
 	}
+	
+	@Override
+	public void accidentUpdate(int carno) {
+		sql.update("car.accidentUpdate", carno);
+	}
+
 }

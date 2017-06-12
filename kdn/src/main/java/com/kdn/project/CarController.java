@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kdn.model.domain.Accident;
 import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
@@ -41,4 +42,6 @@ public class CarController {
 		
 		return "include/search_modal";
 	}
+	
+
 }

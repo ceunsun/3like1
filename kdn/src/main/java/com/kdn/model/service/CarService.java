@@ -17,4 +17,5 @@ public interface CarService {
 	public abstract List<Reservation> reserveSearch();
 	public abstract List<Accident> accidentSearch();
 
+	public abstract void accidentUpdate(int carno);
 }

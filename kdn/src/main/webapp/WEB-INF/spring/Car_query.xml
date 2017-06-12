@@ -38,7 +38,14 @@
 	</select>
 
 	<select id="accidentSearch" resultType="accident"> 
-		SELECT * 
+		SELECT accidentno, accidentdate, memberno, carno
 		FROM accident 
+	</select>
+	
+	<!-- 사고 확인 -->
+	<select id="accidentUpdate" parameterType="int">
+		UPDATE car 
+		SET carstatus = '사고차량' 
+		WHERE carno=#{carno} 
 	</select>
 </mapper>

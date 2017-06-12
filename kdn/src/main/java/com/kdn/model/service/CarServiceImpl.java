@@ -98,4 +98,10 @@ public class CarServiceImpl implements CarService {
 		
 		return aList;
 	}
+	
+	@Override
+	public void accidentUpdate(int carno){
+		
+		dao.accidentUpdate(carno);
+	}
 }

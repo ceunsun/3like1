@@ -199,7 +199,7 @@
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/index-07.jpg" alt="image" class="img-responsive">
+						<img src="img/car-01.png" alt="image" width=250px height=225px class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
 						<p class="tm-home-box-3-description">Proin gravida nibhvell
@@ -209,7 +209,7 @@
 							<a href="#" class="tm-home-box-2-link"><i
 								class="fa fa-heart tm-home-box-2-icon border-right"></i></a> <a
 								href="#" class="tm-home-box-2-link"><span
-								class="tm-home-box-2-description box-3">Travel</span></a> <a
+								class="tm-home-box-2-description box-3">포르쉐 카레라GT</span></a> <a
 								href="#" class="tm-home-box-2-link"><i
 								class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 						</div>
@@ -219,7 +219,7 @@
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/index-08.jpg" alt="image" class="img-responsive">
+						<img src="img/car-02.png" alt="image" width=250px height=225px class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
 						<p class="tm-home-box-3-description">Proin gravida nibhvell
@@ -229,7 +229,7 @@
 							<a href="#" class="tm-home-box-2-link"><i
 								class="fa fa-heart tm-home-box-2-icon border-right"></i></a> <a
 								href="#" class="tm-home-box-2-link"><span
-								class="tm-home-box-2-description box-3">Travel</span></a> <a
+								class="tm-home-box-2-description box-3">현대차 쏘나타 하이브리드</span></a> <a
 								href="#" class="tm-home-box-2-link"><i
 								class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 						</div>
@@ -239,7 +239,7 @@
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/index-09.jpg" alt="image" class="img-responsive">
+						<img src="img/car-03.png" alt="image" width=250px height=225px class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
 						<p class="tm-home-box-3-description">Proin gravida nibhvell
@@ -249,7 +249,7 @@
 							<a href="#" class="tm-home-box-2-link"><i
 								class="fa fa-heart tm-home-box-2-icon border-right"></i></a> <a
 								href="#" class="tm-home-box-2-link"><span
-								class="tm-home-box-2-description box-3">Travel</span></a> <a
+								class="tm-home-box-2-description box-3">쉐보레 전기차</span></a> <a
 								href="#" class="tm-home-box-2-link"><i
 								class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 						</div>
@@ -259,7 +259,7 @@
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/index-10.jpg" alt="image" class="img-responsive">
+						<img src="img/car-04.png" alt="image" width=250px height=225px class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
 						<p class="tm-home-box-3-description">Proin gravida nibhvell
@@ -269,7 +269,7 @@
 							<a href="#" class="tm-home-box-2-link"> <i
 								class="fa fa-heart tm-home-box-2-icon border-right"></i></a> <a
 								href="#" class="tm-home-box-2-link"><span
-								class="tm-home-box-2-description box-3">Travel</span></a> <a
+								class="tm-home-box-2-description box-3">루시드에어</span></a> <a
 								href="#" class="tm-home-box-2-link"><i
 								class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 						</div>
