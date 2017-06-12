@@ -38,4 +38,38 @@
 		DELETE FROM board
 		WHERE boardno = #{boardno}
 	</delete>
+	
+	<select id="accsearch" parameterType="int" resultType="accident">
+		SELECT *
+		FROM accident
+		WHERE accidentno=#{accidentno}
+	</select>
+	
+	<select id="accsearchAll" resultType="accident">
+		SELECT *
+		FROM accident
+		ORDER BY accidentno desc
+	</select>
+	
+	<select id="accgetCount" resultType="int" >
+		SELECT count(*) count
+		FROM accident
+	</select>
+	
+	<insert id="accinsert" parameterType="accident">
+		INSERT INTO accident 
+		VALUES(accident_no.nextval, #{accidentdate}, #{memberno}, #{carno})
+	</insert>
+	
+	<update id="accupdate" parameterType="accident">
+		UPDATE accident 
+		SET accidentdate=#{accidentdate:VARCHAR},
+		    carno=#{carno:INTEGER}
+		WHERE accidentno=#{accidentno:INTEGER}
+	</update>
+	
+	<delete id="accdelete" parameterType="int">
+		DELETE FROM accident
+		WHERE accidentno = #{accidentno:INTEGER}
+	</delete>
 </mapper>

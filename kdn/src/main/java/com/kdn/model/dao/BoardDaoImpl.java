@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kdn.model.domain.Accident;
 import com.kdn.model.domain.Board;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
@@ -47,5 +48,40 @@ public class BoardDaoImpl implements BoardDao{
 	@Override
 	public void delete(int boardno) {
 		sql.delete("board.delete", boardno);		
+	}
+
+	@Override
+	public Accident accsearch(int accidentno) {
+		return sql.selectOne("board.accsearch", accidentno);
+	}
+
+	@Override
+	public List<Accident> accsearchAll(PageBean pb) {
+		RowBounds rowBounds = new RowBounds(pb.getStart()-1, pb.getEnd());
+		
+		return sql.selectList("board.accsearchAll", pb, rowBounds);
+	}
+
+	@Override
+	public int accgetCount() {
+		return sql.selectOne("board.accgetCount");
+	}
+
+	@Override
+	public void accinsert(Accident accident) {
+		sql.insert("board.accinsert", accident);
+		
+	}
+
+	@Override
+	public void accupdate(Accident accident) {
+		sql.update("board.accupdate", accident);		
+		
+	}
+
+	@Override
+	public void accdelete(int accidentno) {
+		sql.delete("board.accdelete", accidentno);		
+		
 	}
 }

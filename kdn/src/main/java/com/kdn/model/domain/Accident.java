@@ -1,6 +1,8 @@
 package com.kdn.model.domain;
 
-public class Accident {
+import java.io.Serializable;
+
+public class Accident implements Serializable{
 	private int accidentno;
 	private String accidentdate;
 	private String memberno;
@@ -8,8 +10,7 @@ public class Accident {
 	
 	public Accident() { }
 	
-	public Accident(int accidentno, String accidentdate, String memberno,
-			int carno) {
+	public Accident(int accidentno, String accidentdate, String memberno,int carno) {
 		this.accidentno = accidentno;
 		this.accidentdate = accidentdate;
 		this.memberno = memberno;
