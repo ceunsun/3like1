@@ -56,4 +56,9 @@ public class CarDaoImpl implements CarDao {
 	public void reserve(Reservation reservation) {
 		sql.insert("car.reserve", reservation);
 	}
+
+	@Override
+	public void reserveStatus(int carno) {
+		sql.update("car.reserveStatus", carno);		
+	}
 }

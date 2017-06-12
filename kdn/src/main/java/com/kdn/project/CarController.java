@@ -45,9 +45,8 @@ public class CarController {
 		model.addAttribute("cList", cList);
 		model.addAttribute("startdate", startdate);
 		model.addAttribute("enddate", enddate);
-		model.addAttribute("content", "home/available_content");
 		
-		return "home";
+		return "home/available";
 	}
 	
 	// available_content.jsp	
@@ -60,6 +59,7 @@ public class CarController {
 		System.out.println(reservation);
 		
 		carService.reserve(reservation);
+		carService.reserveStatus(carno);
 		
 		return "redirect:home.do";
 	}

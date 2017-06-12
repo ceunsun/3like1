@@ -107,4 +107,13 @@ public class CarServiceImpl implements CarService {
 			e.printStackTrace();
 		}	
 	}
+
+	@Override
+	public void reserveStatus(int carno) {
+		try {
+			dao.reserveStatus(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
 }
