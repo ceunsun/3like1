@@ -55,7 +55,7 @@
 							</div>
 							<div class="boardbtn">
 								<input type="submit" value="수정 완료">
-								<input type="reset" value="취소">
+								<input type="reset" value="취소" onClick="location.href='board.do?pageNo=1'">
 							</div>
 						</form>
 					</div>
