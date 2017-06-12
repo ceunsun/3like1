@@ -144,6 +144,7 @@ public class BoardController {
 	// accboard_writeForm.jsp
 	@RequestMapping(value = "accboard_write.do", method = RequestMethod.POST)
 	public String accboard_write(Accident accident) {
+		System.out.println("accident write>>>>>>>>>>>>>>>>>@controller"+accident);
 		boardService.accinsert(accident); 
 			
 		return "redirect:accboard.do?pageNo=1";
