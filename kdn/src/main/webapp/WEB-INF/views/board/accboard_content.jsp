@@ -27,10 +27,10 @@
 										<span class="glyphicon glyphicon-home"></span> 홈
 									</a>
 									<span>&gt;</span></li>
-								<li class="women">문의 게시판</li>
+								<li class="women">사고 게시판</li>
 							</ul>
 							<ul class="previous">
-								<li><a href="board.do?pageNo=${pageNo}">이전 페이지로</a></li>
+								<li><a href="accboard.do?pageNo=${pageNo}">이전 페이지로</a></li>
 							</ul>
 							<div class="clearfix"></div>
 						</div>
@@ -48,26 +48,26 @@
 						<table class="table table-hover table-responsive table-striped board_table">
 							<thead>
 								<tr>
-									<th>No</th><th>Title</th><th>Writer</th><th>date</th>
+									<th>No</th><th>Date</th><th>Writer</th><th>CarNo</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="board" items="${bList}">
-									<tr onclick="location.href='boardSearch.do?boardno=${board.boardno}&pageNo=${pageNo}'">
-										<td>${board.boardno}</td>
-										<td>${board.title}</td>
-										<td>${board.memberno}</td>
-										<td>${board.regdate}</td>
+								<c:forEach var="accident" items="${aList}">
+									<tr onclick="location.href='accboardSearch.do?accidentno=${accident.accidentno}&pageNo=${pageNo}'">
+										<td>${accident.accidentno}</td>
+										<td>${accident.accidentdate}</td>
+										<td>${accident.memberno}</td>
+										<td>${accident.carno}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 					</div>
 					<div class="boardbtn">
-						<a href="writeForm.do?pageNo=${pageNo}"><input type="button" value="글쓰기"></a>
+						<a href="accwriteForm.do?pageNo=${pageNo}"><input type="button" value="글쓰기"></a>
 						<ul class="pagenation">
 							<c:forEach var='i' begin='1' end='${totalPage}'>
-								<li class="active"><a href="board.do?pageNo=${i}">${i}</a></li>
+								<li class="active"><a href="accboard.do?pageNo=${i}">${i}</a></li>
 							</c:forEach>
 						</ul>
 					</div>

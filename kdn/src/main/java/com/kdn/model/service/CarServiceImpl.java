@@ -110,6 +110,12 @@ public class CarServiceImpl implements CarService {
 		
 		return aList;
 	}
+	
+	@Override
+	public void accidentUpdate(int carno){
+		
+		dao.accidentUpdate(carno);
+	}
 
 	@Override
 	public void reserve(Reservation reservation) {

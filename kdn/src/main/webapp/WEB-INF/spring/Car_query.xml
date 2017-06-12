@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="returnSearch" resultType="return">
-		SELECT returnno, to_char(returndate, 'yyyy/mm/-dd') returndate, memberno, carno
+		SELECT returnno, to_char(returndate, 'yyyy/mm/dd') returndate, memberno, carno
 		FROM return
 	</select>
 	
@@ -52,8 +52,15 @@
 	</update>
 	
 	<select id="accidentSearch" resultType="accident"> 
-		SELECT * 
+		SELECT accidentno, accidentdate, memberno, carno
 		FROM accident 
+	</select>
+	
+	<!-- 사고 확인 -->
+	<select id="accidentUpdate" parameterType="int">
+		UPDATE car 
+		SET carstatus = '사고차량' 
+		WHERE carno=#{carno} 
 	</select>
 	
 	<insert id="reserve" parameterType="reservation">		
