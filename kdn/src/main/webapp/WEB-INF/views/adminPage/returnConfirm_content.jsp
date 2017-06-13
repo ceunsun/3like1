@@ -55,11 +55,8 @@
 								 <c:forEach var="rList" items="${rList}">
 									<tr>
 										<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
-										<td>${rList.rentno}</td>
-										<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
-										<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
 										<td>${rList.returnno}</td>
-										<td>${rList.carimg}</td>
+										<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
 										<td>${rList.carno}</td>
 										<td>${rList.memberno}</td>
 										<td>사원 전화번호</td>

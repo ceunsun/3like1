@@ -109,12 +109,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public Car my_return(String memberno) {
+	public Car searchReturn(String memberno) {
 		Car c = null;
 	
 		try {
 			if(memberno!=null) {
-				c = dao.my_return(memberno);
+				c = dao.searchReturn(memberno);
 			}
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");

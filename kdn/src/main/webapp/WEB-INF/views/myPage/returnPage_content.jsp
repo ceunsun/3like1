@@ -40,7 +40,6 @@
 									<th>차량번호</th>
 									<th>대여일</th>
 									<th>반납 예정일</th>
-									
 								</tr>
 							</thead>
 							<tbody>
@@ -52,7 +51,7 @@
 									<td>${car.returndate}</td>									
 									<td>
 										<div class="boardbtn">
-											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${rent.carno}&returndate=${rent.returndate }'">
+											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
 										</div>
 									</td>
 								</tr>

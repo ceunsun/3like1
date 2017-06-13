@@ -51,7 +51,7 @@ public class AdminController {
 		
 		for(int i=0; i<dList.length; i++){			
 			System.out.println(dList[i]);
-			//ms.delete(dList[i]);
+			ms.delete(dList[i]);
 		}		
 		
 		return "redirect:memberContent.do?pageNo=1";
