@@ -46,10 +46,9 @@ public class MemberDaoImpl implements MemberDao {
 		sql.delete("member.delete", memberno);
 	}
 	
-	
 	@Override
-	public Reservation my_reservation(String memberno) {
-		return sql.selectOne("member.my_reservation", memberno);
+	public List<Car> my_reservation(String memberno) {
+		return sql.selectList("member.my_reservation", memberno);
 	}
 	
 	@Override

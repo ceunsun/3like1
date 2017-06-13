@@ -10,10 +10,10 @@
 			<div class="modal-footer">
 				<form action="login.do" method="post" class="tm-contact-form">
 					<div class="form-group">
-						<input type="text" name="memberno" id="memberno" class="form-control" placeholder="사원번호" />
+						<input type="text" name="memberno" id="memberno" class="form-control" placeholder="사원번호" required/>
 					</div>
 					<div class="form-group">
-						<input type="password" name="pwd" id="pwd" class="form-control" placeholder="비밀번호" />
+						<input type="password" name="pwd" id="pwd" class="form-control" placeholder="비밀번호" required/>
 					</div>
 					<div class="form-group">
 						<button class="login-btn tm-submit-btn" type="submit" name="submit">로그인</button>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	
 <section class="tm-white-bg section-padding-bottom">
 	<div class="container">
@@ -36,18 +37,26 @@
 							<thead>
 								<tr>
 									<th>예약번호</th>
+									<th>차량 이미지</th>
+									<th>차량번호</th>
+									<th>차량명</th>
 									<th>대여예정일</th>
 									<th>반납예정일</th>
-									<th>차량번호</th>
+									<th>예약 상태</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>${reservation.reserveno }</td>
-									<td>${reservation.startdate }</td>
-									<td>${reservation.enddate }</td>
-									<td>${reservation.carno }</td>
-								</tr>
+								<c:forEach var="car" items="${cList}">
+									<tr>
+										<td>${car.reserveno}</td>
+										<td>${car.carimg}</td>
+										<td>${car.carno}</td>
+										<td>${car.carname}</td>
+										<td>${car.startdate}</td>
+										<td>${car.enddate}</td>
+										<td>${car.carstatus}</td>
+									</tr>
+								</c:forEach>								
 							</tbody>
 						</table>
 					</div>

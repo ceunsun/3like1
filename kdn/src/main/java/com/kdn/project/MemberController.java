@@ -90,11 +90,11 @@ public class MemberController {
 	//rsvInfoPage_content.jsp
 	@RequestMapping(value= "rsvInfo.do", method = RequestMethod.GET)
 	public String rsvInfo(HttpSession session, Model model){
-		List<Car> rList = carService.rentSearch();
-		String memberno = (String) session.getAttribute("memberno");
-		System.out.println(memberno);
+		List<Car> cList = null;String memberno = (String) session.getAttribute("memberno");
 		
-		model.addAttribute("reservation", ms.my_reservation(memberno));
+		cList = ms.my_reservation(memberno);
+		
+		model.addAttribute("cList", cList);
 		model.addAttribute("content", "rsvInfoPage_content");
 		
 		return "myPage/myPage";

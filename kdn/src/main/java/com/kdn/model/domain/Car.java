@@ -8,18 +8,19 @@ public class Car {
 	private String carname;
 	
 	// reservation join 결과
+	private String enddate;
 	private int reserveno;
 	private String memberno;
 	private String startdate; 
-	private String enddate;
+	
 	
 	// rent join 결과
-	private int RENTNO;	
- 	private String RENTDATE;	
- 	private String RETURNDATE;	
+	private int rentno;	
+ 	private String rentdate;	
+ 	private String returndate;	
  
  	// return join 결과
-	private String RETURNNO;
+	private String returnno;
  	
 	public Car() { }
 
@@ -47,17 +48,17 @@ public class Car {
 	}
 	
 	public Car(String carno, String cartype, String carstatus, String carimg,
-			String carname, String memberno, int rENTNO, String rENTDATE,
-			String rETURNDATE) {
+			String carname, String memberno, int rentno, String rentdate,
+			String returndate) {
 		this.carno = carno;
 		this.cartype = cartype;
 		this.carstatus = carstatus;
 		this.carimg = carimg;
 		this.carname = carname;
 		this.memberno = memberno;
-		RENTNO = rENTNO;
-		RENTDATE = rENTDATE;
-		RETURNDATE = rETURNDATE;
+		this.rentno = rentno;
+		this.rentdate = rentdate;
+		this.returndate = returndate;
 	}
 
 	public String getCarno() {
@@ -141,8 +142,8 @@ public class Car {
 				.append(carname).append(", reserveno=").append(reserveno)
 				.append(", memberno=").append(memberno).append(", startdate=")
 				.append(startdate).append(", enddate=").append(enddate)
-				.append(", RENTNO=").append(RENTNO).append(", RENTDATE=")
-				.append(RENTDATE).append(", RETURNDATE=").append(RETURNDATE)
+				.append(", rentno=").append(rentno).append(", rentdate=")
+				.append(rentdate).append(", returndate=").append(returndate)
 				.append("]");
 		return builder.toString();
 	}

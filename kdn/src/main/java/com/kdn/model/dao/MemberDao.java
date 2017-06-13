@@ -15,7 +15,6 @@ public interface MemberDao {
 	public abstract int getCount();	
 	public abstract void update(Member member);
 	public abstract void delete(String memberno);
-		
-	public abstract Reservation my_reservation(String memberno);	//나의 예약 정보
+	public abstract List<Car> my_reservation(String memberno);	//나의 예약 정보
 	public abstract Car my_return(String memberno);				//반납신청
 }

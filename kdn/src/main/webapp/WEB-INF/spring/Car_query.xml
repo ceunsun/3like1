@@ -40,7 +40,7 @@
 		FROM car c, reservation r
 		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
-	
+		
 	<update id="reserveConfirm" parameterType="int">
 		UPDATE car	
 		SET carstatus='예약완료'
