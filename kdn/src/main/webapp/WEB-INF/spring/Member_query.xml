@@ -59,7 +59,7 @@
 	</select>
 	
 	<!-- 반납 신청 -->
-	<select id="my_return" parameterType="String" resultType="car" >
+	<select id="searchReturn" parameterType="String" resultType="car" >
 		SELECT c.carno carno, 
 			   c.cartype cartype, 
 			   c.carstatus carstatus, 
@@ -70,7 +70,7 @@
 			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
 			   r.rentno rentno
 		FROM car c, rent r
-		WHERE c.carno = r.carno and memberno = #{memberno}
+		WHERE c.carno=r.carno and r.memberno=#{memberno} and c.carstatus='대여 중'
 	</select>	
 </mapper>
 

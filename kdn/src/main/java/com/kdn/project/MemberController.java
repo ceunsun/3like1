@@ -103,20 +103,7 @@ public class MemberController {
 		
 	}
 	
-	//returnPage_content.jsp
-	@RequestMapping(value= "returnPage.do", method = RequestMethod.GET)
-	public String returnPage(HttpSession session, Model model){
-		
-		String memberno = (String) session.getAttribute("memberno");
-		System.out.println(memberno);
-		System.out.println(ms.my_return(memberno));
-		model.addAttribute("car", ms.my_return(memberno));	
-		
-		model.addAttribute("content", "returnPage_content");
-		
-		return "myPage/myPage";
-		
-	}
+	
 	
 	//반납신청으로 변한 후 return테이블에 입력
 	@RequestMapping(value= "returnUpdate.do", method = RequestMethod.GET)

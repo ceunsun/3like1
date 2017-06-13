@@ -25,6 +25,8 @@ import com.kdn.model.service.MemberService;
 public class CarController {
 	@Autowired
 	CarService carService;
+	@Autowired
+	MemberService memberService;
 	
 	// home_content.jsp
 	@RequestMapping(value = "available.do", method = RequestMethod.POST)
@@ -65,5 +67,16 @@ public class CarController {
 		return "redirect:home.do";
 	}
 	
-
+	// myPage_sidebar.jsp
+	@RequestMapping(value= "returnPage.do", method = RequestMethod.GET)
+	public String returnPage(HttpSession session, Model model){
+			
+		String memberno = (String) session.getAttribute("memberno");
+		System.out.println(memberService.searchReturn(memberno));
+		model.addAttribute("car", memberService.searchReturn(memberno));			
+		model.addAttribute("content", "returnPage_content");
+			
+		return "myPage/myPage";
+			
+	}
 }

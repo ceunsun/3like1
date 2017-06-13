@@ -52,7 +52,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 	@Override
-	public Car my_return(String memberno) {
-		return sql.selectOne("member.my_return", memberno);
+	public Car searchReturn(String memberno) {
+		return sql.selectOne("member.searchReturn", memberno);
 	}
 }

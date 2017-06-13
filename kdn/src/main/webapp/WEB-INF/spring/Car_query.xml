@@ -105,7 +105,4 @@
 		INSERT INTO return 
 		VALUES(returnno_seq.nextval, #{returndate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
-
-
-
 </mapper>
