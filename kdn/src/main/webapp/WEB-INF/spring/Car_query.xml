@@ -73,4 +73,5 @@
 		SET carstatus='예약대기'
 		WHERE carno=#{carno} 
 	</update>
+	
 </mapper>

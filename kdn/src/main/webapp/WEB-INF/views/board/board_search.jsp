@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- white bg -->
 <section class="tm-white-bg section-padding-bottom">
@@ -53,8 +54,16 @@
 							</tbody>
 						</table>
 						<div class="boardbtn">
-							<input type="button" value="삭제" onClick="location.href='boardDelete.do?boardno=${board.boardno}'">
-							<input type="button" value="수정" onclick="location.href='updateBoardForm.do?title=${board.title}&boardno=${board.boardno}&memberno=${board.memberno}&content=${board.content}&pageNo=${pageNo}'">
+							<c:choose>
+								<c:when test="${memberno=='admin'}">
+									<input type="button" value="삭제" onClick="location.href='boardDelete.do?boardno=${board.boardno}'">
+									<input type="button" value="수정" onclick="location.href='updateBoardForm.do?title=${board.title}&boardno=${board.boardno}&memberno=${board.memberno}&content=${board.content}&pageNo=${pageNo}'">
+								</c:when>
+								<c:when test="${memberno==board.memberno}">
+									<input type="button" value="삭제" onClick="location.href='boardDelete.do?boardno=${board.boardno}'">
+									<input type="button" value="수정" onclick="location.href='updateBoardForm.do?title=${board.title}&boardno=${board.boardno}&memberno=${board.memberno}&content=${board.content}&pageNo=${pageNo}'">
+								</c:when>								
+							</c:choose>
 						</div>
 					</div>
 				</div>

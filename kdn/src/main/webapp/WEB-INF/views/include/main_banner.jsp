@@ -31,4 +31,5 @@
 			</div> <img src="img/banner-3.jpg" alt="Image" />
 		</li>
 	</ul>
+	
 </div>

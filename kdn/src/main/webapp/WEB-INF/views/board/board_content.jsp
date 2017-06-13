@@ -45,7 +45,7 @@
 								</div>
 							<div class="clearfix"></div>
 						</div>
-						<table class="table table-hover table-responsive table-striped board_table">
+						<table class="table table-hover table-bordered table-responsive table-striped board_table">
 							<thead>
 								<tr>
 									<th>No</th><th>Title</th><th>Writer</th><th>date</th>

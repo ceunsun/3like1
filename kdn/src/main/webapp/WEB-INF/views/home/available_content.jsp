@@ -20,8 +20,8 @@
 					<table class="table table-hover table-responsive table-striped board_table">
 						<thead>
 							<tr>
-								<th><span>대여 일시 :</span> ${startdate}</th>
-								<th><span>반납 일시 :</span>${enddate}</th>
+								<th><span>대여 일시 </span>: ${startdate}</th>
+								<th><span>반납 일시 </span>: ${enddate}</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -43,6 +43,7 @@
 							</c:forEach>
 						</tbody>	
 					</table>
+					</form>
 					<input type="hidden" name="startdate" value="${startdate}"/>
 					<input type="hidden" name="enddate" value="${enddate}"/>
 					<ul class="pagenation">
@@ -55,11 +56,12 @@
 				</div>
 				<div class="col-lg-6 col-md-6">				
 					<div class="map">
-						<iframe src="https://www.google.com/maps/embed/v1/place?q=%EB%A9%80%ED%8B%B0%EC%BA%A0%ED%8D%BC%EC%8A%A4&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0">
-						</iframe>
+						<!-- <iframe src="https://www.google.com/maps/embed/v1/place?q=%EB%A9%80%ED%8B%B0%EC%BA%A0%ED%8D%BC%EC%8A%A4&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0">
+						</iframe> -->
+						<iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJpZhn7vUlcjURW4TlYFCzXek&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0" allowfullscreen></iframe>
 					</div>					
 				</div>
-			</form>
+			
 		</div>
 	</div>
 </section>
