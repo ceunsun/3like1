@@ -36,10 +36,10 @@
 					</div>
 					<div class="tm-what-we-do-right section-margin-top">
 						<form action="accboard_write.do" method="post">
-							<div class="form-group">
-								<input type="text" name="accidentno" id="accidentno" class="form-control"
-									placeholder="사고번호" value="${accidentno}"/>
-							</div>
+							<%-- <div class="form-group">
+								<input type="hidden" name="accidentno" id="accidentno" class="form-control"
+									placeholder="사고번호" value="${accident.accidentno}"/>
+							</div> --%>
 							<div class="form-group">
 								<input type="text" name="accidentdate" id="accidentdate" class="form-control"
 									placeholder="사고날짜를 입력하세요" />
