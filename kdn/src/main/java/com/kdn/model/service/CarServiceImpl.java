@@ -175,4 +175,33 @@ public class CarServiceImpl implements CarService {
 			e.printStackTrace();
 		}		
 	}
+
+	@Override
+	public void returnUpdate(int carno) {
+		try {
+			dao.returnUpdate(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+	}
+
+	@Override
+	public void insertReturn(Return ret) {
+		try {
+			dao.insertReturn(ret);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
+	@Override
+	public void returnConfirm(int carno) {
+		try {
+			dao.returnConfirm(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+	}
 }

@@ -52,7 +52,7 @@
 									<td>${car.returndate}</td>									
 									<td>
 										<div class="boardbtn">
-											<a href="writeForm.do"><input type="button" value="반납"></a>
+											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${rent.carno}&returndate=${rent.returndate }'">
 										</div>
 									</td>
 								</tr>

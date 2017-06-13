@@ -60,7 +60,7 @@ public class AdminController {
 	// adminPage_sidebar.jsp 반납관리
 	@RequestMapping(value = "returnContent.do", method = RequestMethod.GET)
 	public String returnContent(Model model) {
-		List<Car> rList = carService.rentSearch();
+		List<Car> rList = carService.returnSearch("반납신청");
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "returnConfirm_content");
@@ -149,6 +149,7 @@ public class AdminController {
 		return "adminPage/adminPage";
 	}
 	
+
 	//사고 처리 accident_content.jsp
 	@RequestMapping(value= "accidentUpdate.do", method = RequestMethod.GET)
 	public String accidentUpdate(HttpServletRequest request, Model model, int carno){
@@ -157,5 +158,18 @@ public class AdminController {
 		carService.accidentUpdate(carno);
 		
 		return "redirect:accidentContent.do";
+	}
+	
+	@RequestMapping(value= "returnConfirm.do", method = RequestMethod.POST)
+	public String returnConfirm(HttpServletRequest request, Model model){
+		System.out.println("==========================");
+		
+		String[] rList = request.getParameterValues("check");
+		
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.returnConfirm(Integer.parseInt(rList[i]));
+		}	
+		return "redirect:returnContent.do";
 	}
 }

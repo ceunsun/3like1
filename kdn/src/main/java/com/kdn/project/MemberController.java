@@ -2,6 +2,7 @@ package com.kdn.project;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
+import com.kdn.model.domain.Return;
 import com.kdn.model.service.CarService;
 import com.kdn.model.service.MemberService;
 
@@ -115,4 +117,21 @@ public class MemberController {
 		return "myPage/myPage";
 		
 	}
+	
+	//반납신청으로 변한 후 return테이블에 입력
+	@RequestMapping(value= "returnUpdate.do", method = RequestMethod.GET)
+	public String returnConfirm(HttpSession session, int carno, String returndate, Model model){
+		Return ret = null;
+		
+		String memberno= (String) session.getAttribute("memberno");
+
+		ret = new Return(returndate, memberno, carno );
+		
+		carService.returnUpdate(carno);
+		carService.insertReturn(ret);
+		
+		return "redirect:returnPage.do";
+	}
+	
+	
 }

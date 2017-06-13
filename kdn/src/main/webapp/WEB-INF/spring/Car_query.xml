@@ -22,16 +22,16 @@
 		WHERE carname = #{carname} and carstatus like '예약%'
 	</select>
 	
-	<select id="returnSearch" parameterType="String" resultType="return">
+	<select id="returnSearch" parameterType="String" resultType="car">
 		SELECT c.carno carno, 
 			   c.cartype cartype, 
 			   c.carstatus carstatus, 
 			   c.carimg carimg, 
 			   c.carname carname, 
 			   r.memberno memberno, 
-			   TO_CHAR(r.rentdate, 'yyyy/mm/dd') rentdate, 
-			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate
-		FROM car c, reservation r
+			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
+			   r.returnno returnno
+		FROM car c, return r
 		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
 		

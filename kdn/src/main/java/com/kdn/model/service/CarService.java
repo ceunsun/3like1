@@ -25,4 +25,7 @@ public interface CarService {
 	public abstract void reserveConfirm(int carno); // 예약 완료로 상태 변경	
 	public abstract void renting(int carno); // 대여 중으로 상태 변경	
 	public abstract void accidentUpdate(int carno);
+	public abstract void returnUpdate(int carno); // 반납신청으로 상태 변경
+	public abstract void insertReturn(Return ret);
+	public abstract void returnConfirm(int carno); // 예약가능으로 상태 변경(반납)
 }
