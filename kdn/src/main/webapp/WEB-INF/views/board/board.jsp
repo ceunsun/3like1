@@ -19,20 +19,18 @@
 	<link href="css/style.css" rel="stylesheet">
 	
 	<!-- Javascript -->
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 	<!-- moment.js -->
 	<script type="text/javascript" src="js/moment.js"></script>
 	<!-- bootstrap js -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
 	<!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
 	<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
-	
-	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+
 	<script type="text/javascript" src="js/templatemo-script.js"></script>
 	<script type="text/javascript" src="js/templatemo.js"></script>
-	<script type="text/javascript" src="js/google_map.js"></script>
 </head>
 <body class="tm-gray-bg">
 	<!-- Header -->

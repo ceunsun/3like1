@@ -1,5 +1,6 @@
 package com.kdn.model.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,8 +85,21 @@ public class CarServiceImpl implements CarService {
 		
 		return rList;
 	}
-
+	
 	@Override
+	public List<Car> reserveSearch(String carstatus) {
+		List<Car> rList =null;
+		
+		try {
+			rList = dao.reserveSearch(carstatus);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return rList;
+	}
+	
+	/*@Override
 	public List<Reservation> reserveSearch() {
 		List<Reservation> rList =null;
 		
@@ -96,7 +110,7 @@ public class CarServiceImpl implements CarService {
 		}
 		
 		return rList;
-	}
+	}*/
 
 	@Override
 	public List<Accident> accidentSearch() {

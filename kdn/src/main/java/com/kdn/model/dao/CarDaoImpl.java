@@ -1,7 +1,9 @@
 package com.kdn.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,11 +48,16 @@ public class CarDaoImpl implements CarDao {
 	public List<Rent> rentSearch() {
 		return sql.selectList("car.rentSearch");
 	}
-
+	
 	@Override
+	public List<Car> reserveSearch(String carstatus) {
+		return sql.selectList("car.reserveSearch", carstatus);
+	}
+	
+	/*@Override
 	public List<Reservation> reserveSearch() {
 		return sql.selectList("car.reserveSearch");
-	}
+	}*/
 
 	@Override
 	public List<Accident> accidentSearch() {

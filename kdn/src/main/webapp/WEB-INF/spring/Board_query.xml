@@ -46,7 +46,7 @@
 	</select>
 	
 	<select id="accsearchAll" resultType="accident">
-		SELECT *
+		SELECT accidentno, to_char(accidentdate, 'yyyy/mm/dd') accidentdate, memberno, carno
 		FROM accident
 		ORDER BY accidentno desc
 	</select>

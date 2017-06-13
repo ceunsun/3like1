@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- white bg -->
 <section class="tm-white-bg section-padding-bottom">
@@ -50,8 +51,16 @@
 								</tr>
 						</table>
 						<div class="boardbtn">
-							<input type="button" value="삭제" onClick="location.href='accboardDelete.do?accidentno=${accident.accidentno}'"> 
-							<input type="button" value="수정" onclick="location.href='accupdateBoardForm.do?accidentno=${accident.accidentno}&accidentdate=${accident.accidentdate}&memberno=${accident.memberno}&carno=${accident.carno}&pageNo=${pageNo}'">
+							<c:choose>
+								<c:when test="${memberno=='admin'}">
+									<input type="button" value="삭제" onClick="location.href='accboardDelete.do?accidentno=${accident.accidentno}'"> 
+									<input type="button" value="수정" onclick="location.href='accupdateBoardForm.do?accidentno=${accident.accidentno}&accidentdate=${accident.accidentdate}&memberno=${accident.memberno}&carno=${accident.carno}&pageNo=${pageNo}'">
+								</c:when>
+								<c:when test="${memberno==accident.memberno}">
+									<input type="button" value="삭제" onClick="location.href='accboardDelete.do?accidentno=${accident.accidentno}'"> 
+									<input type="button" value="수정" onclick="location.href='accupdateBoardForm.do?accidentno=${accident.accidentno}&accidentdate=${accident.accidentdate}&memberno=${accident.memberno}&carno=${accident.carno}&pageNo=${pageNo}'">
+								</c:when>
+							</c:choose>							
 						</div> 
 					</div>
 				</div>
