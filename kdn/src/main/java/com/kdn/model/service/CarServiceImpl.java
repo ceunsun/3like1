@@ -61,11 +61,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public List<Return> returnSearch() {
-		List<Return> rList = null;
+	public List<Car> returnSearch(String carstatus) {
+		List<Car> rList = null;
 		
 		try {				
-			rList = dao.returnSearch();			
+			rList = dao.returnSearch(carstatus);			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -50,9 +50,10 @@
 								<thead>
 									<tr>
 										<th>사고 번호</th>
-										<th>사고 발생일</th>
-										<th>사번</th>
+										<th>차량 이미지</th>
 										<th>차량 번호</th>
+										<th>사번</th>
+										<th>사고 발생일</th>
 										<th>사고 확인</th>
 										<th></th>
 									</tr>
@@ -61,9 +62,10 @@
 									<c:forEach var="aList" items="${aList}">
 									<tr>
 										<td>${aList.accidentno}</td>
-										<td>${aList.accidentdate}</td>
-										<td>${aList.memberno}</td>
+										<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
 										<td>${aList.carno}</td>
+										<td>${aList.memberno}</td>
+										<td>${aList.accidentdate}</td>
 										<td><input type="button" value="확인" onClick="location.href='accidentUpdate.do?carno=${aList.carno}'"></td>
 									</tr>
 								</c:forEach>

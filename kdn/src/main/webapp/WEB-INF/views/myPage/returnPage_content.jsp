@@ -36,17 +36,20 @@
 							<thead>
 								<tr>
 									<th>대여번호</th>
-									<th>대여일</th>
-									<th>반납일</th>
+									<th>차량 이미지</th>
 									<th>차량번호</th>
+									<th>대여일</th>
+									<th>반납 예정일</th>
+									
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>${rent.rentno }</td>
-									<td>${rent.rentdate }</td>
-									<td>${rent.returndate }</td>
-									<td>${rent.carno }</td>
+									<td>${car.rentno}</td>
+									<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
+									<td>${car.carno}</td>
+									<td>${car.rentdate}</td>
+									<td>${car.returndate}</td>									
 									<td>
 										<div class="boardbtn">
 											<a href="writeForm.do"><input type="button" value="반납"></a>

@@ -49,7 +49,7 @@
 								<c:forEach var="car" items="${cList}">
 									<tr>
 										<td>${car.reserveno}</td>
-										<td>${car.carimg}</td>
+										<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
 										<td>${car.carno}</td>
 										<td>${car.carname}</td>
 										<td>${car.startdate}</td>

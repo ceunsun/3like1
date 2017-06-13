@@ -39,9 +39,9 @@ public class CarDaoImpl implements CarDao {
 	}
 	
 	@Override
-	public List<Return> returnSearch() {
+	public List<Car> returnSearch(String carstatus) {
 
-		return sql.selectList("car.returnSearch");
+		return sql.selectList("car.returnSearch", carstatus);
 	}
 	
 	@Override

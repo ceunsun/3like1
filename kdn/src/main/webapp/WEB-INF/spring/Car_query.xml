@@ -30,8 +30,7 @@
 			   c.carname carname, 
 			   r.memberno memberno, 
 			   TO_CHAR(r.rentdate, 'yyyy/mm/dd') rentdate, 
-			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
-			   r.rentno rentno
+			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate
 		FROM car c, reservation r
 		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
