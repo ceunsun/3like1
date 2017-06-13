@@ -48,7 +48,7 @@
 	<update id="reserveConfirm" parameterType="int">
 		UPDATE car	
 		SET carstatus='예약완료'
-		WHERE carno=#{carno} 
+		WHERE carno=#{carno:INTEGER} 
 	</update>
 	
 	<select id="accidentSearch" resultType="accident"> 

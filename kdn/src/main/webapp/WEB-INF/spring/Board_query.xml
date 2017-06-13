@@ -57,8 +57,8 @@
 	</select>
 	
 	<insert id="accinsert" parameterType="accident">
-		INSERT INTO accident 
-		VALUES(accident_no.nextval, #{accidentdate}, #{memberno}, #{carno})
+		INSERT INTO accident(accidentno, accidentdate, memberno, carno) 
+		VALUES(accident_no.nextval, #{accidentdate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
 	
 	<update id="accupdate" parameterType="accident">
