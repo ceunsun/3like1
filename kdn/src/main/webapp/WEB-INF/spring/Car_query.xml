@@ -22,17 +22,16 @@
 		WHERE carname = #{carname} and carstatus like '예약%'
 	</select>
 	
-	<select id="returnSearch" parameterType="String" resultType="return">
+	<select id="returnSearch" parameterType="String" resultType="car">
 		SELECT c.carno carno, 
 			   c.cartype cartype, 
 			   c.carstatus carstatus, 
 			   c.carimg carimg, 
 			   c.carname carname, 
 			   r.memberno memberno, 
-			   TO_CHAR(r.rentdate, 'yyyy/mm/dd') rentdate, 
 			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
-			   r.rentno rentno
-		FROM car c, reservation r
+			   r.returnno returnno
+		FROM car c, return r
 		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
 		
@@ -89,4 +88,22 @@
 		SET carstatus='예약대기'
 		WHERE carno=#{carno} 
 	</update>	
+	
+	<update id="returnUpdate"		parameterType="int">
+		UPDATE car
+		SET carstatus='반납신청'
+		WHERE carno=#{carno}
+	</update>
+	
+	<update id="returnConfirm"		parameterType="int">
+		UPDATE car
+		SET carstatus='예약가능'
+		WHERE carno=#{carno}
+	</update>
+	
+	<insert id="insertReturn"	parameterType="return">
+		INSERT INTO return 
+		VALUES(returnno_seq.nextval, #{returndate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
+	</insert>
+
 </mapper>

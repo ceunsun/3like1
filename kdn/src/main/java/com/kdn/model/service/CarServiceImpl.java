@@ -61,11 +61,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public List<Return> returnSearch() {
-		List<Return> rList = null;
+	public List<Car> returnSearch(String carstatus) {
+		List<Car> rList = null;
 		
 		try {				
-			rList = dao.returnSearch();			
+			rList = dao.returnSearch(carstatus);			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -174,5 +174,34 @@ public class CarServiceImpl implements CarService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
+	}
+
+	@Override
+	public void returnUpdate(int carno) {
+		try {
+			dao.returnUpdate(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+	}
+
+	@Override
+	public void insertReturn(Return ret) {
+		try {
+			dao.insertReturn(ret);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+
+	@Override
+	public void returnConfirm(int carno) {
+		try {
+			dao.returnConfirm(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
 	}
 }

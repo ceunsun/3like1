@@ -55,7 +55,7 @@
 			   TO_CHAR(r.enddate, 'yyyy/mm/dd') enddate, 
 			   r.reserveno reserveno
 		FROM car c, reservation r
-		WHERE c.carno = r.carno and r.memberno = #{memberno}
+		WHERE c.carno = r.carno and r.memberno = #{memberno} and NOT carstatus = '예약가능'
 	</select>
 	
 	<!-- 반납 신청 -->

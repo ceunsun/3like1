@@ -20,6 +20,12 @@ public class Return {
 		this.memberno = memberno;
 		this.carno = carno;
 	}
+	
+	public Return(String returndate, String memberno, int carno) {
+		this.returndate = returndate;
+		this.memberno = memberno;
+		this.carno = carno;
+	}
 
 	public int getReturnno() {
 		return returnno;

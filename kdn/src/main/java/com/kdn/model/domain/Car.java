@@ -132,6 +132,39 @@ public class Car {
 	public void setReserveno(int reserveno) {
 		this.reserveno = reserveno;
 	}
+	
+
+	public int getRentno() {
+		return rentno;
+	}
+
+	public void setRentno(int rentno) {
+		this.rentno = rentno;
+	}
+
+	public String getRentdate() {
+		return rentdate;
+	}
+
+	public void setRentdate(String rentdate) {
+		this.rentdate = rentdate;
+	}
+
+	public String getReturndate() {
+		return returndate;
+	}
+
+	public void setReturndate(String returndate) {
+		this.returndate = returndate;
+	}
+
+	public String getReturnno() {
+		return returnno;
+	}
+
+	public void setReturnno(String returnno) {
+		this.returnno = returnno;
+	}
 
 	@Override
 	public String toString() {
