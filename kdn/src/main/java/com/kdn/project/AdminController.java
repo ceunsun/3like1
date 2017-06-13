@@ -50,7 +50,8 @@ public class AdminController {
 		String[] dList = request.getParameterValues("check");
 		
 		for(int i=0; i<dList.length; i++){			
-			ms.delete(dList[i]);
+			System.out.println(dList[i]);
+			//ms.delete(dList[i]);
 		}		
 		
 		return "redirect:memberContent.do?pageNo=1";
@@ -93,25 +94,34 @@ public class AdminController {
 	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
 	public String reserveConfirm(HttpServletRequest request, Model model) {
 		String[] rList = request.getParameterValues("check");
-
-		
+				
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);
 			carService.reserveConfirm(Integer.parseInt(rList[i]));
-		}		
+		}	
 		
 		return "redirect:reserveContent.do";
 	}
 	
-	// adminPage_sidebar.jsp 대여 중으로 상태 변경
-	@RequestMapping(value = "rentContent.do", method = RequestMethod.POST)
+	// adminPage_sidebar.jsp 대여 중으로 상태 변경 후 대여 테이블에 데이터 입력
+	@RequestMapping(value = "rentConfirm.do", method = RequestMethod.POST)
 	public String rentContent(HttpServletRequest request, Model model) {
 		String[] rList = request.getParameterValues("check");
-
+		Rent rent = null;
 		
-		for(int i=0; i<rList.length; i++){	
-			System.out.println(rList[i]);
-			carService.renting(Integer.parseInt(rList[i]));
+		for(int i=0; i<rList.length; i++){
+			String[] split = rList[i].split(",");
+			
+			int carno = Integer.parseInt(split[0]);
+			String memberno = split[1];
+			String rentdate = split[2];
+			String returndate = split[3];
+			
+			carService.renting(carno);
+			
+			rent = new Rent(rentdate, returndate, memberno, carno);
+			
+			carService.insertRent(rent);
 		}		
 		
 		return "redirect:rentContent.do";

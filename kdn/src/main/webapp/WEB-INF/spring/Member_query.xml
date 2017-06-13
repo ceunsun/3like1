@@ -71,8 +71,7 @@
 			   r.rentno rentno
 		FROM car c, rent r
 		WHERE c.carno = r.carno and memberno = #{memberno}
-	</select>
-	
+	</select>	
 </mapper>
 
 

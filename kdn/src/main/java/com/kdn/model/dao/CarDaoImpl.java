@@ -89,4 +89,8 @@ public class CarDaoImpl implements CarDao {
 	public void renting(int carno) {
 		sql.update("car.renting", carno);
 	}
+	@Override
+	public void insertRent(Rent rent) {
+		sql.insert("car.insertRent", rent);
+	}
 }

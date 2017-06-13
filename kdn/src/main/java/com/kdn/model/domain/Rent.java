@@ -4,12 +4,19 @@ public class Rent {
 	private int rentno;
 	private String rentdate;
 	private String returndate;
-	private int memberno;
+	private String memberno;
 	private int carno;
 	
 	public Rent() { }
-	
-	public Rent(int rentno, String rentdate, String returndate, int memberno, int carno) {
+		
+	public Rent(String rentdate, String returndate, String memberno, int carno) {
+		this.rentdate = rentdate;
+		this.returndate = returndate;
+		this.memberno = memberno;
+		this.carno = carno;
+	}
+
+	public Rent(int rentno, String rentdate, String returndate, String memberno, int carno) {
 		this.rentno = rentno;
 		this.rentdate = rentdate;
 		this.returndate = returndate;
@@ -41,11 +48,11 @@ public class Rent {
 		this.returndate = returndate;
 	}
 
-	public int getMemberno() {
+	public String getMemberno() {
 		return memberno;
 	}
 
-	public void setMemberno(int memberno) {
+	public void setMemberno(String memberno) {
 		this.memberno = memberno;
 	}
 
