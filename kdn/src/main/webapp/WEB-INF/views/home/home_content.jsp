@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<script type="text/javascript">
+<script type="text/javascript">
 function available(f){
 	f.action = 'available.do?pageNo=1';
 	f.method = 'POST';
