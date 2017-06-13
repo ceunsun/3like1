@@ -106,7 +106,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="tm-about-box-1">
-					<a href="#"><img src="img/about-4.jpg" alt="img"
+					<a href="#"><img src="img/undo.jpg" alt="img" width=150px height=150px
 						class="tm-about-box-1-img"></a>
 					<h3 class="tm-about-box-1-title">차량 반납</h3>
 					<p class="margin-bottom-15 gray-text">반납 시간에 맞추어 차량을 반납 장소에 주차하신 후 홈페이지에서 반납 신청을
@@ -115,7 +115,7 @@
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="tm-about-box-1">
-					<a href="#"><img src="img/about-5.jpg" alt="img"
+					<a href="#"><img src="img/info.jpg" alt="img" width=150px height=150px
 						class="tm-about-box-1-img"></a>
 					<h3 class="tm-about-box-1-title">차량 이용</h3>
 					<p class="margin-bottom-15 gray-text">예약신청을 하면</p>
@@ -123,7 +123,7 @@
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="tm-about-box-1">
-					<a href="#"><img src="img/about-6.jpg" alt="img"
+					<a href="#"><img src="img/add.jpg" alt="img" width=150px height=150px
 						class="tm-about-box-1-img"></a>
 					<h3 class="tm-about-box-1-title">차량 예약</h3>
 					<p class="margin-bottom-15 gray-text">본인 사원 번호로 로그인 후 예약이 가능합니다.
@@ -132,7 +132,7 @@
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="tm-about-box-1">
-					<a href="#"><img src="img/about-7.jpg" alt="img"
+					<a href="#"><img src="img/lock.jpg" alt="img" width=150px height=150px
 						class="tm-about-box-1-img"></a>
 					<h3 class="tm-about-box-1-title">
 						로그인 <!-- <span>( Manager )</span> -->
