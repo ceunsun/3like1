@@ -36,19 +36,39 @@
 		FROM rent
 	</select>
 	
-	<select id="reserveSearch" resultType="reservation"> 
+	<!-- <select id="reserveSearch" resultType="reservation"> 
 		SELECT reserveno, 
 			   carno, 
 			   memberno,
 			   TO_CHAR(startdate, 'yyyy/mm/dd') startdate, 
 			   TO_CHAR(enddate, 'yyyy/mm/dd') enddate 
 		FROM RESERVATION  
+	</select> -->
+	
+	<select id="reserveSearch" parameterType="String"  resultType="car">
+		SELECT c.carno carno, 
+			   c.cartype cartype, 
+			   c.carstatus carstatus, 
+			   c.carimg carimg, 
+			   c.carname carname, 
+			   r.memberno memberno, 
+			   TO_CHAR(r.startdate, 'yyyy/mm/dd') startdate, 
+			   TO_CHAR(r.enddate, 'yyyy/mm/dd') enddate, 
+			   r.reserveno reserveno
+		FROM car c, reservation r
+		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
 	
 	<update id="reserveConfirm" parameterType="int">
 		UPDATE car	
 		SET carstatus='예약완료'
 		WHERE carno=#{carno:INTEGER} 
+	</update>
+	
+	<update id="renting"		parameterType="int">
+		UPDATE car
+		SET carstatus='대여 중'
+		WHERE carno=#{carno:INTEGER}
 	</update>
 	
 	<select id="accidentSearch" resultType="accident"> 

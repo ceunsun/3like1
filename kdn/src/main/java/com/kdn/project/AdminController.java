@@ -56,10 +56,10 @@ public class AdminController {
 		return "redirect:memberContent.do?pageNo=1";
 	}
 
-	// adminPage_sidebar.jsp 
+	// adminPage_sidebar.jsp 반납관리
 	@RequestMapping(value = "returnContent.do", method = RequestMethod.GET)
 	public String returnContent(Model model) {
-		List<Return> rList = carService.returnSearch();
+		List<Car> rList = carService.reserveSearch("대여중");
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "returnConfirm_content");
@@ -67,10 +67,10 @@ public class AdminController {
 		return "adminPage/adminPage";
 	}
 	
-	// adminPage_sidebar.jsp
+	// adminPage_sidebar.jsp 대여 관리
 	@RequestMapping(value = "rentContent.do", method = RequestMethod.GET)
 	public String rentContent(Model model) {
-		List<Rent> rList = carService.rentSearch();
+		List<Car> rList = carService.reserveSearch("예약완료");
 	
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "rentConfirm_content");
@@ -78,10 +78,10 @@ public class AdminController {
 		return "adminPage/adminPage";
 	}
 	
-	// adminPage_sidebar.jsp
+	// adminPage_sidebar.jsp 예약 관리
 	@RequestMapping(value = "reserveContent.do", method = RequestMethod.GET)
 	public String reserveContent(Model model) {
-		List<Reservation> rList = carService.reserveSearch();
+		List<Car> rList = carService.reserveSearch("예약대기");
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "reserveConfirm_content");
@@ -89,11 +89,12 @@ public class AdminController {
 		return "adminPage/adminPage";
 	}
 	
-	// adminPage_sidebar.jsp
+	// adminPage_sidebar.jsp 예약확인으로 상태 변경
 	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
 	public String reserveConfirm(HttpServletRequest request, Model model) {
 		String[] rList = request.getParameterValues("check");
 
+		
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);
 			carService.reserveConfirm(Integer.parseInt(rList[i]));
@@ -102,7 +103,21 @@ public class AdminController {
 		return "redirect:reserveContent.do";
 	}
 	
-	// adminPage_sidebar.jsp
+	// adminPage_sidebar.jsp 대여 중으로 상태 변경
+	@RequestMapping(value = "rentContent.do", method = RequestMethod.POST)
+	public String rentContent(HttpServletRequest request, Model model) {
+		String[] rList = request.getParameterValues("check");
+
+		
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.renting(Integer.parseInt(rList[i]));
+		}		
+		
+		return "redirect:rentContent.do";
+	}
+	
+	// adminPage_sidebar.jsp 사고 관리
 	@RequestMapping(value = "accidentContent.do", method = RequestMethod.GET)
 	public String accidentContent(Model model) {
 		List<Accident> aList = carService.accidentSearch();
@@ -113,10 +128,12 @@ public class AdminController {
 		return "adminPage/adminPage";
 	}
 	
-	// adminPage_sidebar.jsp
+	// adminPage_sidebar.jsp 반납 대기 신청 관리
 	@RequestMapping(value = "renewContent.do", method = RequestMethod.GET)
 	public String renewContent(Model model) {
+		List<Car> rList = carService.reserveSearch("반납대기"); 
 		
+		model.addAttribute("rList", rList);
 		model.addAttribute("content", "renewConfirm_content");
 		
 		return "adminPage/adminPage";

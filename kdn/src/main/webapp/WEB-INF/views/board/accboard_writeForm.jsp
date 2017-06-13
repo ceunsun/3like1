@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 <!-- white bg -->
 <section class="tm-white-bg section-padding-bottom">
 	<div class="container">
@@ -41,12 +41,17 @@
 									placeholder="사고번호" value="${accident.accidentno}"/>
 							</div> --%>
 							<div class="form-group">
-								<input type="text" name="accidentdate" id="accidentdate" class="form-control"
-									placeholder="사고날짜를 입력하세요" />
+								<div class="input-group">
+									<input type='text' class="form-control" name="accidentdate" id="accidentdate"
+												placeholder="-- 사고 발생일 --" /> 
+									<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+								</div>
+								<!-- <input type="text" name="accidentdate" id="accidentdate" class="form-control"
+									placeholder="사고날짜를 입력하세요" /> -->
 							</div>
 							<div class="form-group">
 								<input type="text" name="memberno" id="memberno" class="form-control"
-									placeholder="사원번호" />
+									value="${memberno}" />
 							</div>
 							<div class="form-group">
 								<input type="text" name="carno" id="carno" class="form-control"
