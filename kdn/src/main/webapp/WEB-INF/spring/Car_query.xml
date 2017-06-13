@@ -26,25 +26,7 @@
 		SELECT returnno, to_char(returndate, 'yyyy/mm/dd') returndate, memberno, carno
 		FROM return
 	</select>
-	
-	<select id="rentSearch" resultType="rent">
-		SELECT rentno, 
-			   to_char(rentdate, 'yyyy/mm/dd') rentdate, 
-			   to_char(returndate, 'yyyy/mm/dd') returndate, 
-			   memberno, 
-			   carno
-		FROM rent
-	</select>
-	
-	<!-- <select id="reserveSearch" resultType="reservation"> 
-		SELECT reserveno, 
-			   carno, 
-			   memberno,
-			   TO_CHAR(startdate, 'yyyy/mm/dd') startdate, 
-			   TO_CHAR(enddate, 'yyyy/mm/dd') enddate 
-		FROM RESERVATION  
-	</select> -->
-	
+		
 	<select id="reserveSearch" parameterType="String"  resultType="car">
 		SELECT c.carno carno, 
 			   c.cartype cartype, 
@@ -86,6 +68,5 @@
 		UPDATE car	
 		SET carstatus='예약대기'
 		WHERE carno=#{carno} 
-	</update>
-	
+	</update>	
 </mapper>

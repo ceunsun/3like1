@@ -74,6 +74,19 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
+	public List<Car> rentSearch() {
+		List<Car> rList =null;
+		
+		try {
+			rList = dao.rentSearch();		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return rList;
+	}
+	
+	/*@Override
 	public List<Rent> rentSearch() {
 		List<Rent> rList =null;
 		
@@ -84,7 +97,7 @@ public class CarServiceImpl implements CarService {
 		}
 		
 		return rList;
-	}
+	}*/
 	
 	@Override
 	public List<Car> reserveSearch(String carstatus) {
@@ -98,19 +111,6 @@ public class CarServiceImpl implements CarService {
 		
 		return rList;
 	}
-	
-	/*@Override
-	public List<Reservation> reserveSearch() {
-		List<Reservation> rList =null;
-		
-		try {
-			rList = dao.reserveSearch();		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return rList;
-	}*/
 
 	@Override
 	public List<Accident> accidentSearch() {

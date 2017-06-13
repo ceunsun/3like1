@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kdn.model.domain.Board;
+import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.domain.Rent;
@@ -52,7 +53,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 	@Override
-	public Rent my_return(String memberno) {
+	public Car my_return(String memberno) {
 		return sql.selectOne("member.my_return", memberno);
 	}
 }

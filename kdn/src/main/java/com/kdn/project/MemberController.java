@@ -1,5 +1,7 @@
 package com.kdn.project;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +10,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
+import com.kdn.model.service.CarService;
 import com.kdn.model.service.MemberService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	MemberService ms;
+	
+	@Autowired
+	CarService carService;
 	
 	@RequestMapping(value="login.do", method=RequestMethod.POST)
 	public String login(String memberno, String pwd, HttpSession session){
@@ -83,7 +90,7 @@ public class MemberController {
 	//rsvInfoPage_content.jsp
 	@RequestMapping(value= "rsvInfo.do", method = RequestMethod.GET)
 	public String rsvInfo(HttpSession session, Model model){
-		
+		List<Car> rList = carService.rentSearch();
 		String memberno = (String) session.getAttribute("memberno");
 		System.out.println(memberno);
 		

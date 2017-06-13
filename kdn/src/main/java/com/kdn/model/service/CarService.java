@@ -15,9 +15,9 @@ public interface CarService {
 	public abstract int getCount(String carname); // 페이징을 위한 쿼리 결과물 개수를 조회
 	public abstract List<Car> availableSearch(String carname, PageBean pb); // 예약 가능한 차 조회
 	public abstract List<Return> returnSearch(); // 반납 신청 조회
-	public abstract List<Rent> rentSearch(); // 대여 조회
-	public abstract List<Car> reserveSearch(String carstatus);
-	//public abstract List<Reservation> reserveSearch(); // 예약 내역 조회
+	public abstract List<Car> rentSearch(); // 대여 조회
+	//public abstract List<Rent> rentSearch(); // 대여 조회
+	public abstract List<Car> reserveSearch(String carstatus); // 예약 내역 조회
 	public abstract List<Accident> accidentSearch(); // 사고 신청 조회
 	public abstract void reserve(Reservation reservation); // 예약 신청
 	public abstract void reserveStatus(int carno); // 예약 대기 중으로 상태 변경	

@@ -45,19 +45,19 @@ public class CarDaoImpl implements CarDao {
 	}
 	
 	@Override
-	public List<Rent> rentSearch() {
+	public List<Car> rentSearch() {
 		return sql.selectList("car.rentSearch");
 	}
+	
+	/*@Override
+	public List<Rent> rentSearch() {
+		return sql.selectList("car.rentSearch");
+	}*/
 	
 	@Override
 	public List<Car> reserveSearch(String carstatus) {
 		return sql.selectList("car.reserveSearch", carstatus);
 	}
-	
-	/*@Override
-	public List<Reservation> reserveSearch() {
-		return sql.selectList("car.reserveSearch");
-	}*/
 
 	@Override
 	public List<Accident> accidentSearch() {

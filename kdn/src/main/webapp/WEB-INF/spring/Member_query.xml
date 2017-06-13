@@ -51,10 +51,18 @@
 	</select>
 	
 	<!-- 반납 신청 -->
-	<select id="my_return" parameterType="string" resultType="rent" >
-		SELECT rentno, to_char(rentdate, 'yyyy/mm/dd') rentdate, to_char(returndate, 'yyyy/mm/dd') returndate, carno
-		FROM rent
-		WHERE memberno = #{memberno}
+	<select id="my_return" parameterType="String" resultType="car" >
+		SELECT c.carno carno, 
+			   c.cartype cartype, 
+			   c.carstatus carstatus, 
+			   c.carimg carimg, 
+			   c.carname carname, 
+			   r.memberno memberno, 
+			   TO_CHAR(r.rentdate, 'yyyy/mm/dd') rentdate, 
+			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
+			   r.rentno rentno
+		FROM car c, rent r
+		WHERE c.carno = r.carno and memberno = #{memberno}
 	</select>
 	
 </mapper>

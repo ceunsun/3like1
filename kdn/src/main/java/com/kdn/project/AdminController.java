@@ -59,7 +59,7 @@ public class AdminController {
 	// adminPage_sidebar.jsp 반납관리
 	@RequestMapping(value = "returnContent.do", method = RequestMethod.GET)
 	public String returnContent(Model model) {
-		List<Car> rList = carService.reserveSearch("대여중");
+		List<Car> rList = carService.rentSearch();
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "returnConfirm_content");

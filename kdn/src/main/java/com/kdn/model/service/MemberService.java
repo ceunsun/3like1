@@ -3,6 +3,7 @@ package com.kdn.model.service;
 import java.util.List;
 
 import com.kdn.model.domain.Board;
+import com.kdn.model.domain.Car;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.domain.Rent;
@@ -16,5 +17,5 @@ public interface MemberService {
 	public abstract void delete(String memberno);
 		
 	public abstract Reservation my_reservation(String memberno);
-	public abstract Rent my_return(String memberno);
+	public abstract Car my_return(String memberno);
 }

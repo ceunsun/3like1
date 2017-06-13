@@ -8,11 +8,19 @@ public class Car {
 	private String carname;
 	
 	// reservation join 결과
+	private int reserveno;
 	private String memberno;
 	private String startdate; 
 	private String enddate;
-	private String reserveno;
 	
+	// rent join 결과
+	private int RENTNO;	
+ 	private String RENTDATE;	
+ 	private String RETURNDATE;	
+ 
+ 	// return join 결과
+	private String RETURNNO;
+ 	
 	public Car() { }
 
 	public Car(String carno, String cartype, String carstatus, String carimg,
@@ -26,7 +34,7 @@ public class Car {
 	
 	public Car(String carno, String cartype, String carstatus, String carimg,
 			String carname, String memberno, String startdate, String enddate,
-			String reserveno) {
+			int reserveno) {
 		this.carno = carno;
 		this.cartype = cartype;
 		this.carstatus = carstatus;
@@ -36,6 +44,20 @@ public class Car {
 		this.startdate = startdate;
 		this.enddate = enddate;
 		this.reserveno = reserveno;
+	}
+	
+	public Car(String carno, String cartype, String carstatus, String carimg,
+			String carname, String memberno, int rENTNO, String rENTDATE,
+			String rETURNDATE) {
+		this.carno = carno;
+		this.cartype = cartype;
+		this.carstatus = carstatus;
+		this.carimg = carimg;
+		this.carname = carname;
+		this.memberno = memberno;
+		RENTNO = rENTNO;
+		RENTDATE = rENTDATE;
+		RETURNDATE = rETURNDATE;
 	}
 
 	public String getCarno() {
@@ -102,11 +124,11 @@ public class Car {
 		this.enddate = enddate;
 	}
 
-	public String getReserveno() {
+	public int getReserveno() {
 		return reserveno;
 	}
 
-	public void setReserveno(String reserveno) {
+	public void setReserveno(int reserveno) {
 		this.reserveno = reserveno;
 	}
 
@@ -116,9 +138,11 @@ public class Car {
 		builder.append("Car [carno=").append(carno).append(", cartype=")
 				.append(cartype).append(", carstatus=").append(carstatus)
 				.append(", carimg=").append(carimg).append(", carname=")
-				.append(carname).append(", memberno=").append(memberno)
-				.append(", startdate=").append(startdate).append(", enddate=")
-				.append(enddate).append(", reserveno=").append(reserveno)
+				.append(carname).append(", reserveno=").append(reserveno)
+				.append(", memberno=").append(memberno).append(", startdate=")
+				.append(startdate).append(", enddate=").append(enddate)
+				.append(", RENTNO=").append(RENTNO).append(", RENTDATE=")
+				.append(RENTDATE).append(", RETURNDATE=").append(RETURNDATE)
 				.append("]");
 		return builder.toString();
 	}
