@@ -141,7 +141,7 @@ public class AdminController {
 	// adminPage_sidebar.jsp 반납 대기 신청 관리
 	@RequestMapping(value = "renewContent.do", method = RequestMethod.GET)
 	public String renewContent(Model model) {
-		List<Car> rList = carService.reserveSearch("반납대기"); 
+		List<Car> rList = carService.returnSearch("반납대기"); 
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "renewConfirm_content");

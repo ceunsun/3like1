@@ -16,9 +16,7 @@ public interface CarDao {
 	public abstract List<Car> availableSearch(String carname, PageBean pb); // 예약 가능한 차 조회
 	public abstract List<Car> returnSearch(String carstatus); // 반납 신청 조회
 	public abstract List<Car> rentSearch(); // 대여 조회
-	//public abstract List<Rent> rentSearch(); // 대여 조회
 	public abstract List<Car> reserveSearch(String carstatus); // 예약 내역 조회
-	//public abstract List<Reservation> reserveSearch(); // 예약 내역 조회
 	public abstract List<Accident> accidentSearch(); // 사고 신청 조회
 	public abstract void insertRent(Rent rent); 	
 	public abstract void accidentUpdate(int carno);

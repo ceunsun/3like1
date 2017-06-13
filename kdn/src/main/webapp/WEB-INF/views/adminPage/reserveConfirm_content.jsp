@@ -57,7 +57,7 @@
 										<tr>
 											<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
 											<td>${rList.reserveno}</td>
-											<td>${rList.carimg}</td>
+											<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
 											<td>${rList.carno}</td>
 											<td>${rList.memberno}</td>
 											<td>사원 이름</td>

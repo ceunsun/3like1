@@ -15,7 +15,6 @@ public interface MemberService {
 	public int getCount();
 	public abstract void update(Member member); 
 	public abstract void delete(String memberno);
-		
 	public abstract List<Car> my_reservation(String memberno);
 	public abstract Car my_return(String memberno);
 }

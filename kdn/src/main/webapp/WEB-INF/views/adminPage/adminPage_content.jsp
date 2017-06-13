@@ -36,6 +36,72 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					<section>
+					<div class="row">
+						<div>
+							<h3>최근 예약 신청 내역</h3>
+						</div>
+						<div class="tm-white-bg section-padding-bottom">
+							<table>
+								<thead>
+									<tr>
+										<th>예약번호</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					</section>
+					<div class="row">
+						<div >
+							<h3>최근 대여 내역</h3>
+						</div>
+						<div class="tm-white-bg section-padding-bottom">
+							<table>
+								<thead>
+									<tr>
+										<th>예약번호</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div >
+							<h3>최근 반납 신청 내역</h3>
+						</div>
+						<div class="tm-white-bg section-padding-bottom">
+							<table>
+								<thead>
+									<tr>
+										<th>예약번호</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div >
+							<h3>최근 사고 차량 내역</h3>
+						</div>
+						<div class="tm-white-bg section-padding-bottom">
+							<table>
+								<thead>
+									<tr>
+										<th>예약번호</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 				<jsp:include page="adminPage_sidebar.jsp" />
 			</div>

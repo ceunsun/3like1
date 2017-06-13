@@ -109,8 +109,9 @@ public class MemberController {
 		
 		String memberno = (String) session.getAttribute("memberno");
 		System.out.println(memberno);
+		System.out.println(ms.my_return(memberno));
+		model.addAttribute("car", ms.my_return(memberno));	
 		
-		model.addAttribute("rent", ms.my_return(memberno));
 		model.addAttribute("content", "returnPage_content");
 		
 		return "myPage/myPage";
