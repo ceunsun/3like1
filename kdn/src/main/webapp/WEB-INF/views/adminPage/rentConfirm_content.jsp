@@ -36,6 +36,7 @@
 							</ul>
 							<div class="clearfix"></div>
 						</div>
+						<form action="rentContent.do" method="post">
 						<table class="table table-hover table-responsive table-striped board_table section-margin-top">
 							<thead>
 								<tr>
@@ -69,14 +70,15 @@
 							</tbody>
 						</table>
 						<div class="boardbtn">
-							<a href="writeForm.do"><input type="button" value="확인"></a>
-							<a href="writeForm.do"><input type="button" value="취소"></a>
+							<input type="submit" value="확인">
+							<input type="reset" value="취소">
 							<ul class="pagenation">
 								<li class="active"><a href="#">1</a></li>
 								<li><a href="#">2</a></li>
 							</ul>
 						</div>						
 						<div class="clearfix"></div>
+						</form>
 					</div>
 				</div>
 				<jsp:include page="adminPage_sidebar.jsp" />

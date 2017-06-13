@@ -93,6 +93,7 @@ public class AdminController {
 	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
 	public String reserveConfirm(HttpServletRequest request, Model model) {
 		String[] rList = request.getParameterValues("check");
+
 		
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);
@@ -100,6 +101,20 @@ public class AdminController {
 		}		
 		
 		return "redirect:reserveContent.do";
+	}
+	
+	// adminPage_sidebar.jsp 대여 중으로 상태 변경
+	@RequestMapping(value = "rentContent.do", method = RequestMethod.POST)
+	public String rentContent(HttpServletRequest request, Model model) {
+		String[] rList = request.getParameterValues("check");
+
+		
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.renting(Integer.parseInt(rList[i]));
+		}		
+		
+		return "redirect:rentContent.do";
 	}
 	
 	// adminPage_sidebar.jsp 사고 관리

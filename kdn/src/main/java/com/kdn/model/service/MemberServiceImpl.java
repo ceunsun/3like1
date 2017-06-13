@@ -95,10 +95,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Reservation my_reservation(String memberno) {
 		Reservation m = null;
-	
+		
 		try {
 			if(memberno!=null) {
 				m = dao.my_reservation(memberno);
+				
 			}
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
