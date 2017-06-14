@@ -35,7 +35,7 @@
 			mapTypeControl: true,
 	        mapTypeControlOptions: {
 		        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		        mapTypeIds: ['roadmap', 'terrain']
+		        mapTypeIds: ['satellite', 'terrain']
 	        },
 			
 		});
@@ -75,71 +75,93 @@
 		});
 	}
 </script>
-
-<section class="container tm-home-section-2 section-margin-top">
-	<div class="row">
-		<div >
-		<iframe src="https://www.google.com/maps/embed/v1/place?q=%EB%A9%80%ED%8B%B0%EC%BA%A0%ED%8D%BC%EC%8A%A4&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0">
-		</iframe>
-	</div>
-</section>
-<!-- white bg -->
-<section class="section-padding-bottom tm-white-bg">
-	<div class="container">
+<!-- <div class="container">
+	<div class="section-margin-top about-section">
 		<div class="row">
-			<div class="tm-section-header section-margin-top">
-				<div class="col-lg-4 col-md-3 col-sm-3">
+			<div class="tm-section-header">
+				<div class="col-lg-3 col-md-3 col-sm-3">
 					<hr>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<h2 class="tm-section-title">Contact Us</h2>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<h2 class="tm-section-title">대여 장소 위치</h2>
 				</div>
-				<div class="col-lg-4 col-md-3 col-sm-3">
+				<div class="col-lg-3 col-md-3 col-sm-3">
 					<hr>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<!-- contact form -->
-			<form action="#" method="post" class="tm-contact-form">
-<!--				<div class="col-lg-6 col-md-6">
-					
- 					<div class="contact-social">
-						<a href="#" class="tm-social-icon tm-social-facebook"><i
-							class="fa fa-facebook"></i></a> <a href="#"
-							class="tm-social-icon tm-social-dribbble"><i
-							class="fa fa-dribbble"></i></a> <a href="#"
-							class="tm-social-icon tm-social-twitter"><i
-							class="fa fa-twitter"></i></a> <a href="#"
-							class="tm-social-icon tm-social-instagram"><i
-							class="fa fa-instagram"></i></a> <a href="#"
-							class="tm-social-icon tm-social-google-plus"><i
-							class="fa fa-google-plus"></i></a>
-					</div> 
-				</div>-->
-				<div class="col-lg-6 col-md-6 tm-contact-form-input">
-					<div class="form-group">
-						<input type="text" id="contact_name" class="form-control"
-							placeholder="NAME" />
-					</div>
-					<div class="form-group">
-						<input type="email" id="contact_email" class="form-control"
-							placeholder="EMAIL" />
-					</div>
-					<div class="form-group">
-						<input type="text" id="contact_subject" class="form-control"
-							placeholder="SUBJECT" />
-					</div>
-					<div class="form-group">
-						<textarea id="contact_message" class="form-control" rows="6"
-							placeholder="MESSAGE"></textarea>
-					</div>
-					<div class="form-group">
-						<button class="tm-submit-btn" type="submit" name="submit">Submit
-							now</button>
-					</div>
-				</div>
-			</form>
+	</div>
+</div>
+<section class="container tm-home-section-2 section-margin-top">
+	<div class="row">
+		<div id="map">
 		</div>
 	</div>
 </section>
+white bg
+<section class="section-padding-bottom tm-white-bg">
+	<div class="container">
+		<div class="row">
+			<div>
+				<h4><span class="glyphicon glyphicon-map-marker"></span> 주소</h4>
+				<p>(58322) 전라남도 나주시 빛가람로 661</p>
+				<h4><span class="glyphicon glyphicon-phone"></span> 연락처</h4>
+				<p>Tel. 061-931-7114</p>
+				<h4><span class="glyphicon glyphicon-road"></span> qjtm</h4>
+				<p><span id="bus">버스</span> 
+				<p>- 나주역 : 700(순환버스), 1160번
+				<p>- 나주버스터미널 : 700번
+				<p>- 광주역 : 100 ~ 109, 400, 402, 403, 404, 500, 501, 504, 505번
+				<p>- 광주 송정역 : 1160번
+				<p>- 광주공항 : 1160번</p>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+<section class="section-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">대여 장소 위치</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+			<div class="row">
+				<!-- contact form -->
+				<form action="#" method="post" class="tm-contact-form">
+					<div class="col-lg-6 col-md-6">
+						<div class="container">
+							<div class="row">
+								<div>
+									<h4><span class="glyphicon glyphicon-map-marker"></span> 주소</h4>
+									<p>(58322) 전라남도 나주시 빛가람로 661</p>
+									<h4><span class="glyphicon glyphicon-phone"></span> 연락처</h4>
+									<p>Tel. 061-931-7114</p>
+									<h4><span class="glyphicon glyphicon-road"></span> 교통편</h4>
+									<p><span id="bus"><h5>- 버스</h5></span> 
+									<div class="row bus">
+										<ul>
+											<li><h6> 나주역 : 700(순환버스), 1160번</h6></li>
+											<li><h6> 나주버스터미널 : 700번</h6></li>
+											<li><h6> 광주역 : 100 ~ 109, 400, 402, 403, 404, 500, 501, 504, 505번</h6></li>
+											<li><h6> 광주 송정역 : 1160번</h6></li>
+											<li><h6> 광주공항 : 1160번</h6></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div> 
+					<div class="col-lg-6 col-md-6 tm-contact-form-input">
+						<div class="row">
+							<div id="map">
+							</div>
+						</div>
+						              
+					</div>
+				</form>
+			</div>			
+		</div>
+	</section>

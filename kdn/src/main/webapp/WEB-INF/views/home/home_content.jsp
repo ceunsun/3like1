@@ -104,10 +104,10 @@ $(function() {
 							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
 							auctor, nisi elit consequat ipsum</p>
 						<div class="tm-home-box-2-container">
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carname=모델S" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-								<span class="tm-home-box-2-description box-3">포르쉐 카레라GT</span>
+							<a href="carModal.do?carname=모델S" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+								<span class="tm-home-box-2-description box-3">쉐보레 말리부</span>
 							</a>
 						</div>
 					</div>
@@ -124,10 +124,10 @@ $(function() {
 							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
 							auctor, nisi elit consequat ipsum</p>
 						<div class="tm-home-box-2-container">
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carname=쏘나타" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">현대차 쏘나타 하이브리드</span></a>
+							<a href="carModal.do?carname=쏘나타" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">현대 쏘나타</span></a>
 						</div>
 					</div>
 				</div>
@@ -143,10 +143,10 @@ $(function() {
 							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
 							auctor, nisi elit consequat ipsum</p>
 						<div class="tm-home-box-2-container">
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carname=아이오닉" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">쉐보레 전기차</span></a>
+							<a href="carModal.do?carname=아이오닉" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">현대 아이오닉</span></a>
 						</div>
 					</div>
 				</div>
@@ -162,10 +162,10 @@ $(function() {
 							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
 							auctor, nisi elit consequat ipsum</p>
 						<div class="tm-home-box-2-container">
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal"> 
+							<a href="carModal.do?carname=말리부" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal"> 
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="#" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">루시드에어</span></a>
+							<a href="carModal.do?carname=말리부" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">테슬라 모델S</span></a>
 						</div>
 					</div>
 				</div>

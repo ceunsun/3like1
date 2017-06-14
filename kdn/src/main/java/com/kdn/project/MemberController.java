@@ -143,7 +143,7 @@ public class MemberController {
 		return "redirect:returnPage.do";
 	}
 	
-	@RequestMapping(value= "delayUpdate.do", method = RequestMethod.GET)
+	@RequestMapping(value= "delayUpdate.do", method = RequestMethod.POST)
 	public String delayUpdate(Model model, HttpSession session, String returndate,int carno){
 		System.out.println("================");
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -161,5 +161,11 @@ public class MemberController {
 		return "redirect:returnPage.do";
 	}
 	
-	
+	@RequestMapping(value= "renewModal.do", method = RequestMethod.GET)
+	public String renewModal(Model model, int carno){
+		System.out.println(carno);
+		
+		model.addAttribute("carno", carno);
+		return "myPage/renew_modal";
+	}
 }

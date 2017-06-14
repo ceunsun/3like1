@@ -70,6 +70,7 @@
 						</li>
 						<li><a href="about.do">서비스 안내</a></li>
 						<li><a href="board.do?pageNo=1">고객 센터</a></li>
+						<li><a href="contact.do">오시는 길</a></li>
 					</ul>
 				</nav>
 			</div>

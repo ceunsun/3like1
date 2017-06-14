@@ -147,7 +147,9 @@ public class AdminController {
 	@RequestMapping(value = "renewContent.do", method = RequestMethod.GET)
 	public String renewContent(Model model) {
 		List<Car> rList = carService.searchReturn(); 
-		
+		for(Object obj: rList){
+			System.out.println(rList);
+		}
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "renewConfirm_content");
 		
@@ -188,7 +190,6 @@ public class AdminController {
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);
 			carService.renting(Integer.parseInt(rList[i]));
-
 		}	
 	
 		return "redirect:renewContent.do";

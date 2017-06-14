@@ -54,7 +54,14 @@
 									<td>
 										<div class="boardbtn">
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
-											<input type="submit" value="연장" data-toggle="modal" data-target="#renewModal">
+											<a data-toggle="modal" data-target="#renewModal" href="renewModal.do?carno=${car.carno }" role="button" data-backdrop="static">
+												<input type="button" value="연장">
+											</a>
+											<%-- <form action="renewModal.do">
+												<!-- <input type="button" value="연장" data-toggle="modal" data-target="#renewModal"> -->
+												<input type="hidden" id="carno" name="carno" value="${car.carno }">
+												<button id="button" data-toggle="modal" data-target="#renewModal" onclick="modal(this.form)">연장</button>
+											</form> --%>
 										</div>
 									</td>
 									</tr>
@@ -68,10 +75,11 @@
 		</div>		
 	</div>
 </section>
+
 <div class="modal fade" id="renewModal" role="dialog">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
-			<jsp:include page="renew_modal.jsp"></jsp:include>
+			<%-- <jsp:include page="renew_modal.jsp"></jsp:include> --%>
 		</div>
 	</div>
 </div>

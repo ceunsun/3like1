@@ -8,6 +8,19 @@
 	border: 2px solid;
 	border-radius: 10px;
 }
+.availableCar{
+	height: 450px;
+	overflow: scroll;
+}
+
+.accent{
+	color: darkorange;
+}
+
+#click{
+	color: darkorange;
+}
+
 </style>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJHho4WfeCzzv4U-5rLubsROfinFrIwo&callback=initMap">
 </script>
@@ -32,12 +45,7 @@
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom : 17,
 			center : a,
-			mapTypeControl: true,
-	        mapTypeControlOptions: {
-		        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		        mapTypeIds: ['roadmap', 'terrain']
-	        },
-			
+			mapTypeId : "satellite"			
 		});
 
 		var marker1 = new google.maps.Marker({
@@ -63,15 +71,15 @@
 		
 		google.maps.event.addDomListener(marker1, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
-			document.getElementById("rentPlace").innerHTML = '대여 장소 : A 대여소';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">A 대여소</span>';
 		});
 		google.maps.event.addDomListener(marker2, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
-			document.getElementById("rentPlace").innerHTML = '대여 장소 : B 대여소';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">B 대여소</span>';
 		});
 		google.maps.event.addDomListener(marker3, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
-			document.getElementById("rentPlace").innerHTML = '대여 장소 : C 대여소';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">C 대여소</span>';
 		});
 	}
 </script>
@@ -110,9 +118,9 @@ $(function() {
 			<!-- contact form -->
 			<form action="reserve.do" method="post" id="frm" class="tm-contact-form">
 				<div class="col-lg-6 col-md-6 tm-contact-form-input">
-					<div >
+					<div class="availableCar">
 					<table class="table table-hover table-responsive table-striped board_table available-table">
-						<span><h4>총 ${total}대 검색 되었습니다.</h4></span>
+						<span><h4>총 <span class="accent">${total}대</span> 예약 가능 합니다.</h4></span>
 						<thead>
 							<tr>
 								<th><span>대여 일시 :</span></th><td></span>${startdate}</td>
@@ -153,7 +161,7 @@ $(function() {
 				<!-- <iframe src="https://www.google.com/maps/embed/v1/place?q=%EB%A9%80%ED%8B%B0%EC%BA%A0%ED%8D%BC%EC%8A%A4&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0">
 						</iframe> -->
 				<!-- <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJpZhn7vUlcjURW4TlYFCzXek&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0" allowfullscreen></iframe> -->
-				<span id="click"><h4>대여소를 선택하세요.</h4></span>
+				<span id="click"><h4><span class="glyphicon glyphicon-info-sign"> 대여소를 선택하세요.</h4></span>
 				<span><h4><span id="rentPlace"></span></h4></span>
 				<!-- <table>
 					

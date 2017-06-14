@@ -64,6 +64,13 @@ public class HomeController {
 		return "contact/contact";
 	}
 	
+	@RequestMapping(value = "carModal.do", method = RequestMethod.GET)
+	public String carModal(Model model, String carname, String cartype) {
+		model.addAttribute("carname", carname);
+		model.addAttribute("cartype", cartype);
+		
+		return "include/car_modal";
+	}
 	
 	/**
 	 * adminPage
