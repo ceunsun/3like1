@@ -48,7 +48,7 @@
 						<table class="table table-hover table-bordered table-responsive table-striped board_table">
 							<thead>
 								<tr>
-									<th>No</th><th>Title</th><th>Writer</th><th>date</th>
+									<th>글 번호</th><th>제목</th><th>작성자</th><th>작성일</th>
 								</tr>
 							</thead>
 							<tbody>

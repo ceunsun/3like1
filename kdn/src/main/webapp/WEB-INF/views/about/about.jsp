@@ -32,10 +32,10 @@
 	<script type="text/javascript" src="js/templatemo.js"></script>
 	<script type="text/javascript" src="js/google_map.js"></script>
 </head>
-<body>
+<body class="tm-gray-bg">
 	<!-- Header -->
 	<header>
-		<!-- Header Nav -->
+		<!-- Header Nav --> 
 		<jsp:include page = "../include/header_nav.jsp" />
 		<!-- Header Nav End-->
 		<jsp:include page = "../include/login_modal.jsp" />		

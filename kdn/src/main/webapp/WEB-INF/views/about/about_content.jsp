@@ -22,7 +22,7 @@
 		 <div class="flexslider flexslider-about effect2"> 
 			<ul class="slides">
 				<li> 
-				<img src="img/how.jpeg" alt="image"/>
+				<img src="img/how.jpeg" alt="image" class="img-rounded img-thumbnail"/>
 					<div class="flex-caption">
 						<h2 class="slider-title">이용 후 대여한 한전KDN으로 반납해주세요</h2>
 						<h4 class="slider-subtitle">모든 차량 반납은 대여한 한전KDN으로 하셔야 합니다.</h4>
