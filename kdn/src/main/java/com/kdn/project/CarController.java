@@ -1,5 +1,6 @@
 package com.kdn.project;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,21 +31,18 @@ public class CarController {
 	
 	// home_content.jsp
 	@RequestMapping(value = "available.do", method = RequestMethod.POST)
-	public String available(String car, String startdate, String enddate, PageBean pb, Model model) {		
-		int pageNo=1;
-		pb.setTotal(carService.getCount(car)); // 총 게시글 개수
-		pb.setPageNo(pageNo);
-		pb.setInterval(3);
+	public String available(String car, String startdate, String enddate, Model model) {		
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		List<Car> cList = carService.availableSearch(car, pb);
+		map.put("startdate", startdate);
+		map.put("enddate", enddate);
+		map.put("carname", car);
 		
-		for(Object obj : cList){
-			System.out.println(obj);
-		}
-				
-		int totalPage = pb.getTotalPage(); // 총 페이지 개수
+		int total = carService.getCount(map);
 		
-		model.addAttribute("totalPage", totalPage);
+		List<Car> cList = carService.availableSearch(map);
+		
+		model.addAttribute("total", total);
 		model.addAttribute("cList", cList);
 		model.addAttribute("startdate", startdate);
 		model.addAttribute("enddate", enddate);
@@ -56,13 +54,21 @@ public class CarController {
 	@RequestMapping(value = "reserve.do", method = RequestMethod.POST)
 	public String reserve(int carno, String startdate, String enddate, HttpSession session, Model model) {		
 		String memberno = (String) session.getAttribute("memberno");
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("memberno", memberno);
+		map.put("penalty", 200);
 		
 		Reservation reservation = new Reservation(startdate, enddate, carno, memberno);
 		
 		System.out.println(reservation);
 		
 		carService.reserve(reservation);
+		memberService.getPenalty(map);
+		Member m = memberService.search(memberno);
 		carService.reserveStatus(carno);
+		
+		session.setAttribute("penalty", (m.getPenalty()));
 		
 		return "redirect:home.do";
 	}
@@ -70,10 +76,12 @@ public class CarController {
 	// myPage_sidebar.jsp
 	@RequestMapping(value= "returnPage.do", method = RequestMethod.GET)
 	public String returnPage(HttpSession session, Model model){
-			
 		String memberno = (String) session.getAttribute("memberno");
+		
+		List<Car> cList = memberService.searchReturn(memberno);
+		
 		System.out.println(memberService.searchReturn(memberno));
-		model.addAttribute("car", memberService.searchReturn(memberno));			
+		model.addAttribute("cList", cList);			
 		model.addAttribute("content", "returnPage_content");
 			
 		return "myPage/myPage";

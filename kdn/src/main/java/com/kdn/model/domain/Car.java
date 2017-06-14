@@ -14,7 +14,9 @@ public class Car {
  	private String rentdate;	
  	private String returndate;
 	private int returnno;
- 	
+	private int accidentno;
+	private String accidentdate;
+	
 	public Car() { }
 
 	public Car(String carno, String cartype, String carstatus, String carimg,
@@ -157,6 +159,22 @@ public class Car {
 	public void setReturnno(int returnno) {
 		this.returnno = returnno;
 	}
+	
+	public int getAccidentno() {
+		return accidentno;
+	}
+
+	public void setAccidentno(int accidentno) {
+		this.accidentno = accidentno;
+	}
+
+	public String getAccidentdate() {
+		return accidentdate;
+	}
+
+	public void setAccidentdate(String accidentdate) {
+		this.accidentdate = accidentdate;
+	}
 
 	@Override
 	public String toString() {
@@ -169,7 +187,9 @@ public class Car {
 				.append(memberno).append(", startdate=").append(startdate)
 				.append(", rentno=").append(rentno).append(", rentdate=")
 				.append(rentdate).append(", returndate=").append(returndate)
-				.append(", returnno=").append(returnno).append("]");
+				.append(", returnno=").append(returnno).append(", accidentno=")
+				.append(accidentno).append(", accidentdate=")
+				.append(accidentdate).append("]");
 		return builder.toString();
 	}
 }

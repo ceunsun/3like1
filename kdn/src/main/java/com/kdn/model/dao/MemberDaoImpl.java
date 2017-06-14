@@ -1,5 +1,6 @@
 package com.kdn.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -42,6 +43,10 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
+	public void getPenalty(HashMap<String, Object> map) {
+		sql.update("member.getPenalty", map);
+	}
+	@Override
 	public void delete(String memberno) {
 		sql.delete("member.delete", memberno);
 	}
@@ -52,7 +57,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	
 	@Override
-	public Car searchReturn(String memberno) {
-		return sql.selectOne("member.searchReturn", memberno);
+	public List<Car> searchReturn(String memberno) {
+		return sql.selectList("member.searchReturn", memberno);
 	}
 }

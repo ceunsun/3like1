@@ -1,6 +1,10 @@
 package com.kdn.project;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -108,15 +112,34 @@ public class MemberController {
 	//반납신청으로 변한 후 return테이블에 입력
 	@RequestMapping(value= "returnUpdate.do", method = RequestMethod.GET)
 	public String returnConfirm(HttpSession session, int carno, String returndate, Model model){
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd", Locale.KOREA);
 		Return ret = null;
-		
 		String memberno= (String) session.getAttribute("memberno");
-
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
 		ret = new Return(returndate, memberno, carno );
 		
-		carService.returnUpdate(carno);
-		carService.insertReturn(ret);
+		Date today = new Date();
+		String currDay = simpleDateFormat.format(today);
 		
+		int compare = currDay.compareTo(returndate);
+
+		carService.returnUpdate(carno);
+		
+		if(compare > 0){
+			System.out.println("반납일 안지킴!!");
+			
+			map.put("memberno", memberno);
+			map.put("penalty", 1000);
+			
+			ms.getPenalty(map);
+			
+			Member m = ms.search(memberno);
+			
+			session.setAttribute("penalty", m.getPenalty());
+		}
+		carService.insertReturn(ret);
+				
 		return "redirect:returnPage.do";
 	}
 	

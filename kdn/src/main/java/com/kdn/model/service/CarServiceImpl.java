@@ -36,11 +36,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public int getCount(String carname) {
+	public int getCount(HashMap<String, Object> map) {
 		int count=0;
 		
 		try {		
-			count = dao.getCount(carname);
+			count = dao.getCount(map);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -48,11 +48,11 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public List<Car> availableSearch(String carname, PageBean pb) {
+	public List<Car> availableSearch(HashMap<String, Object> map) {
 		List<Car> aList = null;
 		
 		try {		
-			aList = dao.availableSearch(carname, pb);
+			aList = dao.availableSearch(map);
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
@@ -113,8 +113,8 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public List<Accident> accidentSearch() {
-		List<Accident> aList =null;
+	public List<Car> accidentSearch() {
+		List<Car> aList =null;
 		
 		try {
 			aList = dao.accidentSearch();		
@@ -126,9 +126,9 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public void accidentUpdate(int carno){
+	public void accidentUpdate(HashMap<String, Object> map){
 		
-		dao.accidentUpdate(carno);
+		dao.accidentUpdate(map);
 	}
 
 	@Override

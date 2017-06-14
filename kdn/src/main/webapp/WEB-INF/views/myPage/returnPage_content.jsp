@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <section class="tm-white-bg section-padding-bottom">
 	<div class="container">
@@ -43,8 +44,9 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>${car.rentno}</td>
+								<c:forEach var="car" items="${cList}">
+									<tr>
+										<td>${car.rentno}</td>
 									<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
 									<td>${car.carno}</td>
 									<td>${car.rentdate}</td>
@@ -54,7 +56,8 @@
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
 										</div>
 									</td>
-								</tr>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

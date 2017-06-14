@@ -38,6 +38,12 @@
 		WHERE memberno=#{memberno}
 	</update> 
 	
+	<update id="getPenalty" parameterType="HashMap">
+		UPDATE member 
+		SET penalty=penalty-#{penalty}
+		WHERE memberno=#{memberno}
+	</update>	
+	
 	<delete id="delete" parameterType="string">
 		DELETE FROM member
 		WHERE memberno = #{memberno}

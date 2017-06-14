@@ -1,5 +1,6 @@
 package com.kdn.project;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -130,7 +131,11 @@ public class AdminController {
 	// adminPage_sidebar.jsp 사고 관리
 	@RequestMapping(value = "accidentContent.do", method = RequestMethod.GET)
 	public String accidentContent(Model model) {
-		List<Accident> aList = carService.accidentSearch();
+		List<Car> aList = carService.accidentSearch();
+		
+		for(Object obj : aList){
+			System.out.println(aList);
+		}
 		
 		model.addAttribute("aList", aList);
 		model.addAttribute("content", "accident_content");
@@ -153,9 +158,12 @@ public class AdminController {
 	//사고 처리 accident_content.jsp
 	@RequestMapping(value= "accidentUpdate.do", method = RequestMethod.GET)
 	public String accidentUpdate(HttpServletRequest request, Model model, int carno){
-		System.out.println(carno);
+		HashMap<String, Object> map = new HashMap<String, Object>();
 			
-		carService.accidentUpdate(carno);
+		map.put("carstatus", "사고차량");
+		map.put("carno", carno);
+		
+		carService.accidentUpdate(map);
 		
 		return "redirect:accidentContent.do";
 	}

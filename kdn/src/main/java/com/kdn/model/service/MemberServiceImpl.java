@@ -1,5 +1,6 @@
 package com.kdn.model.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +78,15 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public void getPenalty(HashMap<String, Object> map) {
+		try {
+			dao.getPenalty(map);
+		} catch(Exception  e){
+			throw new UpdateException("DB 서버 오류");
+		}
+	}
+	
+	@Override
 	public void delete(String memberno) {
 		try {
 			Member find= dao.search(memberno);
@@ -109,17 +119,17 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public Car searchReturn(String memberno) {
-		Car c = null;
+	public List<Car> searchReturn(String memberno) {
+		List<Car> cList = null;
 	
 		try {
 			if(memberno!=null) {
-				c = dao.searchReturn(memberno);
+				cList = dao.searchReturn(memberno);
 			}
 		} catch (Exception e) {
 			throw new UpdateException("DB 서버 오류");
 		}
 		
-		return c;
+		return cList;
 	}
 }

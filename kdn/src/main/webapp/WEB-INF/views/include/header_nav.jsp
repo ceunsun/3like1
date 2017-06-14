@@ -34,9 +34,13 @@
 							</c:choose>
 						</li>
 						<li>
-							<a href="#">
-								<span class="glyphicon glyphicon-thumbs-down"></span> 벌 점 : ${penalty}p
-							</a>
+							<c:choose>
+								<c:when test="${memberno != 'admin'}">
+									<a href="#">
+										<span class="glyphicon glyphicon-thumbs-up"></span> 카 마일리지 : ${penalty}p
+									</a>
+								</c:when>
+							</c:choose>							
 						</li>
 						<li>
 							<a href="logout.do">
