@@ -10,7 +10,7 @@
 				</h1>
 				<p class="tm-banner-subtitle">#For Your Business</p>
 			<!-- 	<a href="#more" class="tm-banner-link">Learn More</a> -->
-			</div> <img src="img/main.jpg" alt="Image" />
+			</div> <img src="img/main1.jpg" alt="Image" />
 		</li>
 		<li>
 			<div class="tm-banner-inner">
