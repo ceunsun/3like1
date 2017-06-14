@@ -28,15 +28,7 @@
 	                </ul>         
 				</li>
 				<li>
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시글관리<span class="caret"></span><span class="fa arrow"></span></a> 
-					<ul class="dropdown-menu">
-	                	<li>
-	                    	<a href="#"><i class="fa fa-edit fa-fw"></i>공지사항 등록</a> 
-	                    </li>
-	                    <li>
-	                    	<a href="#"><i class="fa fa-edit fa-fw"></i>공지사항 삭제</a>
-	                    </li>
-	                </ul> 
+					<a href="board.do?pageNo=1" >게시글관리<span class="fa arrow"></span></a>
 	            </li>
 			</ul>
 		</div>
