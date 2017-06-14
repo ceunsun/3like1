@@ -15,8 +15,8 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="css/flexslider.css" rel="stylesheet">
-	<!-- <link href="css/templatemo-style.css" rel="stylesheet"> -->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/templatemo-style.css" rel="stylesheet">
+	<!-- <link href="css/style.css" rel="stylesheet"> -->
 	
 	<!-- Javascript -->
 	<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
@@ -32,7 +32,7 @@
 	<script type="text/javascript" src="js/templatemo-script.js"></script>
 	<script type="text/javascript" src="js/templatemo.js"></script>
 </head>
-<body class="tm-gray-bg">
+<body>
 	<!-- Header -->
 	<header>
 		<!-- Header Nav -->
