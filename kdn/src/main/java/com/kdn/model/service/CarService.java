@@ -28,4 +28,5 @@ public interface CarService {
 	public abstract void returnUpdate(int carno); // 반납신청으로 상태 변경
 	public abstract void insertReturn(Return ret);
 	public abstract void returnConfirm(int carno); // 예약가능으로 상태 변경(반납)
+	public abstract List<Car> searchReturn();
 }

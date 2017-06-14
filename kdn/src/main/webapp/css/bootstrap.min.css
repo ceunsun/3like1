@@ -2578,13 +2578,15 @@ caption {
 }
 
 th {
-	text-align: center
+	text-align: center;
+	color: darkviolet;
 }
 
 .table {
 	width: 100%;
 	max-width: 100%;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
@@ -2604,7 +2606,7 @@ th {
 	.table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th
 	{
 	border-top: 0;
-	color: cornflowerblue;
+	color: darkviolet;
 }
 
 .table>tbody+tbody {

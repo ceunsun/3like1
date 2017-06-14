@@ -9,8 +9,7 @@
 	border-radius: 10px;
 }
 </style>
-<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJHho4WfeCzzv4U-5rLubsROfinFrIwo&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJHho4WfeCzzv4U-5rLubsROfinFrIwo&callback=initMap">
 </script>
 <script>
 	function initMap() {
@@ -29,7 +28,7 @@
 
 		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		var labelIndex = 0;
-
+				
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom : 17,
 			center : a,

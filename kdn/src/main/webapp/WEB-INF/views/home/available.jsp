@@ -35,7 +35,7 @@
 	<script type="text/javascript" src="js/reservation.js"></script>	
 </head>
 
-<body class="tm-gray-bg">
+<body>
 	<!-- Header -->
 	<header>
 		<!-- Header Nav -->

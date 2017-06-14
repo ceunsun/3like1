@@ -108,4 +108,8 @@ public class CarDaoImpl implements CarDao {
 	public void returnConfirm(int carno) {
 		sql.update("car.returnConfirm", carno);
 	}
+	@Override
+	public List<Car> searchReturn() {
+		return sql.selectList("car.searchReturn");
+	}
 }

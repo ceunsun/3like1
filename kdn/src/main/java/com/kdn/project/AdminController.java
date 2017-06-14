@@ -84,7 +84,7 @@ public class AdminController {
 	@RequestMapping(value = "reserveContent.do", method = RequestMethod.GET)
 	public String reserveContent(Model model) {
 		List<Car> rList = carService.reserveSearch("예약대기");
-		
+				
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "reserveConfirm_content");
 		

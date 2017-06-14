@@ -54,7 +54,7 @@
 									<td>
 										<div class="boardbtn">
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
-											<input type="submit" value="연장" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
+											<input type="submit" value="연장" data-toggle="modal" data-target="#carModal">
 										</div>
 									</td>
 									</tr>
@@ -68,3 +68,10 @@
 		</div>		
 	</div>
 </section>
+<div class="modal fade" id="carModal" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<jsp:include page="renew_modal.jsp"></jsp:include>
+		</div>
+	</div>
+</div>

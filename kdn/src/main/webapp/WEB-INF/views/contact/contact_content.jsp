@@ -1,41 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<section class="container tm-home-section-1" id="more">
+<style>
+#map {
+	height: 400px;
+	width: 100%;
+	border: 2px solid;
+	border-radius: 10px;
+}
+</style>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJHho4WfeCzzv4U-5rLubsROfinFrIwo&callback=initMap">
+</script>
+<script>
+	function initMap() {
+		var a = {
+			lat : 35.021998,
+			lng : 126.784143
+		};
+		var b = {
+			lat : 35.022357,
+			lng : 126.783139
+		};
+		var c = {
+			lat : 35.021751,
+			lng : 126.783032
+		};
+
+		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		var labelIndex = 0;
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom : 17,
+			center : a,
+			mapTypeControl: true,
+	        mapTypeControlOptions: {
+		        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+		        mapTypeIds: ['roadmap', 'terrain']
+	        },
+			
+		});
+
+		var marker1 = new google.maps.Marker({
+			position : a,
+			label : labels[labelIndex++ % labels.length],
+			animation: google.maps.Animation.DROP,
+			map : map
+		});
+
+		var marker2 = new google.maps.Marker({
+			position : b,
+			label : labels[labelIndex++ % labels.length],
+			animation: google.maps.Animation.DROP,
+			map : map
+		});
+
+		var marker3 = new google.maps.Marker({
+			position : c,
+			label : labels[labelIndex++ % labels.length],
+			animation: google.maps.Animation.DROP,
+			map : map
+		});
+		
+		google.maps.event.addDomListener(marker1, 'click', function() {
+			document.getElementById("click").innerHTML = ' ';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : A 대여소';
+		});
+		google.maps.event.addDomListener(marker2, 'click', function() {
+			document.getElementById("click").innerHTML = ' ';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : B 대여소';
+		});
+		google.maps.event.addDomListener(marker3, 'click', function() {
+			document.getElementById("click").innerHTML = ' ';
+			document.getElementById("rentPlace").innerHTML = '대여 장소 : C 대여소';
+		});
+	}
+</script>
+
+<section class="container tm-home-section-2 section-margin-top">
 	<div class="row">
-	<div id="contact-map">
+		<div >
 		<iframe src="https://www.google.com/maps/embed/v1/place?q=%EB%A9%80%ED%8B%B0%EC%BA%A0%ED%8D%BC%EC%8A%A4&key=AIzaSyDdbPoIrCQAdsJGUcY3Ux9wuxuzrJmA6c0">
 		</iframe>
-		 <!-- slider -->
-		<!--<div class="flexslider effect2 effect2-contact tm-contact-box-1">
-			<ul class="slides">
-				<li><img src="img/world-map.png" alt="image"
-					class="contact-image" />
-					<div class="contact-text">
-						<h2 class="slider-title">Lorem Isum Dolor</h2>
-						<h3 class="slider-subtitle">Gravida nibh vel velit auctor
-							aliquet enean sollicitudin lorem quis auctor, nisi elit consequat
-							ipsum</h3>
-						<p class="slider-description">
-							Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt
-							auctor a ornare odio. Sed non mauris vitae erat consequat auctor
-							eu in elit. Class aptent taciti sociosqu ad litora torquent per
-							conubia nostra, per inceptos himenaeos. <br> <br>
-							Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum
-							sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
-							Proin condimentum fermentum nunc. Etiam pharetra, erat sed
-							fermentum feugiat, velit mauris gestas quam, ut aliquam massa
-							nisi.
-						</p>
-						<div class="slider-social">
-							<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-							<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-							<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-							<a href="#" class="tm-social-icon"><i
-								class="fa fa-google-plus"></i></a>
-						</div>
-					</div></li>
-			</ul>
-		</div> -->
 	</div>
 </section>
 <!-- white bg -->
