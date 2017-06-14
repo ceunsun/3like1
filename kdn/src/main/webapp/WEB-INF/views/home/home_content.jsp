@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<script type="text/javascript">
-function available(f){
-	f.action = 'available.do?pageNo=1';
-	f.method = 'POST';
-	f.submit();
-}
-</script>
+<!-- <script type="text/javascript">
+$(function() {
+	$('#frm').submit(function(event) {
+	alert('실행');
+		/* var memberno = ${memberno};
+		alert(memberno);
+		if (memberno == '') {
+			alert('로그인 후에 이용 가능 합니다.');
+			return false;
+		}	
+		if(memberno != ''){
+			$(this).submit();
+		} */
+	});
+});
+</script> -->
 <section class="container tm-home-section-1" id="more">
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sm-6">
@@ -19,7 +28,7 @@ function available(f){
 				<div class="tab-content tm-white-bg">
 					<div role="tabpanel" class="tab-pane fade in active id="car">
 						<div class="tm-search-box effect2">
-							<form class="hotel-search-form" action="available.do?pageNo=1" method="POST">
+							<form class="hotel-search-form" id="frm" action="available.do" method="post">
 								<div class="tm-form-inner">
 									<div class="form-group margin-bottom-0">
 										<select class="form-control" id="fuel" name="fuel">
@@ -57,7 +66,7 @@ function available(f){
 									</div>
 								</div>
 								<div class="form-group tm-yellow-gradient-bg text-center">
-									<a href="" class="reservation" onclick="available(this.form)">
+									<a href="" class="reservation">
 									<button class="tm-yellow-btn">예약 가능 조회</button></a>
 								</div>
 								<%-- <div class="modal fade" id="searchModal" role="dialog">

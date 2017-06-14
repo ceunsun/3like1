@@ -27,15 +27,13 @@ public class CarDaoImpl implements CarDao {
 		return sql.selectOne("car.search", carno);
 	}
 	@Override
-	public int getCount(String carname) {
-		return sql.selectOne("car.getCount", carname);
+	public int getCount(HashMap<String, Object> map) {
+		return sql.selectOne("car.getCount", map);
 	}
 	
 	@Override
-	public List<Car> availableSearch(String carname, PageBean pb) {
-		RowBounds rowBounds = new RowBounds(pb.getStart()-1, pb.getEnd());
-		
-		return sql.selectList("car.availableSearch", carname, rowBounds);
+	public List<Car> availableSearch(HashMap<String, Object> map) {
+		return sql.selectList("car.availableSearch", map);
 	}
 	
 	@Override

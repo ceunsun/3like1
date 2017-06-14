@@ -35,7 +35,7 @@
 						</li>
 						<li>
 							<a href="#">
-								<span class="glyphicon glyphicon-thumbs-down"></span> 벌 점 : ${penalty}p
+								<span class="glyphicon glyphicon-thumbs-down"></span> 카 마일리지 : ${penalty}p
 							</a>
 						</li>
 						<li>

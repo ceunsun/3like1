@@ -1,5 +1,6 @@
 package com.kdn.model.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.kdn.model.domain.Board;
@@ -14,7 +15,8 @@ public interface MemberService {
 	public List<Member>	searchAll(PageBean pb);
 	public int getCount();
 	public abstract void update(Member member); 
+	public abstract void getPenalty(HashMap<String, Object> map); 
 	public abstract void delete(String memberno);
 	public abstract List<Car> my_reservation(String memberno);
-	public abstract Car searchReturn(String memberno);
+	public abstract List<Car> searchReturn(String memberno);
 }

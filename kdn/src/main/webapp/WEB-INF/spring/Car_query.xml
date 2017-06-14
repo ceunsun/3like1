@@ -10,17 +10,30 @@
 		WHERE carname = #{carname}
 	</select>
 	
-	<select id="getCount" parameterType="String" resultType="int" >
+	<select id="getCount" parameterType="HashMap" resultType="int" >
 		SELECT count(*) count
-		FROM car
-		WHERE carname = #{carname} and carstatus='예약가능'
+		FROM (SELECT carno, startdate, enddate     
+      		  FROM reservation 
+      		  WHERE NOT (to_char(startdate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate}) 
+      			    AND NOT (to_char(enddate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate})) a, car c
+		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
 	</select>
 	
-	<select id="availableSearch" parameterType="String" resultType="car">
+	<select id="availableSearch" parameterType="HashMap" resultType="car">
+		SELECT c.carno carno, c.cartype cartype, c.carstatus carstatus, 
+			   c.carimg carimg, c.carname carname, a.startdate, a.enddate
+		FROM (SELECT carno, startdate, enddate     
+      		  FROM reservation 
+      		  WHERE NOT (to_char(startdate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate}) 
+      			    AND NOT (to_char(enddate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate})) a, car c
+		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
+	</select>
+	
+	<!-- <select id="availableSearch" parameterType="String" resultType="car">
 		SELECT *
 		FROM car
 		WHERE carname = #{carname} and carstatus like '예약%'
-	</select>
+	</select> -->
 	
 	<select id="returnSearch" parameterType="String" resultType="car">
 		SELECT c.carno carno, 

@@ -349,7 +349,11 @@ table .boardbtn input[type=button]{
 .login-btn{
 	color: white;
 }
-
+.available-table {
+	height: 450px;
+	width: 100%;
+	overflow: scroll;
+}
 .search-modal-header {
 	background-color: #816263;
 }
@@ -365,6 +369,7 @@ iframe {
 	width: 100%;
 	height: 400px;
 }
+
 /*http://cssdeck.com/labs/different-css3-box-shadows-effects*/
 /*==================================================
  * Effect 2

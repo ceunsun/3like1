@@ -1,6 +1,10 @@
 package com.kdn.project;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.kdn.model.domain.Car;
 import com.kdn.model.service.CarService;
 import com.kdn.model.service.MemberService;
+import com.sun.org.apache.bcel.internal.generic.SIPUSH;
 
 /**
  * Handles requests for the application home page.
@@ -24,9 +29,10 @@ public class HomeController {
 	
 	/**
 	 * home
+	 * @throws ParseException 
 	 */	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() {		
+	public String home(){
 		return "home";
 	}
 	
