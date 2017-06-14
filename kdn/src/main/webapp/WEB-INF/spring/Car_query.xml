@@ -120,4 +120,11 @@
 		INSERT INTO return 
 		VALUES(returnno_seq.nextval, #{returndate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
+	
+	<update id="delayUpdate"		parameterType="int">
+		UPDATE car
+		SET carstatus='반납연장신청'
+		WHERE carno=#{carno}
+	</update>
+	
 </mapper>
