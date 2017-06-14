@@ -20,8 +20,8 @@
 <section class="container" id="more">
 	<div class="row">
 		 <div class="flexslider flexslider-about effect2"> 
-			<!--  <ul class="slides">
-				<li>  -->
+			<ul class="slides">
+				<li> 
 				<img src="img/how.jpeg" alt="image"/>
 					<div class="flex-caption">
 						<h2 class="slider-title">이용 후 대여한 한전KDN으로 반납해주세요</h2>
@@ -33,6 +33,11 @@
 						<h2 class="slider-title">연료가 50%이상 남았는지 확인해주세요</h2>
 						<h3 class="slider-subtitle">다음 사용자를 위해 연료가 충분히 남았는지 확인해주세요.</h3>
 						<br>
+					</div>
+				</li>
+				<li>
+				<img src="img/how-2.jpg" alt="image"/>
+					<div class="flex-caption">
 						<h2 class="slider-title">차 안에서 흡연은 꼭 참아주세요</h2>
 						<h3 class="slider-subtitle">함께 사용하는 분들을 위해 대여 차량을 이용하는 동안 흡연은 꼭 참아주세요!<br>
 														 이용 후에는 차량 내부에 있는 쓰레기를 정리해 주시기 바랍니다.</h3>
@@ -44,10 +49,11 @@
 						<h2 class="slider-title">애완동물은 캐리어를 이용해주세요</h2>
 						<h3 class="slider-subtitle">애완동물은 캐리어를 이용해 대여 차량에 동반 탑승하실 수 있습니다.<br>
 													단, 장애인 반려견은 캐리어 없이도 탑승 가능합니다.</h3>
+						<br>
 					</div>
-				<!-- </li>
-			</ul> -->
-			</div>
+				</li>
+			</ul> 
+		</div>
 	</div>
 
 	<div class="section-margin-top about-section">
