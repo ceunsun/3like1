@@ -146,4 +146,19 @@
 		FROM car c, rent r
 		WHERE c.carno=r.carno and c.carstatus='반납연장신청'
 	</select>
+	
+	<update id="delayUpdate"		parameterType="int">
+		UPDATE car
+		SET carstatus='반납연장신청'
+		WHERE carno=#{carno}
+	</update>
+	
+	<update id="delayDate"		parameterType="HashMap">
+		UPDATE rent
+		SET returndate=#{returndate}
+		WHERE carno=#{carno}
+	</update>
+	
+
+	
 </mapper>

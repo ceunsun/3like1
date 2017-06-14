@@ -218,6 +218,25 @@ public class CarServiceImpl implements CarService {
 		
 	}
 
+
+	@Override
+	public void delayUpdate(int carno) {
+		try {
+			dao.delayUpdate(carno);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}			
+	}
+
+	@Override
+	public void delayDate(HashMap<String, Object> map) {
+		try {
+			dao.delayDate(map);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}			
+	}
+
 	@Override
 	public List<Car> searchReturn() {
 		List<Car> rList = null;
