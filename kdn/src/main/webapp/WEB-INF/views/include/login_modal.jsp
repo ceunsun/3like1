@@ -5,7 +5,7 @@
 		<div class="modal-content">
 			<div class="modal-body">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">LOGIN</h4>
+				<h4 class="modal-title">로그인</h4>
 			</div>	
 			<div class="modal-footer">
 				<form action="login.do" method="post" class="tm-contact-form">

@@ -79,15 +79,17 @@
 		VALUES(rentno_seq.nextval, #{rentdate:VARCHAR}, #{returndate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
 	
-	<select id="accidentSearch" resultType="accident"> 
-		SELECT accidentno, accidentdate, memberno, carno
-		FROM accident 
+	<select id="accidentSearch" resultType="car"> 
+		select c.carno carno, c.cartype cartype, c.carstatus carstatus, c.carimg carimg, c.carname carname, 
+			   a.accidentno accidentno, to_char(a.accidentdate, 'yyyy/mm/dd') accidentdate, a.memberno memberno
+		from car c, accident a
+		where c.carno=a.carno and c.carstatus='사고차량'
 	</select>
 	
 	<!-- 사고 확인 -->
-	<select id="accidentUpdate" parameterType="int">
+	<select id="accidentUpdate" parameterType="HashMap">
 		UPDATE car 
-		SET carstatus = '사고차량' 
+		SET carstatus = #{carstatus} 
 		WHERE carno=#{carno} 
 	</select>
 	

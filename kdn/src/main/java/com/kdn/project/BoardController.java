@@ -1,5 +1,6 @@
 package com.kdn.project;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +17,14 @@ import com.kdn.model.domain.Board;
 import com.kdn.model.domain.Member;
 import com.kdn.model.domain.PageBean;
 import com.kdn.model.service.BoardService;
+import com.kdn.model.service.CarService;
 
 @Controller
 public class BoardController {
 	@Autowired
 	BoardService boardService;
+	@Autowired
+	CarService carService;
 	
 	// header_nav.jsp
 	@RequestMapping(value = "board.do", method = RequestMethod.GET)
@@ -144,6 +148,12 @@ public class BoardController {
 	// accboard_writeForm.jsp
 	@RequestMapping(value = "accboard_write.do", method = RequestMethod.POST)
 	public String accboard_write(Accident accident) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("carstatus", "사고차량");
+		map.put("carno", accident.getCarno());
+		
+		carService.accidentUpdate(map);
 		boardService.accinsert(accident); 
 			
 		return "redirect:accboard.do?pageNo=1";

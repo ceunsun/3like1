@@ -113,8 +113,8 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public List<Accident> accidentSearch() {
-		List<Accident> aList =null;
+	public List<Car> accidentSearch() {
+		List<Car> aList =null;
 		
 		try {
 			aList = dao.accidentSearch();		
@@ -126,9 +126,9 @@ public class CarServiceImpl implements CarService {
 	}
 	
 	@Override
-	public void accidentUpdate(int carno){
+	public void accidentUpdate(HashMap<String, Object> map){
 		
-		dao.accidentUpdate(carno);
+		dao.accidentUpdate(map);
 	}
 
 	@Override

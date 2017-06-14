@@ -58,13 +58,13 @@ public class CarDaoImpl implements CarDao {
 	}
 
 	@Override
-	public List<Accident> accidentSearch() {
+	public List<Car> accidentSearch() {
 		return sql.selectList("car.accidentSearch");
 	}
 	
 	@Override
-	public void accidentUpdate(int carno) {
-		sql.update("car.accidentUpdate", carno);
+	public void accidentUpdate(HashMap<String, Object> map) {
+		sql.update("car.accidentUpdate", map);
 	}
 
 

@@ -27,6 +27,7 @@ body {
 	overflow-x: hidden; 
 	width: 90%; 
 	margin : auto;
+	color: darkgoldenrod;
 }
 .tm-header {
 	background: #03d2ff;	
@@ -214,7 +215,7 @@ body {
 .tm-yellow-btn {
 	width: 130px;
 	height: 40px;
-	background-color: #F5D338;
+	background-color: lightcyan;
 	border: medium none;
 	color: #5C4905;
 	font-size: 12px;
@@ -224,11 +225,12 @@ body {
 }
 .tm-yellow-btn:hover,
 .tm-yellow-btn:focus {
-	background-color: #F9E58B;
+	background-color: lightcyan;
 }
 .tm-form-inner { 
 	padding: 35px 30px 5px; 
 	height: 295px;
+	background-color: bisque;
 }
 ul.breadcrumbs{
 	padding:0;
@@ -369,7 +371,14 @@ iframe {
 	width: 100%;
 	height: 400px;
 }
-
+.reserve{
+	background-color: #03d2ff;
+	width:100%;
+	margin-bottom: 20px;
+}
+.reserve h5{
+	color: white;
+}
 /*http://cssdeck.com/labs/different-css3-box-shadows-effects*/
 /*==================================================
  * Effect 2
@@ -404,8 +413,9 @@ iframe {
 	background-color: #fff;
 }
 .tm-home-box-1 {
-	width: 346px;
+	width: 300px;
 	height: 436px;
+	margin: 120px 20px;
 }
 .tm-home-box-1-center {
 	margin: 0 auto;
@@ -418,7 +428,7 @@ iframe {
 #hotelCarTabs {
 	border-bottom: none;
 	height: 52px;
-	background-color: #eff;
+	background-color: lightcoral;
 }
 #hotelCarTabs li {
 	width: 50%;
@@ -435,7 +445,7 @@ iframe {
 	background: transparent linear-gradient(to bottom, #F5D11D 0%, #F3D10E 1%, #EFCF1C 2%, #FCCD0D 4%, #F7CA0D 5%, #F9CB1E 6%, #F7CB10 7%, #F8CC14 8%, #F0C40C 54%, #EDC50C 55%, #E9C108 71%, #ECC008 78%, #E6BE06 91%, #E9BD06 93%, #E8BC06 100%) repeat scroll 0% 0%;
 	border: none;
 	border-radius: 0;
-	color: #5C4905;
+	color: white;
 	font-weight: 600;
 }
 #hotelCarTabs > li > a:hover,
@@ -466,7 +476,10 @@ iframe {
 	color: white;
 }
 
-.hotel-search-form .form-group { margin-bottom: 30px; }
+.hotel-search-form .form-group { 
+	margin-bottom: 30px; 
+	background-color: aquamarine;
+}
 
 /*Section 2, index.html */
 .section-margin-top { margin-top: 45px; }
@@ -474,6 +487,7 @@ hr { border-top: 1px solid #111010; }
 .tm-section-header {
 	margin-bottom: 45px;
 	overflow: hidden;
+	color: coral;
 }
 .tm-section-title {
 	text-align: center;
@@ -517,6 +531,7 @@ hr { border-top: 1px solid #111010; }
 	width: 60px;
 	height: 60px;
 	font-size: 1.4em;
+	color: tomato;
 }
 .tm-home-box-2-description {
 	display: inline-block;
@@ -525,7 +540,10 @@ hr { border-top: 1px solid #111010; }
 	width: 125px;
 	padding-bottom: 18px;
 }
-.tm-home-box-2-description.box-3 { width: 175px; }
+.tm-home-box-2-description.box-3 { 
+	width: 175px; 
+	color : brown;
+}
 .home-description {
 	margin: 50px auto;
 	padding: 0 30px;
@@ -539,13 +557,13 @@ hr { border-top: 1px solid #111010; }
 }
 .tm-home-box-3-img-container { float: left; }
 .tm-home-box-3-info {
-    height: 225px;
-    max-width: 305px;
+    height: 210px;
+    max-width: 253px;
     float: right;
     border: 1px solid #CCC;
-	border-left: none;
+    border-left: none;
 }
-.tm-home-box-3-description { padding: 40px 30px 44px; }
+.tm-home-box-3-description { padding: 20px; }
 .section-padding-bottom { padding-bottom: 60px; }
 
 /* Tours */
