@@ -27,7 +27,6 @@ body {
 	overflow-x: hidden; 
 	width: 90%; 
 	margin : auto;
-	color: darkgoldenrod;
 }
 .tm-header {
 	background: #03d2ff;	
@@ -310,7 +309,7 @@ ul.pagenation li a {
 	text-transform: uppercase;
 }
 ul.pagenation li.active a, ul.pagenation li a:hover {
-	background: #3C3038;
+	background: mediumpurple;
 	color: #fff;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -325,7 +324,7 @@ ul.pagenation li.active a, ul.pagenation li a:hover {
 	font-size: 13px;
 	cursor: pointer;
 	font-weight: 500;
-	background: #816263;
+	background: steelblue;
 	border-top: none;
 	border-left: none;
 	border-right: none;
@@ -494,6 +493,7 @@ hr { border-top: 1px solid #111010; }
 	text-transform: uppercase;
 	font-size: 36px;
 	font-weight: 300;
+	color: darkviolet;
 }
 .tm-home-box-2 {
 	background-color: white;
@@ -563,7 +563,10 @@ hr { border-top: 1px solid #111010; }
     border: 1px solid #CCC;
     border-left: none;
 }
-.tm-home-box-3-description { padding: 20px; }
+.tm-home-box-3-description { 
+	padding: 20px; 
+	color: brown; 
+}
 .section-padding-bottom { padding-bottom: 60px; }
 
 /* Tours */
