@@ -55,7 +55,7 @@
 										<tr>
 											<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
 											<td>${rList.reserveno}</td>
-											<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
+											<td width="150px"><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
 											<td>${rList.carno}</td>
 											<td>${rList.memberno}</td>
 											<td>${rList.startdate}</td>
@@ -68,10 +68,6 @@
 							<div class="boardbtn">
 								<input type="submit" value="확인">
 								<input type="reset" value="취소">
-								<ul class="pagenation">
-									<li class="active"><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-								</ul>
 							</div>						
 							<div class="clearfix"></div>
 						</form>

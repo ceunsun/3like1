@@ -40,7 +40,6 @@
 							<thead>
 								<tr>
 									<th></th>
-									<th>신청 번호</th>
 									<th>차량 이미지</th>
 									<th>차량 번호</th>
 									<th>사원 번호</th>
@@ -51,9 +50,8 @@
 							<tbody>
 								<c:forEach var="car" items="${rList}">
 									<tr>
-										<td><input type="checkbox" name='check' id='check' value='${car.carno}'></td>	
-										<td>신청 번호</td>
-										<td>${car.carimg}</td>
+										<td><input type="checkbox" name='check' id='check' value='${car.carno}'></td>
+										<td width="150px"><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
 										<th>${car.carno}</th>
 										<th>${car.memberno}</th>
 										<th>${car.rentdate}</th>
@@ -65,10 +63,6 @@
 						<div class="boardbtn">
 							<input type="submit" value="확인">
 							<input type="reset" value="취소">
-							<ul class="pagenation">
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-							</ul>
 						</div>						
 						<div class="clearfix"></div>
 						</form>

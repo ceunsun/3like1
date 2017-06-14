@@ -36,15 +36,7 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="toolbar">
-							<div class="sort">
-								<div class="sort-by">
-									<label>Sort By</label>
-									<select>
-										<option value="">제목</option>
-										<option value="">작성자</option>
-									</select> <a href=""><img src="img/arrow2.gif" alt="" class="v-middle"></a>
-								</div>
-							</div>
+							
 							
 							<table class="table table-hover table-responsive table-striped board_table section-margin-top">
 								<thead>
@@ -55,7 +47,6 @@
 										<th>사번</th>
 										<th>사고 발생일</th>
 										<th>차량 상태</th>
-										<th>사고 확인</th>
 										<th></th>
 									</tr>
 								</thead>
@@ -63,12 +54,13 @@
 									<c:forEach var="aList" items="${aList}">
 									<tr>
 										<td>${aList.accidentno}</td>
-										<td><img src="img/${aList.carimg}" class="img-responsive img-rounded"></td>
+										<td width="150px"><img src="img/${aList.carimg}" class="img-responsive img-rounded"></td>
 										<td>${aList.carno}</td>
 										<td>${aList.memberno}</td>
 										<td>${aList.accidentdate}</td>
 										<td>${aList.carstatus}</td>
-										<td><div class="boardbtn">
+										<td>
+											<div class="boardbtn">
 												<input type="button" value="확인" onClick="location.href='accidentUpdate.do?carno=${aList.carno}'">
 											</div>
 										</td>
@@ -77,10 +69,6 @@
 								</tbody>
 							</table>
 							
-							<ul class="pagenation">
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-							</ul>
 							<div class="clearfix"></div>
 						</div>
 					

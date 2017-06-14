@@ -330,7 +330,6 @@ ul.pagenation li.active a, ul.pagenation li a:hover {
 	border-right: none;
 }
 table .boardbtn input[type=button]{
-	float: right;
 }
 .contact-map{
 	width:100%;
@@ -378,6 +377,9 @@ iframe {
 .reserve h5{
 	color: white;
 }
+.modal-title{
+	color: #816263;
+}
 /*http://cssdeck.com/labs/different-css3-box-shadows-effects*/
 /*==================================================
  * Effect 2
@@ -414,7 +416,7 @@ iframe {
 .tm-home-box-1 {
 	width: 300px;
 	height: 436px;
-	margin: 120px 20px;
+	margin: 90px 20px;
 }
 .tm-home-box-1-center {
 	margin: 0 auto;
@@ -484,7 +486,7 @@ iframe {
 .section-margin-top { margin-top: 45px; }
 hr { border-top: 1px solid #111010; }
 .tm-section-header {
-	margin-bottom: 45px;
+	margin-bottom: 25px;
 	overflow: hidden;
 	color: coral;
 }

@@ -53,8 +53,8 @@
 								 <c:forEach var="rList" items="${rList}">
 									<tr>
 										<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
-										<td>${rList.returnno}</td>
-										<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
+										<td >${rList.returnno}</td>
+										<td width="150px"><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
 										<td>${rList.carno}</td>
 										<td>${rList.memberno}</td>								
 										<td>${rList.returndate}</td>
@@ -65,10 +65,6 @@
 						</table>
 						<div class="boardbtn">
 							<input type="submit" value="확인">
-							<ul class="pagenation">
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-							</ul>
 						</div>						
 						<div class="clearfix"></div>
 					</div>

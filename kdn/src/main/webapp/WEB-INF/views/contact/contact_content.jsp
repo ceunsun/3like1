@@ -32,12 +32,7 @@
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom : 17,
 			center : a,
-			mapTypeControl: true,
-	        mapTypeControlOptions: {
-		        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		        mapTypeIds: ['satellite', 'terrain']
-	        },
-			
+			mapTypeId : "roadmap"
 		});
 
 		var marker1 = new google.maps.Marker({
@@ -75,7 +70,7 @@
 		});
 	}
 </script>
-<!-- <div class="container">
+<div class="container">
 	<div class="section-margin-top about-section">
 		<div class="row">
 			<div class="tm-section-header">
@@ -83,7 +78,7 @@
 					<hr>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
-					<h2 class="tm-section-title">대여 장소 위치</h2>
+					<h2 class="tm-section-title">대여 장소 위치 찾기</h2>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3">
 					<hr>
@@ -98,28 +93,38 @@
 		</div>
 	</div>
 </section>
-white bg
-<section class="section-padding-bottom tm-white-bg">
+<section class="section-padding-bottom section-margin-top tm-white-bg">
 	<div class="container">
 		<div class="row">
-			<div>
+			<div class="col-sm-5">
 				<h4><span class="glyphicon glyphicon-map-marker"></span> 주소</h4>
-				<p>(58322) 전라남도 나주시 빛가람로 661</p>
+				<ul>
+					<li><h5>(58322) 전라남도 나주시 빛가람로 661</h5></li>
+				</ul>
+				<br>
 				<h4><span class="glyphicon glyphicon-phone"></span> 연락처</h4>
-				<p>Tel. 061-931-7114</p>
-				<h4><span class="glyphicon glyphicon-road"></span> qjtm</h4>
-				<p><span id="bus">버스</span> 
-				<p>- 나주역 : 700(순환버스), 1160번
-				<p>- 나주버스터미널 : 700번
-				<p>- 광주역 : 100 ~ 109, 400, 402, 403, 404, 500, 501, 504, 505번
-				<p>- 광주 송정역 : 1160번
-				<p>- 광주공항 : 1160번</p>
+				<ul>
+					<li><h5>Tel. 061-931-7114</h5></li>
+				</ul>
 			</div>
+			<div class="col-sm-5">
+				<h4><span class="glyphicon glyphicon-road"></span> 버스</h4>
+				<ul>
+					<li><h6> 나주역 : 700(순환버스), 1160번</h6></li>
+					<li><h6> 나주버스터미널 : 700번</h6></li>
+					<li><h6> 광주역 : 100 ~ 109, 400, 402, 403, 404, 500, 501, 504, 505번</h6></li>
+					<li><h6> 광주 송정역 : 1160번</h6></li>
+					<li><h6> 광주공항 : 1160번</h6></li>
+				</ul>
+			</div>
+			<div class="col-sm-2">
+				
+			</div>			
 		</div>
 	</div>
-</section> -->
+</section>
 
-<section class="section-padding-bottom">
+<!-- <section class="section-padding-bottom">
 		<div class="container">
 			<div class="row">
 				<div class="tm-section-header section-margin-top">
@@ -129,7 +134,7 @@ white bg
 				</div>				
 			</div>
 			<div class="row">
-				<!-- contact form -->
+				contact form
 				<form action="#" method="post" class="tm-contact-form">
 					<div class="col-lg-6 col-md-6">
 						<div class="container">
@@ -164,4 +169,4 @@ white bg
 				</form>
 			</div>			
 		</div>
-	</section>
+	</section> -->

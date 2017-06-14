@@ -1490,7 +1490,8 @@ hr {
 }
 
 .h4, h4 {
-	font-size: 18px
+	font-size: 18px;
+	color: darkorange;
 }
 
 .h5, h5 {

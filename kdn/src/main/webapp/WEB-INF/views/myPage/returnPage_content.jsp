@@ -47,10 +47,10 @@
 								<c:forEach var="car" items="${cList}">
 									<tr>
 										<td>${car.rentno}</td>
-										<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
+										<td width="150px"><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
 										<td>${car.carno}</td>
 										<td>${car.rentdate}</td>
-										<td>${car.returndate}</td>									
+										<td width="150px">${car.returndate}</td>									
 									<td>
 										<div class="boardbtn">
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">

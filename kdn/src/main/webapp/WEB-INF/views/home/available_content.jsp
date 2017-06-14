@@ -89,7 +89,7 @@ $(function() {
 		var penalty = ${penalty};
 		
 		if (penalty < 200) {
-			alert('마일리지 거지라 안돼요!!');
+			alert('마일리지가 부족합니다!!');
 			return false;
 		}	
 		if(penalty >= 200){

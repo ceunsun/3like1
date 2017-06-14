@@ -48,7 +48,7 @@
 						<table class="table table-hover table-bordered table-responsive table-striped board_table">
 							<thead>
 								<tr>
-									<th>No</th><th>Date</th><th>Writer</th><th>CarNo</th>
+									<th>사고 번호</th><th>사고 발생일</th><th>신고자</th><th>차량 번호</th>
 								</tr>
 							</thead>
 							<tbody>

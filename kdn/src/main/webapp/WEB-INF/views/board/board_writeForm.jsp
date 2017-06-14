@@ -45,10 +45,6 @@
 									placeholder="글 제목을 입력하세요" />
 							</div>
 							<div class="form-group">
-								<input type="file" name="boardimage" id="boardimage" class="form-control"
-									placeholder="신고할 차량 이미지를 올려주세요" />
-							</div>
-							<div class="form-group">
 								<textarea name="content" id="content" class="form-control" rows="12"
 									placeholder="내용을 입력하세요"></textarea>
 							</div>
