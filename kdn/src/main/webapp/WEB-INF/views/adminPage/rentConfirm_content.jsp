@@ -56,15 +56,15 @@
 									<c:forEach var="rList" items="${rList}">
 										<tr>
 											<td><input type="checkbox" name='check' id='check' value='${rList.carno},${rList.memberno},${rList.startdate},${rList.enddate}'></td>	
-												<td>${rList.reserveno}</td>
-												<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
-												<td>${rList.carno}</td>
-												<td>${rList.memberno}</td>
-												<td>사원 이름</td>
-												<td>사원 이메일</td>
-												<td>${rList.startdate}</td>
-												<td>${rList.enddate}</td>
-												<td>${rList.carstatus}</td>
+											<td>${rList.reserveno}</td>
+											<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
+											<td>${rList.carno}</td>
+											<td>${rList.memberno}</td>
+											<td>사원 이름</td>
+											<td>사원 이메일</td>
+											<td>${rList.startdate}</td>
+											<td>${rList.enddate}</td>
+											<td>${rList.carstatus}</td>
 										</tr>
 									</c:forEach>
 								</tbody>
