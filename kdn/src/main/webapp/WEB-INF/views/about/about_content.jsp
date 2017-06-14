@@ -25,13 +25,13 @@
 				<img src="img/how.jpeg" alt="image"/>
 					<div class="flex-caption">
 						<h2 class="slider-title">이용 후 대여한 한전KDN으로 반납해주세요</h2>
-						<h3 class="slider-subtitle">모든 차량 반납은 대여한 한전KDN으로 하셔야 합니다.</h3>
+						<h4 class="slider-subtitle">모든 차량 반납은 대여한 한전KDN으로 하셔야 합니다.</h4>
 						<br>
 						<h2 class="slider-title">반납 일자를 준수해주세요</h2>
-						<h3 class="slider-subtitle">다음 사용자를 위해 반납일자를 꼭 지켜주세요.</h3>
+						<h4 class="slider-subtitle">다음 사용자를 위해 반납일자를 꼭 지켜주세요.</h4>
 						<br>
 						<h2 class="slider-title">연료가 50%이상 남았는지 확인해주세요</h2>
-						<h3 class="slider-subtitle">다음 사용자를 위해 연료가 충분히 남았는지 확인해주세요.</h3>
+						<h4 class="slider-subtitle">다음 사용자를 위해 연료가 충분히 남았는지 확인해주세요.</h4>
 						<br>
 					</div>
 				</li>

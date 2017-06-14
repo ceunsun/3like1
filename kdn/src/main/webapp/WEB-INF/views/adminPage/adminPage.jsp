@@ -15,8 +15,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="css/flexslider.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<!-- <link href="css/templatemo-style.css" rel="stylesheet"> -->
+	<link href="css/templatemo-style.css" rel="stylesheet">
 	
 	<!-- Javascript -->
 	<!-- jQuery -->
@@ -32,6 +31,9 @@
 	<script type="text/javascript" src="js/templatemo-script.js"></script>
 	<script type="text/javascript" src="js/templatemo.js"></script>
 	<script type="text/javascript" src="js/google_map.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/drilldown.js"></script>
 </head>
 <body class="tm-gray-bg">
 	<!-- Header -->

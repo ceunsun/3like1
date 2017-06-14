@@ -32,6 +32,11 @@ public class CarDaoImpl implements CarDao {
 	}
 	
 	@Override
+	public int countEvent(String carstatus) {
+		return sql.selectOne("car.countEvent", carstatus);
+	}
+	
+	@Override
 	public List<Car> availableSearch(HashMap<String, Object> map) {
 		return sql.selectList("car.availableSearch", map);
 	}

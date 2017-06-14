@@ -531,7 +531,7 @@ hr { border-top: 1px solid #111010; }
 	width: 60px;
 	height: 60px;
 	font-size: 1.4em;
-	color: tomato;
+	color: crimson;
 }
 .tm-home-box-2-description {
 	display: inline-block;
@@ -768,7 +768,7 @@ hr { border-top: 1px solid #111010; }
   bottom: 0;
   font-size: 14px;
   line-height: 18px;
-  margin-top: 110px;
+  margin-top: 50px;
 }
 .flexslider.flexslider-banner .slides img { 
 	display: block;
@@ -787,7 +787,7 @@ hr { border-top: 1px solid #111010; }
 	max-width: 528px;
 	margin-top: 70px;
 	margin-bottom: 70px;
-	height: 490px;
+	height: 420px;
 }
 .slider-title {
 	/* font-style: italic; */
@@ -795,11 +795,13 @@ hr { border-top: 1px solid #111010; }
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	font-size: 20px;
+	color: steelblue;
 }
 .slider-subtitle {
 	font-size: 15px;
 	margin-bottom: 25px;
 	text-align: left;
+	color: black;
 }
 .slider-description {
 	color: #B1B1B1;

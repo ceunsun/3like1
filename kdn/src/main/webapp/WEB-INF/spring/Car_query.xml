@@ -19,6 +19,17 @@
 		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
 	</select>
 	
+	<select id="countEvent" parameterType="String" resultType="int" >
+		select count(*) count
+		from car
+		where carstatus=#{carstatus}
+	</select>
+	
+	<select id="countReservation" resultType="int" >
+		select count(*) count
+		from reservation
+	</select>
+	
 	<select id="availableSearch" parameterType="HashMap" resultType="car">
 		SELECT c.carno carno, c.cartype cartype, c.carstatus carstatus, 
 			   c.carimg carimg, c.carname carname, a.startdate, a.enddate
