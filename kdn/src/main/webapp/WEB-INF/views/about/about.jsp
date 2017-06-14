@@ -15,7 +15,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="css/flexslider.css" rel="stylesheet">
-	<link href="css/templatemo-style.css" rel="stylesheet">
+	<link href="css/templatemo-style.css?ver=3" rel="stylesheet">
 	
 	<!-- Javascript -->
 	<!-- jQuery -->

@@ -57,9 +57,9 @@
 		<div class="row">
 			<!-- contact form -->
 			<form action="#" method="post" class="tm-contact-form">
-				<div class="col-lg-6 col-md-6">
-					</div>
-					<div class="contact-social">
+<!--				<div class="col-lg-6 col-md-6">
+					
+ 					<div class="contact-social">
 						<a href="#" class="tm-social-icon tm-social-facebook"><i
 							class="fa fa-facebook"></i></a> <a href="#"
 							class="tm-social-icon tm-social-dribbble"><i
@@ -70,8 +70,8 @@
 							class="fa fa-instagram"></i></a> <a href="#"
 							class="tm-social-icon tm-social-google-plus"><i
 							class="fa fa-google-plus"></i></a>
-					</div>
-				</div>
+					</div> 
+				</div>-->
 				<div class="col-lg-6 col-md-6 tm-contact-form-input">
 					<div class="form-group">
 						<input type="text" id="contact_name" class="form-control"
