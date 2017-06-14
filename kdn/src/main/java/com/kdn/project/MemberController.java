@@ -143,5 +143,23 @@ public class MemberController {
 		return "redirect:returnPage.do";
 	}
 	
+	@RequestMapping(value= "delayUpdate.do", method = RequestMethod.GET)
+	public String delayUpdate(Model model, HttpSession session, String returndate,int carno){
+		System.out.println("================");
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		
+		map.put("returndate", returndate);
+		map.put("carno", carno);
+		System.out.println(returndate);
+		System.out.println(carno);
+		
+		
+		carService.delayUpdate(carno);
+		carService.delayDate(map);
+		
+		return "redirect:returnPage.do";
+	}
+	
 	
 }

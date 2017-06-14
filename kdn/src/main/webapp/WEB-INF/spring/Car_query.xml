@@ -138,4 +138,12 @@
 		WHERE carno=#{carno}
 	</update>
 	
+	<update id="delayDate"		parameterType="HashMap">
+		UPDATE rent
+		SET returndate=#{returndate}
+		WHERE carno=#{carno}
+	</update>
+	
+
+	
 </mapper>

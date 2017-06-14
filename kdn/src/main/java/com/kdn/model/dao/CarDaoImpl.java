@@ -108,4 +108,12 @@ public class CarDaoImpl implements CarDao {
 	public void returnConfirm(int carno) {
 		sql.update("car.returnConfirm", carno);
 	}
+	@Override
+	public void delayUpdate(int carno) {
+		sql.update("car.delayUpdate", carno);		
+	}
+	@Override
+	public void delayDate(HashMap<String, Object> map) {
+		sql.update("car.delayDate", map);		
+	}
 }
