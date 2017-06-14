@@ -13,6 +13,7 @@ import com.kdn.model.domain.Return;
 public interface CarService {
 	public abstract Car search(int carno); // 차량 번호에 해당하는 차량 정보를 추출
 	public abstract int getCount(HashMap<String, Object> map); // 페이징을 위한 쿼리 결과물 개수를 조회
+	public abstract int countEvent(String carstatus);
 	public abstract List<Car> availableSearch(HashMap<String, Object> map); // 예약 가능한 차 조회
 	public abstract List<Car> returnSearch(String carstatus); // 반납 신청 조회
 	public abstract List<Car> rentSearch(); // 대여 조회

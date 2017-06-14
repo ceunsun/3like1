@@ -47,6 +47,19 @@ public class CarServiceImpl implements CarService {
 		return count;
 	}
 	
+
+	@Override
+	public int countEvent(String carstatus) {
+		int count=0;
+		
+		try {		
+			count = dao.countEvent(carstatus);
+		} catch (Exception e) {
+			throw new UpdateException("DB 서버 오류");
+		}
+		return count;
+	}
+	
 	@Override
 	public List<Car> availableSearch(HashMap<String, Object> map) {
 		List<Car> aList = null;

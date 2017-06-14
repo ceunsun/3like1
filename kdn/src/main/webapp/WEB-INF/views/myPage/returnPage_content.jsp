@@ -54,6 +54,7 @@
 									<td>
 										<div class="boardbtn">
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
+											<input type="submit" value="연장" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
 										</div>
 									</td>
 									</tr>

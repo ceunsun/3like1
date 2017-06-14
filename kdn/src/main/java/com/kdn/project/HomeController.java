@@ -70,10 +70,16 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "adminPage.do", method = RequestMethod.GET)
 	public String adminPage(Model model) {
-		List<Car> rList = carService.reserveSearch("예약대기");
+		int reserveWait = carService.countEvent("예약대기");
+		int reserveConfirm = carService.countEvent("대여 중");
+		int returnWait = carService.countEvent("반납신청");
+		int accidentConfirm = carService.countEvent("사고차량");
 		
-		model.addAttribute("rList", rList);
-				
+		model.addAttribute("reserveWait", reserveWait);
+		model.addAttribute("reserveConfirm", reserveConfirm);
+		model.addAttribute("returnWait", returnWait);
+		model.addAttribute("accidentConfirm", accidentConfirm);
+		
 		return "adminPage/adminPage";
 	}
 }
