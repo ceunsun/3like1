@@ -84,7 +84,7 @@ public class AdminController {
 	@RequestMapping(value = "reserveContent.do", method = RequestMethod.GET)
 	public String reserveContent(Model model) {
 		List<Car> rList = carService.reserveSearch("예약대기");
-		
+				
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "reserveConfirm_content");
 		
@@ -146,7 +146,7 @@ public class AdminController {
 	// adminPage_sidebar.jsp 반납 대기 신청 관리
 	@RequestMapping(value = "renewContent.do", method = RequestMethod.GET)
 	public String renewContent(Model model) {
-		List<Car> rList = carService.returnSearch("반납대기"); 
+		List<Car> rList = carService.searchReturn(); 
 		
 		model.addAttribute("rList", rList);
 		model.addAttribute("content", "renewConfirm_content");
@@ -179,5 +179,18 @@ public class AdminController {
 			carService.returnConfirm(Integer.parseInt(rList[i]));
 		}	
 		return "redirect:returnContent.do";
+	}
+	
+	@RequestMapping(value = "renewConfirm.do", method = RequestMethod.POST)
+	public String renewConfirm(HttpServletRequest request, Model model) {
+		String[] rList = request.getParameterValues("check");
+		System.out.println("==============");
+		for(int i=0; i<rList.length; i++){	
+			System.out.println(rList[i]);
+			carService.renting(Integer.parseInt(rList[i]));
+
+		}	
+	
+		return "redirect:renewContent.do";
 	}
 }

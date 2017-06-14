@@ -44,9 +44,7 @@
 									<th>반납 번호</th>
 									<th>차량 이미지</th>
 									<th>차량 번호</th>
-									<th>사원 이름</th>
-									<th>사원 전화번호</th>
-									<th>사원 이메일</th>
+									<th>사원 번호</th>
 									<th>반납일</th>
 									<th>차량 상태</th>
 								</tr>
@@ -58,9 +56,7 @@
 										<td>${rList.returnno}</td>
 										<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
 										<td>${rList.carno}</td>
-										<td>${rList.memberno}</td>
-										<td>사원 전화번호</td>
-										<td>사원 이메일</td>									
+										<td>${rList.memberno}</td>								
 										<td>${rList.returndate}</td>
 										<td>${rList.carstatus}</td>
 									</tr>

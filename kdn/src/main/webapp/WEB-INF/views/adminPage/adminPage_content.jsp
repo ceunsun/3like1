@@ -87,9 +87,10 @@ $(function () {
 								<h3>오늘의 할일  (To-Do List)</h3>
 							</div>
 						<div id="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-						<button id="plain">Plain</button>
-						<button id="inverted">Inverted</button>
-						<button id="polar">Polar</button>						
+						<div class="boardbtn">
+							<button id="plain">Plain</button>
+							<button id="inverted">Inverted</button>
+						</div>						
 					</div>
 				</div>				
 			</div>

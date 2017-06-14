@@ -32,7 +32,7 @@
 	<script type="text/javascript" src="js/templatemo.js"></script>
 	<script type="text/javascript" src="js/google_map.js"></script>
 </head>
-<body class="tm-gray-bg">
+<body>
 	<!-- Header -->
 	<header>
 		<!-- Header Nav -->

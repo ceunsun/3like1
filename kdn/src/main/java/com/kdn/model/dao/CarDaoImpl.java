@@ -116,4 +116,8 @@ public class CarDaoImpl implements CarDao {
 	public void delayDate(HashMap<String, Object> map) {
 		sql.update("car.delayDate", map);		
 	}
+	@Override
+	public List<Car> searchReturn() {
+		return sql.selectList("car.searchReturn");
+	}
 }

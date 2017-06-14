@@ -132,6 +132,21 @@
 		VALUES(returnno_seq.nextval, #{returndate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
 	
+	<!-- 반납 연장 신청 보기 -->
+	<select id="searchReturn" resultType="car" >
+		SELECT c.carno carno, 
+			   c.cartype cartype, 
+			   c.carstatus carstatus, 
+			   c.carimg carimg, 
+			   c.carname carname, 
+			   r.memberno memberno, 
+			   TO_CHAR(r.rentdate, 'yyyy/mm/dd') rentdate, 
+			   TO_CHAR(r.returndate, 'yyyy/mm/dd') returndate, 
+			   r.rentno rentno
+		FROM car c, rent r
+		WHERE c.carno=r.carno and c.carstatus='반납연장신청'
+	</select>
+	
 	<update id="delayUpdate"		parameterType="int">
 		UPDATE car
 		SET carstatus='반납연장신청'

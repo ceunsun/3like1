@@ -236,4 +236,17 @@ public class CarServiceImpl implements CarService {
 			e.printStackTrace();
 		}			
 	}
+
+	@Override
+	public List<Car> searchReturn() {
+		List<Car> rList = null;
+		
+		try {				
+			rList = dao.searchReturn();			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return rList;
+	}
 }

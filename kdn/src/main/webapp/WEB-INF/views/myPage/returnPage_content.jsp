@@ -47,14 +47,14 @@
 								<c:forEach var="car" items="${cList}">
 									<tr>
 										<td>${car.rentno}</td>
-									<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
-									<td>${car.carno}</td>
-									<td>${car.rentdate}</td>
-									<td>${car.returndate}</td>									
+										<td><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
+										<td>${car.carno}</td>
+										<td>${car.rentdate}</td>
+										<td>${car.returndate}</td>									
 									<td>
 										<div class="boardbtn">
 											<input type="submit" value="반납" onClick="location.href='returnUpdate.do?carno=${car.carno}&returndate=${car.returndate }'">
-											<input type="submit" value="연장" onClick="location.href='delayUpdate.do?carno=${car.carno}&returndate=20170707'">
+											<input type="submit" value="연장" data-toggle="modal" data-target="#renewModal">
 										</div>
 									</td>
 									</tr>
@@ -68,3 +68,10 @@
 		</div>		
 	</div>
 </section>
+<div class="modal fade" id="renewModal" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<jsp:include page="renew_modal.jsp"></jsp:include>
+		</div>
+	</div>
+</div>

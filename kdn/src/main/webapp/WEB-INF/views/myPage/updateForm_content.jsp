@@ -37,30 +37,30 @@
 							<table class="table table-hover table-responsive table-striped board_table section-margin-top">
 								<tbody>
 									<tr>
-										<td>사 번</td>
+										<th>사 번</th>
 										<td>
 											<input type="hidden" class="form-control" name="memberno" id="memberno" value="${member.memberno}">
 											${member.memberno}
 										</td>
 									</tr>
 									<tr>
-										<td>이 름</td>
+										<th>이 름</th>
 										<td><input type="text" class="form-control" name="name" id="name" placeholder="${member.name}"></td>
 									</tr>
 									<tr>
-										<td>비밀번호</td>
+										<th>비밀번호</th>
 										<td><input type="password" class="form-control" name="pwd" id="pwd" placeholder="..."></td>
 									</tr>
 									<tr>
-										<td>부 서</td>
+										<th>부 서</th>
 										<td><input type="text" class="form-control" name="dept" id="dept" placeholder="${member.dept}"></td>
 									</tr>
 									<tr>
-										<td>전화번호</td>
+										<th>전화번호</th>
 										<td><input type="text" class="form-control" name="mobile" id="mobile" placeholder="${member.mobile}"></td>
 									</tr>
 									<tr>
-										<td>이메일</td>
+										<th>이메일</th>
 										<td><input type="email" class="form-control" name="email" id="email" placeholder="${member.email}"></td>
 									</tr>
 								</tbody>

@@ -44,9 +44,7 @@
 										<th>예약 번호</th>
 										<th>차량 이미지</th>
 										<th>차량 번호</th>
-										<th>사원 이름</th>
-										<th>사원 전화번호</th>
-										<th>사원 이메일</th>
+										<th>사원 번호</th>
 										<th>대여일</th>
 										<th>반납 예정일</th>
 										<th>차량 상태</th>
@@ -56,15 +54,13 @@
 									<c:forEach var="rList" items="${rList}">
 										<tr>
 											<td><input type="checkbox" name='check' id='check' value='${rList.carno},${rList.memberno},${rList.startdate},${rList.enddate}'></td>	
-												<td>${rList.reserveno}</td>
-												<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
-												<td>${rList.carno}</td>
-												<td>${rList.memberno}</td>
-												<td>사원 이름</td>
-												<td>사원 이메일</td>
-												<td>${rList.startdate}</td>
-												<td>${rList.enddate}</td>
-												<td>${rList.carstatus}</td>
+											<td>${rList.reserveno}</td>
+											<td><img src="img/${rList.carimg}" class="img-responsive img-rounded"></td>
+											<td>${rList.carno}</td>
+											<td>${rList.memberno}</td>
+											<td>${rList.startdate}</td>
+											<td>${rList.enddate}</td>
+											<td>${rList.carstatus}</td>
 										</tr>
 									</c:forEach>
 								</tbody>

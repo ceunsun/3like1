@@ -35,44 +35,43 @@
 							</ul>
 							<div class="clearfix"></div>
 						</div>
+						<form action="renewConfirm.do" method="post">
 						<table class="table table-hover table-responsive table-striped board_table section-margin-top">
 							<thead>
 								<tr>
+									<th></th>
 									<th>신청 번호</th>
 									<th>차량 이미지</th>
 									<th>차량 번호</th>
-									<th>사원 이름</th>
-									<th>사원 전화번호</th>
-									<th>사원 이메일</th>
+									<th>사원 번호</th>
 									<th>대여 예정일</th>
 									<th>반납 예정일</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="rList" items="${rList}">
+								<c:forEach var="car" items="${rList}">
 									<tr>
-										<td><input type="checkbox" name='check' id='check' value=''></td>	
+										<td><input type="checkbox" name='check' id='check' value='${car.carno}'></td>	
 										<td>신청 번호</td>
-										<td>차량 이미지</td>
-										<th>차량 번호</th>
-										<th>사원 이름</th>
-										<th>사원 전화번호</th>
-										<th>사원 이메일</th>
-										<th>대여 예정일</th>
-										<th>반납 예정일</th>
+										<td>${car.carimg}</td>
+										<th>${car.carno}</th>
+										<th>${car.memberno}</th>
+										<th>${car.rentdate}</th>
+										<th>${car.returndate}</th>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 						<div class="boardbtn">
-							<a href="writeForm.do"><input type="button" value="확인"></a>
-							<a href="writeForm.do"><input type="button" value="취소"></a>
+							<input type="submit" value="확인">
+							<input type="reset" value="취소">
 							<ul class="pagenation">
 								<li class="active"><a href="#">1</a></li>
 								<li><a href="#">2</a></li>
 							</ul>
 						</div>						
 						<div class="clearfix"></div>
+						</form>
 					</div>
 				</div>
 				<jsp:include page="adminPage_sidebar.jsp" />
