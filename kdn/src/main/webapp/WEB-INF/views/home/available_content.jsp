@@ -45,7 +45,7 @@
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom : 17,
 			center : a,
-			mapTypeId : "satellite"			
+			mapTypeId : "roadmap"			
 		});
 
 		var marker1 = new google.maps.Marker({

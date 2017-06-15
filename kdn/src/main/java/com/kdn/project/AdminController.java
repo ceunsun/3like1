@@ -95,6 +95,8 @@ public class AdminController {
 	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
 	public String reserveConfirm(HttpServletRequest request, Model model) {
 		String[] rList = request.getParameterValues("check");
+		
+		
 				
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);

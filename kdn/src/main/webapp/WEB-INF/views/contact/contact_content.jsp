@@ -30,7 +30,7 @@
 		var labelIndex = 0;
 
 		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom : 17,
+			zoom : 18,
 			center : a,
 			mapTypeId : "roadmap"
 		});

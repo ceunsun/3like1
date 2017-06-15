@@ -188,7 +188,7 @@ $(function() {
 	</div>
 </div>
 <div class="modal fade" id="carModal" role="dialog">
-	<div class="modal-dialog modal-lg">
+	<div class="modal-dialog modal-md">
 		<div class="modal-content">
 			<jsp:include page="../include/car_modal.jsp"></jsp:include>
 		</div>

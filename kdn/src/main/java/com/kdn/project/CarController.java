@@ -54,10 +54,10 @@ public class CarController {
 	@RequestMapping(value = "reserve.do", method = RequestMethod.POST)
 	public String reserve(int carno, String startdate, String enddate, String place, HttpSession session, Model model) {		
 		String memberno = (String) session.getAttribute("memberno");
-		HashMap<String, Object> map = new HashMap<String, Object>();
+		/*HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("memberno", memberno);
-		map.put("penalty", 200);
+		map.put("penalty", 200);*/
 		
 		Reservation reservation = new Reservation(startdate, enddate, carno, memberno);
 		
@@ -66,11 +66,11 @@ public class CarController {
 		
 		carService.reserve(reservation);
 		carService.reserveStatus(carno);
-		memberService.getPenalty(map);
+		//memberService.getPenalty(map);
 		
 		Member m = memberService.search(memberno);
 				
-		session.setAttribute("penalty", (m.getPenalty()));
+		//session.setAttribute("penalty", (m.getPenalty()));
 		
 		return "redirect:home.do";
 	}

@@ -29,8 +29,6 @@
 		});
 	});
 </script>
-<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-
 <div class="modal-body">
 	<div class="modal-body">
 		<div class="row tm-white-bg">
@@ -91,19 +89,28 @@
 					</div>
 					<br>
 					<div class="form-group">
-						<div class='input-group date' id='datetimepicker1'>
+						<!-- <div class='input-group date' id='datetimepicker1'>
 							<input type='text' class="form-control" name="startdate"
 								placeholder="대여일을 입력해 주세요" /> <span class="input-group-addon">
 								<span class="fa fa-calendar"></span>
 							</span>
+							
+						</div> -->
+						<div class='input-group'>
+							<input id="startdate" name="startdate" class="form-control" type="date" placeholder="대여일을 입력해 주세요">
+							<span class="input-group-addon"><span class="fa fa-calendar"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<div class='input-group date' id='datetimepicker2'>
+						<!-- <div class='input-group date' id='datetimepicker2'>
 							<input type='text' class="form-control" name="enddate"
 								placeholder="반납일을 입력해 주세요" /> <span class="input-group-addon">
 								<span class="fa fa-calendar"></span>
 							</span>
+						</div> -->
+						<div class='input-group'>
+					<input id="enddate" name="enddate" class="form-control" type="date" placeholder="반납일을 입력해 주세요">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span>
 						</div>
 					</div>
 					<input type="hidden" name="car" id="car" value="${car.carname}">

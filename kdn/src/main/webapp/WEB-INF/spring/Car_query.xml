@@ -16,7 +16,7 @@
       		  FROM reservation 
       		  WHERE NOT (to_char(startdate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate}) 
       			    AND NOT (to_char(enddate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate})) a, car c
-		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
+		WHERE c.carno(+)=a.carno and c.carname=#{carname} and c.carstatus like '예약%'
 	</select>
 	
 	<select id="countEvent" parameterType="String" resultType="int" >
@@ -37,7 +37,7 @@
       		  FROM reservation 
       		  WHERE NOT (to_char(startdate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate}) 
       			    AND NOT (to_char(enddate, 'yyyy/mm/dd') BETWEEN #{startdate} AND #{enddate})) a, car c
-		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
+		WHERE c.carno(+)=a.carno and c.carname=#{carname} and c.carstatus like '예약%'
 	</select>
 	
 	<select id="returnSearch" parameterType="String" resultType="car">
