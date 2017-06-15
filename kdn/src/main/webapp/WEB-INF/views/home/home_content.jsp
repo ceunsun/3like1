@@ -16,6 +16,24 @@ $(function() {
 	});
 });
 </script>
+<style>
+.hyundai{
+	color: blue;
+}
+.chevrolet{
+	color: darkorange;
+}
+.tesla{
+	color: blue;
+}
+.heavy{
+	color: midnightblue;
+}
+.lightHeavy{
+	color: darkcyan;
+}
+
+</style>
 <div class=row>
 	<div class="col-sm-3">
 		<div class="tm-home-box-1">
@@ -96,11 +114,12 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-01.png" alt="image" width=253px height=210px
+						<img src="img/malibu.jpg" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">제조사 : 쉐보레<br><br>차종 : 중형차<br><br>연비 : 10.8km/ℓ~13.0km/ℓ </p>
+						<p class="tm-home-box-3-description">제조사 : <span class="brand chevrolet">쉐보레</span><br><br>
+						차종 : <span class="heavy">중형차</span><br><br>연비 : 10.8km/ℓ~13.0km/ℓ </p>
 						<div class="tm-home-box-2-container">
 							<a href="carModal.do?carno=100011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
@@ -114,11 +133,12 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-02.png" alt="image" width=253px height=210px
+						<img src="img/sonata.jpg" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">제조사 : 현대자동차<br><br>차종 : 중형차<br><br>연비 : 10.7km/ℓ~16.1km/ℓ </p>
+						<p class="tm-home-box-3-description">제조사 : <span class="brand hyundai">현대자동차</span><br><br>
+						차종 : <span class="heavy">중형차</span><br><br>연비 : 10.7km/ℓ~16.1km/ℓ </p>
 						<div class="tm-home-box-2-container">
 							<a href="carModal.do?carno=100001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
@@ -135,7 +155,8 @@ $(function() {
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">제조사 : 현대자동차<br><br>차종 : 준중형차<br><br>1회 충전 주행가능거리 : 191km </p>
+						<p class="tm-home-box-3-description">제조사 : <span class="brand hyundai">현대자동차</span><br><br>
+						차종 : <span class="lightHeavy">준중형차</span><br><br>1회 충전 주행가능거리 : 191km </p>
 						<div class="tm-home-box-2-container">
 							<a href="carModal.do?carno=200001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
@@ -152,7 +173,8 @@ $(function() {
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">제조사 : 테슬라<br><br>차종 : 중형차<br><br>1회 충전 주행가능거리 : 470km </p>
+						<p class="tm-home-box-3-description">제조사 : <span class="brand tesla">테슬라</span><br><br>
+						차종 : <span class="heavy">중형차</span><br><br>1회 충전 주행가능거리 : 470km </p>
 						<div class="tm-home-box-2-container">
 							<a href="carModal.do?carno=200011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal"> 
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 

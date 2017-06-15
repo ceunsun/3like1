@@ -52,7 +52,7 @@ public class CarController {
 	
 	// available_content.jsp	
 	@RequestMapping(value = "reserve.do", method = RequestMethod.POST)
-	public String reserve(int carno, String startdate, String enddate, HttpSession session, Model model) {		
+	public String reserve(int carno, String startdate, String enddate, String place, HttpSession session, Model model) {		
 		String memberno = (String) session.getAttribute("memberno");
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
@@ -62,12 +62,14 @@ public class CarController {
 		Reservation reservation = new Reservation(startdate, enddate, carno, memberno);
 		
 		System.out.println(reservation);
+		System.out.println(place);
 		
 		carService.reserve(reservation);
-		memberService.getPenalty(map);
-		Member m = memberService.search(memberno);
 		carService.reserveStatus(carno);
+		memberService.getPenalty(map);
 		
+		Member m = memberService.search(memberno);
+				
 		session.setAttribute("penalty", (m.getPenalty()));
 		
 		return "redirect:home.do";

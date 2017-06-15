@@ -9,7 +9,8 @@ public class Car {
 	private String enddate;
 	private int reserveno;
 	private String memberno;
-	private String startdate; 
+	private String startdate;
+	private String place;
 	private int rentno;	
  	private String rentdate;	
  	private String returndate;
@@ -30,7 +31,7 @@ public class Car {
 	
 	public Car(String carno, String cartype, String carstatus, String carimg,
 			String carname, String memberno, String startdate, String enddate,
-			int reserveno) {
+			int reserveno, String place) {
 		this.carno = carno;
 		this.cartype = cartype;
 		this.carstatus = carstatus;
@@ -40,6 +41,7 @@ public class Car {
 		this.startdate = startdate;
 		this.enddate = enddate;
 		this.reserveno = reserveno;
+		this.place = place;
 	}
 	
 	public Car(String carno, String cartype, String carstatus, String carimg,
@@ -127,7 +129,15 @@ public class Car {
 	public void setReserveno(int reserveno) {
 		this.reserveno = reserveno;
 	}
-	
+		
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
 	public int getRentno() {
 		return rentno;
 	}

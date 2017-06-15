@@ -14,7 +14,7 @@
 }
 
 .accent{
-	color: darkorange;
+	color: red;
 }
 
 #click{
@@ -72,14 +72,17 @@
 		google.maps.event.addDomListener(marker1, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
 			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">A 대여소</span>';
+			document.getElementById("hidden").innerHTML = '<input type="hidden" name="place" id="place" value="a"/>"';
 		});
 		google.maps.event.addDomListener(marker2, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
 			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">B 대여소</span>';
+			document.getElementById("hidden").innerHTML = '<input type="hidden" name="place" id="place" value="b"/>';
 		});
 		google.maps.event.addDomListener(marker3, 'click', function() {
 			document.getElementById("click").innerHTML = ' ';
 			document.getElementById("rentPlace").innerHTML = '대여 장소 : <span class="accent">C 대여소</span>';
+			document.getElementById("hidden").innerHTML = '<input type="hidden" name="place" id="place" value="c"/>';
 		});
 	}
 </script>
@@ -120,7 +123,7 @@ $(function() {
 				<div class="col-lg-6 col-md-6 tm-contact-form-input">
 					<div class="availableCar">
 					<table class="table table-hover table-responsive table-striped board_table available-table">
-						<span><h4>총 <span class="accent">${total}대</span> 예약 가능 합니다.</h4></span>
+						<span><h5>총 <span class="accent">${total}대</span> 예약 가능 합니다.</h5></span>
 						<thead>
 							<tr>
 								<th><span>대여 일시 :</span></th><td></span>${startdate}</td>
@@ -148,13 +151,9 @@ $(function() {
 						</tbody>
 					</table>
 					</div>
-			</form>
-			<input type="hidden" name="startdate" value="${startdate}" /> <input type="hidden" name="enddate" value="${enddate}" />
-			<ul class="pagenation">
-				<c:forEach var='i' begin='1' end='${totalPage}'>
-					<li class="active"><a href="available.do?startdate=${startdate}&enddate=${enddate}&car=${car.carname}&pageNo=${i}">${i}</a></li>
-				</c:forEach>
-			</ul>
+					<span id="hidden"></span>
+					<input type="hidden" name="startdate" value="${startdate}" /> <input type="hidden" name="enddate" value="${enddate}" />
+			</form>			
 		</div>
 		<div class="col-lg-6 col-md-6">
 			<div>

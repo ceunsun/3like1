@@ -40,12 +40,6 @@
 		WHERE c.carno=a.carno(+) and c.carstatus like '예약%' and c.carname=#{carname}
 	</select>
 	
-	<!-- <select id="availableSearch" parameterType="String" resultType="car">
-		SELECT *
-		FROM car
-		WHERE carname = #{carname} and carstatus like '예약%'
-	</select> -->
-	
 	<select id="returnSearch" parameterType="String" resultType="car">
 		SELECT c.carno carno, 
 			   c.cartype cartype, 
@@ -68,7 +62,8 @@
 			   r.memberno memberno, 
 			   TO_CHAR(r.startdate, 'yyyy/mm/dd') startdate, 
 			   TO_CHAR(r.enddate, 'yyyy/mm/dd') enddate, 
-			   r.reserveno reserveno
+			   r.reserveno reserveno,
+			   r.place place
 		FROM car c, reservation r
 		WHERE c.carno = r.carno and c.carstatus=#{carstatus}
 	</select>
@@ -106,7 +101,8 @@
 	
 	<insert id="reserve" parameterType="reservation">		
 		INSERT INTO reservation 
-		VALUES(reservation_seq.nextval, #{startdate}, #{enddate}, #{carno}, #{memberno})
+		VALUES(reservationno_seq.nextval, #{startdate:VARCHAR}, #{enddate:VARCHAR}, 
+			   #{carno:INTEGER}, #{memberno:VARCHAR}, #{place:VARCHAR})
 	</insert>
 	
 	<update id="reserveStatus" parameterType="int">
@@ -158,7 +154,4 @@
 		SET returndate=#{returndate}
 		WHERE carno=#{carno}
 	</update>
-	
-
-	
 </mapper>

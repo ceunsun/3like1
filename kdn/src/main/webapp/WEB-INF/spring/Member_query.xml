@@ -59,7 +59,8 @@
 			   r.memberno memberno, 
 			   TO_CHAR(r.startdate, 'yyyy/mm/dd') startdate, 
 			   TO_CHAR(r.enddate, 'yyyy/mm/dd') enddate, 
-			   r.reserveno reserveno
+			   r.reserveno reserveno,
+			   r.place place			   
 		FROM car c, reservation r
 		WHERE c.carno = r.carno and r.memberno = #{memberno} and NOT carstatus = '예약가능'
 	</select>
