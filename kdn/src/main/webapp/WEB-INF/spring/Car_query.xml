@@ -7,7 +7,7 @@
 	<select id="search" parameterType="int" resultType="car">
 		SELECT *
 		FROM car
-		WHERE carname = #{carname}
+		WHERE carno = #{carno}
 	</select>
 	
 	<select id="getCount" parameterType="HashMap" resultType="int" >

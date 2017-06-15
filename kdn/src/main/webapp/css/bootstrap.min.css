@@ -6882,7 +6882,8 @@ button.close {
 }
 
 .carousel {
-	position: relative
+	position: relative;
+	width: 73%;
 }
 
 .carousel-inner {

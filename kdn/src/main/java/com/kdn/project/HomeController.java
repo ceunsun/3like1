@@ -65,9 +65,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "carModal.do", method = RequestMethod.GET)
-	public String carModal(Model model, String carname, String cartype) {
-		model.addAttribute("carname", carname);
-		model.addAttribute("cartype", cartype);
+	public String carModal(Model model, String carno) {
+		System.out.println(Integer.parseInt(carno));
+		Car c = carService.search(Integer.parseInt(carno));
+		
+		model.addAttribute("car", c);
 		
 		return "include/car_modal";
 	}

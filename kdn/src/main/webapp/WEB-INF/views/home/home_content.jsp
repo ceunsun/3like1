@@ -39,7 +39,7 @@ $(function() {
 								<div class="form-group">
 									<select class="form-control" id="car" name="car">
 										<option value="">-- 차종 --</option>
-										<option value="쏘나타">쏘나타</option>
+										<option value="소나타">소나타</option>
 										<option value="말리부">말리부</option>
 										<option value="아이오닉">아이오닉</option>
 										<option value="모델S">모델S</option>
@@ -96,18 +96,16 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-01.png" alt="image" width=240px height=210px
+						<img src="img/car-01.png" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">Proin gravida nibhvell
-							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-							auctor, nisi elit consequat ipsum</p>
+						<p class="tm-home-box-3-description">제조사 : 쉐보레<br><br>차종 : 중형차<br><br>연비 : 10.8km/ℓ~13.0km/ℓ </p>
 						<div class="tm-home-box-2-container">
-							<a href="carModal.do?carname=모델S" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carno=100011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-							<a href="carModal.do?carname=모델S" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-								<span class="tm-home-box-2-description box-3">쉐보레 말리부</span>
+							<a href="carModal.do?carno=100011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+								<span class="tm-home-box-2-description box-3">말리부</span>
 							</a>
 						</div>
 					</div>
@@ -116,18 +114,16 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-02.png" alt="image" width=240px height=210px
+						<img src="img/car-02.png" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">Proin gravida nibhvell
-							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-							auctor, nisi elit consequat ipsum</p>
+						<p class="tm-home-box-3-description">제조사 : 현대자동차<br><br>차종 : 중형차<br><br>연비 : 10.7km/ℓ~16.1km/ℓ </p>
 						<div class="tm-home-box-2-container">
-							<a href="carModal.do?carname=쏘나타" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carno=100001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="carModal.do?carname=쏘나타" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">현대 쏘나타</span></a>
+							<a href="carModal.do?carno=100001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">소나타</span></a>
 						</div>
 					</div>
 				</div>
@@ -135,18 +131,16 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-03.png" alt="image" width=240px height=210px
+						<img src="img/car-03.png" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">Proin gravida nibhvell
-							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-							auctor, nisi elit consequat ipsum</p>
+						<p class="tm-home-box-3-description">제조사 : 현대자동차<br><br>차종 : 준중형차<br><br>1회 충전 주행가능거리 : 191km </p>
 						<div class="tm-home-box-2-container">
-							<a href="carModal.do?carname=아이오닉" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<a href="carModal.do?carno=200001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="carModal.do?carname=아이오닉" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">현대 아이오닉</span></a>
+							<a href="carModal.do?carno=200001" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">아이오닉</span></a>
 						</div>
 					</div>
 				</div>
@@ -154,18 +148,16 @@ $(function() {
 			<div class="col-lg-6">
 				<div class="tm-home-box-3">
 					<div class="tm-home-box-3-img-container">
-						<img src="img/car-04.png" alt="image" width=240px height=210px
+						<img src="img/car-04.png" alt="image" width=253px height=210px
 							class="img-responsive">
 					</div>
 					<div class="tm-home-box-3-info">
-						<p class="tm-home-box-3-description">Proin gravida nibhvell
-							velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-							auctor, nisi elit consequat ipsum</p>
+						<p class="tm-home-box-3-description">제조사 : 테슬라<br><br>차종 : 중형차<br><br>1회 충전 주행가능거리 : 470km </p>
 						<div class="tm-home-box-2-container">
-							<a href="carModal.do?carname=말리부" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal"> 
+							<a href="carModal.do?carno=200011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal"> 
 							<i class="fa fa-heart tm-home-box-2-icon border-right"></i></a> 
-							<a href="carModal.do?carname=말리부" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
-							<span class="tm-home-box-2-description box-3">테슬라 모델S</span></a>
+							<a href="carModal.do?carno=200011" class="tm-home-box-2-link" data-toggle="modal" data-target="#carModal">
+							<span class="tm-home-box-2-description box-3">모델S</span></a>
 						</div>
 					</div>
 				</div>
@@ -174,7 +166,7 @@ $(function() {
 	</div>
 </div>
 <div class="modal fade" id="carModal" role="dialog">
-	<div class="modal-dialog modal-sm">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<jsp:include page="../include/car_modal.jsp"></jsp:include>
 		</div>
