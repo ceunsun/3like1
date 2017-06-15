@@ -22,7 +22,7 @@
 }
 
 </style>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMJHho4WfeCzzv4U-5rLubsROfinFrIwo&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRSJcqu3m_6HpSzX-SPbDNkIQEMM3qOYI&callback=initMap">
 </script>
 <script>
 	function initMap() {
@@ -135,7 +135,7 @@ $(function() {
 								<tr>
 									<input type="hidden" name="carno" value="${car.carno}" />
 									<td rowspan="2">${car.carno}</td>
-									<td rowspan="2"><img src="img/${car.carimg}"
+									<td rowspan="2" width="150px"><img src="img/${car.carimg}.jpg"
 										class="img-responsive img-rounded"></td>
 									<td>${car.carname}</td>
 									<td rowspan="2">

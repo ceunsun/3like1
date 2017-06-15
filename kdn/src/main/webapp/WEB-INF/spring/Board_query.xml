@@ -23,7 +23,7 @@
 	
 	<insert id="insert" parameterType="board">
 		INSERT INTO board 
-		VALUES(board_no.nextval, #{memberno}, #{title}, #{content}, sysdate)
+		VALUES(boardno_seq.nextval, #{memberno}, #{title}, #{content}, sysdate)
 	</insert>
 	
 	<update id="update" parameterType="board">
@@ -58,7 +58,7 @@
 	
 	<insert id="accinsert" parameterType="accident">
 		INSERT INTO accident(accidentno, accidentdate, memberno, carno) 
-		VALUES(accident_no.nextval, #{accidentdate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
+		VALUES(accidentno_seq.nextval, #{accidentdate:VARCHAR}, #{memberno:VARCHAR}, #{carno:INTEGER})
 	</insert>
 	
 	<update id="accupdate" parameterType="accident">

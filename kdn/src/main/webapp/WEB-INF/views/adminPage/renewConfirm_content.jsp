@@ -51,7 +51,7 @@
 								<c:forEach var="car" items="${rList}">
 									<tr>
 										<td><input type="checkbox" name='check' id='check' value='${car.carno}'></td>
-										<td width="150px"><img src="img/${car.carimg}" class="img-responsive img-rounded"></td>
+										<td width="150px"><img src="img/${car.carimg}.jpg" class="img-responsive img-rounded"></td>
 										<th>${car.carno}</th>
 										<th>${car.memberno}</th>
 										<th>${car.rentdate}</th>
@@ -60,6 +60,7 @@
 								</c:forEach>
 							</tbody>
 						</table>
+						<input type="hidden" name="returndate" id="returndate" value="${car.returndate}"/>
 						<div class="boardbtn">
 							<input type="submit" value="확인">
 							<input type="reset" value="취소">

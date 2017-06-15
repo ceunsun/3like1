@@ -249,4 +249,13 @@ public class CarServiceImpl implements CarService {
 		
 		return rList;
 	}
+
+	@Override
+	public void delayDateReservation(HashMap<String, Object> map) {
+		try {
+			dao.delayDateReservation(map);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
 }

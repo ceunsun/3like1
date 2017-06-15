@@ -184,12 +184,22 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "renewConfirm.do", method = RequestMethod.POST)
-	public String renewConfirm(HttpServletRequest request, Model model) {
+	public String renewConfirm(HttpServletRequest request, String returndate, Model model) {
 		String[] rList = request.getParameterValues("check");
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		
+		
+		
 		System.out.println("==============");
 		for(int i=0; i<rList.length; i++){	
 			System.out.println(rList[i]);
+			
+			map.put("returndate", returndate);
+			map.put("carno", Integer.parseInt(rList[i]));
+			
 			carService.renting(Integer.parseInt(rList[i]));
+			carService.delayDateReservation(map);
 		}	
 	
 		return "redirect:renewContent.do";

@@ -6,6 +6,7 @@ public class Reservation {
 	private String enddate;
 	private int carno;
 	private String memberno;
+	private String place;
 	
 	public Reservation() { }
 	
@@ -18,12 +19,13 @@ public class Reservation {
 	}
 	
 	public Reservation(int reserveno, String startdate, String enddate,
-			int carno, String memberno) {
+			int carno, String memberno, String place) {
 		this.reserveno = reserveno;
 		this.startdate = startdate;
 		this.enddate = enddate;
 		this.carno = carno;
 		this.memberno = memberno;
+		this.place = place;
 	}
 
 	public int getReserveno() {
@@ -66,13 +68,23 @@ public class Reservation {
 		this.memberno = memberno;
 	}
 
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Reservation [reserveno=").append(reserveno)
 				.append(", startdate=").append(startdate).append(", enddate=")
 				.append(enddate).append(", carno=").append(carno)
-				.append(", memberno=").append(memberno).append("]");
+				.append(", memberno=").append(memberno).append(", place=")
+				.append(place).append("]");
 		return builder.toString();
 	}
 }

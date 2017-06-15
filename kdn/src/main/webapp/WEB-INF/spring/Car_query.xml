@@ -154,4 +154,10 @@
 		SET returndate=#{returndate}
 		WHERE carno=#{carno}
 	</update>
+	
+	<update id="delayDateReservation" parameterType="HashMap">
+		UPDATE reservation
+		SET enddate=#{returndate}
+		WHERE carno=#{carno}
+	</update>
 </mapper>

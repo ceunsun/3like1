@@ -80,6 +80,7 @@ public class HomeController {
 	@RequestMapping(value = "adminPage.do", method = RequestMethod.GET)
 	public String adminPage(Model model) {
 		int reserveWait = carService.countEvent("예약대기");
+		System.out.println(reserveWait);
 		int reserveConfirm = carService.countEvent("대여 중");
 		int returnWait = carService.countEvent("반납신청");
 		int accidentConfirm = carService.countEvent("사고차량");

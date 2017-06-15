@@ -350,7 +350,7 @@ table .boardbtn input[type=button]{
 	color: white;
 }
 .available-table {
-	height: 450px;
+	max-height: 450px;
 	width: 100%;
 	overflow: scroll;
 }

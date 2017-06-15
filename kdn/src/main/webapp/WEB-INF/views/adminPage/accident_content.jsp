@@ -54,7 +54,7 @@
 									<c:forEach var="aList" items="${aList}">
 									<tr>
 										<td>${aList.accidentno}</td>
-										<td width="150px"><img src="img/${aList.carimg}" class="img-responsive img-rounded"></td>
+										<td width="150px"><img src="img/${aList.carimg}.jpg" class="img-responsive img-rounded"></td>
 										<td>${aList.carno}</td>
 										<td>${aList.memberno}</td>
 										<td>${aList.accidentdate}</td>

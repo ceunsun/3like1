@@ -53,19 +53,19 @@
 						<div class="carousel-inner" role="listbox">
 
 							<div class="item active">
-								<img src="img/sonata1.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
+								<img src="img/${car.carimg}1.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
 							</div>
 
 							<div class="item">
-								<img src="img/sonata2.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
+								<img src="img/${car.carimg}2.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
 							</div>
 
 							<div class="item">
-								<img src="img/sonata3.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
+								<img src="img/${car.carimg}3.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
 							</div>
 
 							<div class="item">
-								<img src="img/sonata4.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
+								<img src="img/${car.carimg}4.jpg" alt="sonata" width="100%" height="400" style="margin: auto;">
 							</div>
 						</div>
 						<!-- Left and right controls -->
@@ -106,7 +106,7 @@
 							</span>
 						</div>
 					</div>
-					<input type="hidden" name="car" id="car" value="${carname}">
+					<input type="hidden" name="car" id="car" value="${car.carname}">
 					<button class="tm-yellow-btn">예약 가능 조회</button>
 					<button class="tm-yellow-btn" data-dismiss="modal">취소</button>
 				</form>
