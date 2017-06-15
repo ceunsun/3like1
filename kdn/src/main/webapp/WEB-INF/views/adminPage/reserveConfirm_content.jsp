@@ -53,7 +53,7 @@
 								<tbody>
 									<c:forEach var="rList" items="${rList}">
 										<tr>
-											<td><input type="checkbox" name='check' id='check' value='${rList.carno}'></td>	
+											<td><input type="checkbox" name='check' id='check' value='${rList.carno},${rList.memberno}'></td>	
 											<td>${rList.reserveno}</td>
 											<td width="150px"><img src="img/${rList.carimg}.jpg" class="img-responsive img-rounded"></td>
 											<td>${rList.carno}</td>

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -93,14 +94,27 @@ public class AdminController {
 	
 	// adminPage_sidebar.jsp 예약확인으로 상태 변경
 	@RequestMapping(value = "reserveConfirm.do", method = RequestMethod.POST)
-	public String reserveConfirm(HttpServletRequest request, Model model) {
+	public String reserveConfirm(HttpServletRequest request, HttpSession session, Model model) {
 		String[] rList = request.getParameterValues("check");
-		
-		
-				
+		HashMap<String, Object> map = new HashMap<String, Object>();
+
 		for(int i=0; i<rList.length; i++){	
-			System.out.println(rList[i]);
-			carService.reserveConfirm(Integer.parseInt(rList[i]));
+			
+			
+			String[] split = rList[i].split(",");
+			
+			int carno = Integer.parseInt(split[0]);
+			String memberno = split[1];
+			
+			map.put("memberno", memberno);
+			map.put("penalty", 200);
+			
+			carService.reserveConfirm(carno);
+			ms.getPenalty(map);
+			
+			Member m = ms.search(memberno);
+			
+			session.setAttribute("penalty", (m.getPenalty()));
 		}	
 		
 		return "redirect:reserveContent.do";

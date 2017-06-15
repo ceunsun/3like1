@@ -66,11 +66,11 @@ public class CarController {
 		
 		carService.reserve(reservation);
 		carService.reserveStatus(carno);
-		//memberService.getPenalty(map);
+		/*memberService.getPenalty(map);
 		
 		Member m = memberService.search(memberno);
 				
-		//session.setAttribute("penalty", (m.getPenalty()));
+		session.setAttribute("penalty", (m.getPenalty()));*/
 		
 		return "redirect:home.do";
 	}
